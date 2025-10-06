@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Layout } from '@/components/layout/Layout';
@@ -11,6 +12,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function PatientFamilyDashboard() {
+  const navigate = useNavigate();
   const yourRights = [
     {
       icon: ShieldCheckIcon,
@@ -127,7 +129,35 @@ export default function PatientFamilyDashboard() {
           </div>
         </Card>
 
-        {/* Your Privacy Rights */}
+        {/* Quick Actions */}
+        <section>
+          <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Tools & Resources</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer border-2 border-purple" onClick={() => navigate('/generate-decision-tree')}>
+              <div className="text-3xl mb-4">🤖</div>
+              <h3 className="text-xl font-semibold mb-2">AI Privacy Navigator</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Get personalized guidance for your privacy questions and concerns
+              </p>
+              <Button variant="default" className="w-full bg-purple hover:bg-purple/90">
+                Start Navigation →
+              </Button>
+            </Card>
+
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer border-2 border-purple" onClick={() => navigate('/document-analysis')}>
+              <div className="text-3xl mb-4">📄</div>
+              <h3 className="text-xl font-semibold mb-2">Document Analysis</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Upload consent forms to understand their privacy implications in plain language
+              </p>
+              <Button variant="default" className="w-full bg-purple hover:bg-purple/90">
+                Analyze Document →
+              </Button>
+            </Card>
+          </div>
+        </section>
+
+        {/* Your Privacy Rights - continues below */}
         <section>
           <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Your Privacy Rights</h2>
           <div className="space-y-4 md:space-y-6">

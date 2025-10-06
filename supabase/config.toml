@@ -6,3 +6,9 @@ site_url = "http://localhost:5173"
 
 [functions.therapeutic-privacy-chat]
 verify_jwt = false
+
+[functions.generate-decision-tree]
+verify_jwt = false
+
+[functions.analyze-privacy-document]
+verify_jwt = false

@@ -125,30 +125,53 @@ export default function HealthcareProviderDashboard() {
         <section>
           <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Tools & Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            {tools.map((tool) => (
-              <Card 
-                key={tool.id} 
-                className={`p-6 transition-shadow ${
-                  tool.available 
-                    ? 'hover:shadow-md cursor-pointer' 
-                    : 'opacity-60'
-                }`}
-                onClick={() => tool.available && tool.route && navigate(tool.route)}
-              >
-                <tool.icon className={`w-10 h-10 md:w-12 md:h-12 mb-4 text-${tool.color}`} />
-                <h3 className="text-lg md:text-xl font-semibold mb-2">{tool.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                  {tool.description}
-                </p>
-                <Button 
-                  variant={tool.available ? "default" : "secondary"}
-                  className={tool.available ? `w-full bg-${tool.color} hover:bg-${tool.color}/90` : 'w-full'}
-                  disabled={!tool.available}
-                >
-                  {tool.available ? tool.action : 'Coming in Phase 2'}
-                </Button>
-              </Card>
-            ))}
+            {/* AI Decision Trees - PRIMARY TOOL */}
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer border-2 border-teal" onClick={() => navigate('/generate-decision-tree')}>
+              <div className="text-3xl mb-4">🤖</div>
+              <h3 className="text-xl font-semibold mb-2">AI Decision Trees</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Generate personalized decision trees with real-time PHIPA citations for your specific scenario
+              </p>
+              <Button variant="default" className="w-full bg-teal hover:bg-teal/90">
+                Generate Custom Tree →
+              </Button>
+            </Card>
+
+            {/* Example Decision Trees */}
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer" onClick={() => navigate('/decision-tree')}>
+              <div className="text-3xl mb-4">📚</div>
+              <h3 className="text-xl font-semibold mb-2">Example Decision Trees</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Browse pre-built decision trees for common privacy scenarios
+              </p>
+              <Button variant="outline" className="w-full border-teal text-teal hover:bg-teal/10">
+                View Examples →
+              </Button>
+            </Card>
+
+            {/* Capacity Assessment - Coming Soon */}
+            <Card className="p-6 opacity-60">
+              <ShieldCheckIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-teal" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Capacity Assessment Guide</h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                Decision-specific capacity evaluation framework with therapeutic considerations
+              </p>
+              <Button variant="secondary" className="w-full" disabled>
+                Coming in Phase 2
+              </Button>
+            </Card>
+
+            {/* Learning Library - Coming Soon */}
+            <Card className="p-6 opacity-60">
+              <AcademicCapIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-teal" />
+              <h3 className="text-lg md:text-xl font-semibold mb-2">Learning Library</h3>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                Educational resources on therapeutic privacy, PHIPA, and relational ethics
+              </p>
+              <Button variant="secondary" className="w-full" disabled>
+                Coming in Phase 2
+              </Button>
+            </Card>
           </div>
         </section>
 

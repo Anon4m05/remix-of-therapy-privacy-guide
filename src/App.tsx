@@ -9,6 +9,8 @@ import Landing from "./pages/Landing";
 import RoleSelection from "./pages/RoleSelection";
 import HealthcareProviderDashboard from "./pages/HealthcareProviderDashboard";
 import PatientFamilyDashboard from "./pages/PatientFamilyDashboard";
+import GenerateDecisionTree from "./pages/GenerateDecisionTree";
+import DocumentAnalysis from "./pages/DocumentAnalysis";
 import DecisionTreeHub from "./pages/DecisionTreeHub";
 import DecisionTreeSession from "./pages/DecisionTreeSession";
 import DecisionTreeResults from "./pages/DecisionTreeResults";
@@ -34,6 +36,14 @@ const App = () => (
               <Route
                 path="/dashboard/patient_family"
                 element={<RequireRole><PatientFamilyDashboard /></RequireRole>}
+              />
+              <Route
+                path="/generate-decision-tree"
+                element={<RequireRole><GenerateDecisionTree /></RequireRole>}
+              />
+              <Route
+                path="/document-analysis"
+                element={<RequireRole><DocumentAnalysis /></RequireRole>}
               />
               <Route
                 path="/decision-tree"

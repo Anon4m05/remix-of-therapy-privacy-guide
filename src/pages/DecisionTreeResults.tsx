@@ -1,21 +1,38 @@
+import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2 } from 'lucide-react';
 import { Layout } from '@/components/layout/Layout';
+import { DecisionTreePrint } from '@/components/decision-tree/DecisionTreePrint';
 import { useDecisionTree } from '@/context/DecisionTreeContext';
 import decisionTreesData from '@/data/decisionTrees.json';
 import type { DecisionTreeData } from '@/types';
-import { useToast } from '@/hooks/use-toast';
 
 export default function DecisionTreeResults() {
   const { treeId } = useParams<{ treeId: string }>();
   const navigate = useNavigate();
   const { state, resetTree } = useDecisionTree();
-  const { toast } = useToast();
 
   const data = decisionTreesData as DecisionTreeData;
-  const tree = data.trees.find(t => t.id === treeId);
+  
+  const [aiTree, setAiTree] = useState<any>(null);
+  
+  useEffect(() => {
+    const storedTree = sessionStorage.getItem('current-ai-tree');
+    if (storedTree) {
+      try {
+        const parsed = JSON.parse(storedTree);
+        if (parsed.id === treeId) {
+          setAiTree(parsed);
+        }
+      } catch (error) {
+        console.error('Error parsing stored tree:', error);
+      }
+    }
+  }, [treeId]);
+
+  const tree = aiTree || data.trees.find(t => t.id === treeId);
   const recommendation = tree?.nodes.find(n => n.id === state.currentNodeId);
 
   if (!tree || !recommendation || recommendation.type !== 'recommendation') {
@@ -40,21 +57,16 @@ export default function DecisionTreeResults() {
     };
   });
 
-  const handleDownloadPDF = () => {
-    toast({
-      title: "Coming Soon",
-      description: "PDF download will be available in Phase 2",
-    });
-  };
-
   const handleStartAnother = () => {
     resetTree();
-    navigate('/decision-tree');
+    sessionStorage.removeItem('current-ai-tree');
+    navigate('/generate-decision-tree');
   };
 
   const handleReturnDashboard = () => {
     resetTree();
-    navigate('/dashboard/healthcare_provider');
+    sessionStorage.removeItem('current-ai-tree');
+    navigate(-2); // Go back 2 pages to dashboard
   };
 
   return (
@@ -65,9 +77,12 @@ export default function DecisionTreeResults() {
           <h1 className="text-2xl font-semibold text-success mb-6">
             Decision Tree Complete
           </h1>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            {recommendation.title}
-          </h2>
+          <div className="flex items-center justify-between max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              {recommendation.title}
+            </h2>
+            {tree && <DecisionTreePrint tree={tree} answers={state.answers} />}
+          </div>
         </div>
 
         <Card className="p-8 bg-teal-light border-teal mb-8">
@@ -114,18 +129,10 @@ export default function DecisionTreeResults() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Button
             variant="outline"
-            onClick={handleDownloadPDF}
-            className="flex-1"
-          >
-            📄 Download Summary PDF
-          </Button>
-          
-          <Button
-            variant="outline"
             onClick={handleStartAnother}
             className="flex-1"
           >
-            Start Another Decision Tree
+            Generate Another Tree
           </Button>
           
           <Button

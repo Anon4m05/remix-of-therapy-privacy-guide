@@ -15,7 +15,25 @@ export default function DecisionTreeSession() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const data = decisionTreesData as DecisionTreeData;
-  const tree = data.trees.find(t => t.id === treeId);
+  
+  // Check for AI-generated tree in sessionStorage first
+  const [aiTree, setAiTree] = useState<any>(null);
+  
+  useEffect(() => {
+    const storedTree = sessionStorage.getItem('current-ai-tree');
+    if (storedTree) {
+      try {
+        const parsed = JSON.parse(storedTree);
+        if (parsed.id === treeId) {
+          setAiTree(parsed);
+        }
+      } catch (error) {
+        console.error('Error parsing stored tree:', error);
+      }
+    }
+  }, [treeId]);
+
+  const tree = aiTree || data.trees.find(t => t.id === treeId);
 
   useEffect(() => {
     if (tree && !state.currentTreeId) {

@@ -26,6 +26,12 @@ export interface DecisionTree {
   questionCount: number;
   available: boolean;
   nodes: DecisionTreeNode[];
+  scenarioDetails?: {
+    type: string;
+    setting: string;
+    urgency: string;
+  };
+  generatedAt?: string;
 }
 
 export interface DecisionTreeData {
