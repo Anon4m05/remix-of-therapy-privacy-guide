@@ -15,60 +15,33 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const { role } = useRole();
-  
-  if (!role) {
-    return <Navigate to="/select-role" replace />;
-  }
-  
-  return <>{children}</>;
-}
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <RoleProvider>
         <DecisionTreeProvider>
-          <Toaster />
-          <Sonner />
           <BrowserRouter>
+            <Toaster />
+            <Sonner />
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/select-role" element={<RoleSelection />} />
               <Route
                 path="/dashboard/healthcare_provider"
-                element={
-                  <ProtectedRoute>
-                    <HealthcareProviderDashboard />
-                  </ProtectedRoute>
-                }
+                element={<RequireRole><HealthcareProviderDashboard /></RequireRole>}
               />
               <Route
                 path="/decision-tree"
-                element={
-                  <ProtectedRoute>
-                    <DecisionTreeHub />
-                  </ProtectedRoute>
-                }
+                element={<RequireRole><DecisionTreeHub /></RequireRole>}
               />
               <Route
                 path="/decision-tree/:treeId"
-                element={
-                  <ProtectedRoute>
-                    <DecisionTreeSession />
-                  </ProtectedRoute>
-                }
+                element={<RequireRole><DecisionTreeSession /></RequireRole>}
               />
               <Route
                 path="/decision-tree/:treeId/results"
-                element={
-                  <ProtectedRoute>
-                    <DecisionTreeResults />
-                  </ProtectedRoute>
-                }
+                element={<RequireRole><DecisionTreeResults /></RequireRole>}
               />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
@@ -77,5 +50,15 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+
+function RequireRole({ children }: { children: React.ReactNode }) {
+  const { role } = useRole();
+  
+  if (!role) {
+    return <Navigate to="/select-role" replace />;
+  }
+  
+  return <>{children}</>;
+}
 
 export default App;
