@@ -28,10 +28,10 @@ export default function RoleSelection() {
 
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Who are you?
+            Select Your Role
           </h1>
           <p className="text-lg text-muted-foreground">
-            Select your role to personalize your experience
+            Choose your role to access tools and guidance tailored to your needs
           </p>
         </div>
 
@@ -52,8 +52,8 @@ export default function RoleSelection() {
             </div>
           </Card>
 
-          {/* Patient & Family - COMING SOON */}
-          <Card className="p-6 opacity-50 cursor-not-allowed border-2">
+          {/* Patient & Family - ACTIVE */}
+          <Card className="p-6 hover:shadow-md transition-all cursor-pointer border-2 hover:border-purple" onClick={() => handleRoleSelect('patient_family')}>
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="text-2xl mb-2">👤</div>
@@ -61,21 +61,21 @@ export default function RoleSelection() {
                 <p className="text-sm text-muted-foreground mb-2">
                   Patients, family members, caregivers
                 </p>
-                <Badge variant="secondary" className="text-xs">
-                  Coming in Phase 2
-                </Badge>
               </div>
+              <Button variant="default" className="bg-purple hover:bg-purple/90">
+                Select →
+              </Button>
             </div>
           </Card>
 
-          {/* Privacy Professional - COMING SOON */}
+          {/* Other - COMING SOON */}
           <Card className="p-6 opacity-50 cursor-not-allowed border-2">
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="text-2xl mb-2">🔒</div>
-                <h2 className="text-xl font-semibold mb-2">Privacy Professional</h2>
+                <h2 className="text-xl font-semibold mb-2">Other</h2>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Privacy officers, compliance staff, legal counsel
+                  Privacy professionals, researchers, administrators, legal counsel
                 </p>
                 <Badge variant="secondary" className="text-xs">
                   Coming in Phase 2
