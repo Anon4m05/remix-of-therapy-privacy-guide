@@ -1,0 +1,34 @@
+{
+  "id": "mfippa",
+  "title": "Municipal Freedom of Information and Protection of Privacy Act",
+  "shortTitle": "M/FIPPA",
+  "jurisdiction": "Ontario",
+  "citation": "R.S.O. 1990, Chapter M.56",
+  "sections": [
+    {
+      "number": "1",
+      "title": "Purposes",
+      "content": "The purposes of this Act are:\n(a) to provide a right of access to information under the control of institutions in accordance with the principles that:\n  (i) information should be available to the public,\n  (ii) necessary exemptions from the right of access should be limited and specific, and\n  (iii) decisions on the disclosure of information should be reviewed independently of the institutions controlling the information; and\n(b) to protect the privacy of individuals with respect to personal information about themselves held by institutions and to provide individuals with a right of access to that information."
+    },
+    {
+      "number": "2",
+      "title": "Definitions",
+      "content": "In this Act,\n\n\"head\" means the person who is vested with responsibility for the management of an institution;\n\n\"institution\" means:\n(a) a municipality,\n(b) a local board other than:\n  (i) a business improvement area association,\n  (ii) a board of health,\n  (iii) a local services board,\n(c) a school board, college or university,\n(d) a children's aid society,\n(e) a police services board or police force;\n\n\"personal information\" means recorded information about an identifiable individual, including:\n(a) information relating to the race, national or ethnic origin, colour, religion, age, sex, sexual orientation or marital or family status of the individual,\n(b) information relating to the education or the medical, psychiatric, psychological, criminal or employment history of the individual or information relating to financial transactions in which the individual has been involved,\n(c) any identifying number, symbol or other particular assigned to the individual,\n(d) the address, telephone number, fingerprints or blood type of the individual,\n(e) the personal opinions or views of the individual except where they relate to another individual,\n(f) correspondence sent to the institution by the individual that is implicitly or explicitly of a private or confidential nature, and replies to that correspondence that would reveal the contents of the original correspondence."
+    },
+    {
+      "number": "28",
+      "title": "Collection of personal information",
+      "content": "No person shall collect personal information on behalf of an institution unless the collection is expressly authorized by statute, used for the purposes of law enforcement or necessary to the proper administration of a lawfully authorized activity."
+    },
+    {
+      "number": "29",
+      "title": "Use of personal information",
+      "content": "The head of an institution shall not use personal information in the custody or under the control of the institution except:\n(a) where the person to whom the information relates has identified that information in particular and has consented to its use;\n(b) for the purpose for which it was obtained or compiled or for a consistent purpose;\n(c) for the purpose of complying with an Act of the Legislature or an Act of Parliament, a treaty, agreement or arrangement made under such an Act, or a subpoena, warrant or order issued or made by a court, person or body with jurisdiction to compel the production of information."
+    },
+    {
+      "number": "32",
+      "title": "Disclosure of personal information",
+      "content": "The head of an institution shall not disclose personal information in its custody or under its control except:\n(a) in accordance with Part I (Access to Information);\n(b) where the person to whom the information relates has identified that information in particular and consented to its disclosure;\n(c) for the purpose for which it was obtained or compiled or for a consistent purpose;\n(d) where disclosure is made to an officer, employee or agent of the institution who needs the record in the performance of their duties;\n(e) for the purpose of complying with an Act of the Legislature or an Act of Parliament;\n(f) to a law enforcement agency in Canada to aid an investigation;\n(g) in compelling circumstances affecting the health or safety of any individual;\n(h) for the purpose of a proceeding before a court, tribunal or other entity imposing legal obligations;\n(i) to the archives of Ontario or archives of an institution for archival purposes;\n(j) where the Commissioner has authorized a research program."
+    }
+  ]
+}

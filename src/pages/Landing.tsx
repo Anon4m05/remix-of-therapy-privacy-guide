@@ -31,28 +31,40 @@ export default function Landing() {
       <section className="py-16 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <ClipboardDocumentCheckIcon className="w-12 h-12 text-teal mb-4" />
+            <Card
+              className="p-6 hover:shadow-md transition-shadow cursor-pointer group"
+              onClick={() => navigate('/assess')}
+            >
+              <ClipboardDocumentCheckIcon className="w-12 h-12 text-teal mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold mb-2">Assess</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-4">
                 Evaluate privacy practices through therapeutic outcomes
               </p>
+              <Button variant="outline" className="w-full">Explore Tools</Button>
             </Card>
 
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <AcademicCapIcon className="w-12 h-12 text-teal mb-4" />
+            <Card
+              className="p-6 hover:shadow-md transition-shadow cursor-pointer group"
+              onClick={() => navigate('/learn')}
+            >
+              <AcademicCapIcon className="w-12 h-12 text-teal mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold mb-2">Learn</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-4">
                 Understand privacy's impact on therapeutic relationships
               </p>
+              <Button variant="outline" className="w-full">Read Legislation</Button>
             </Card>
 
-            <Card className="p-6 hover:shadow-md transition-shadow">
-              <LightBulbIcon className="w-12 h-12 text-teal mb-4" />
+            <Card
+              className="p-6 hover:shadow-md transition-shadow cursor-pointer group"
+              onClick={() => navigate('/apply')}
+            >
+              <LightBulbIcon className="w-12 h-12 text-teal mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-lg font-semibold mb-2">Apply</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-4">
                 Navigate complex privacy decisions with confidence
               </p>
+              <Button variant="outline" className="w-full">Get Started</Button>
             </Card>
           </div>
         </div>

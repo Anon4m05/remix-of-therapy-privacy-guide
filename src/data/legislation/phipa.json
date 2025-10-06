@@ -1,0 +1,51 @@
+{
+  "id": "phipa",
+  "title": "Personal Health Information Protection Act, 2004",
+  "shortTitle": "PHIPA",
+  "jurisdiction": "Ontario",
+  "citation": "S.O. 2004, Chapter 3, Schedule A",
+  "consolidationPeriod": "From June 5, 2025 to the e-Laws currency date",
+  "lastAmendment": "2025, c. 7, Sched. 6, s. 1-13",
+  "sections": [
+    {
+      "number": "1",
+      "title": "Purposes",
+      "content": "The purposes of this Act are:\n(a) to establish rules for the collection, use and disclosure of personal health information about individuals that protect the confidentiality of that information and the privacy of individuals with respect to that information, while facilitating the effective provision of health care;\n(b) to provide individuals with a right of access to personal health information about themselves, subject to limited and specific exceptions set out in this Act;\n(c) to provide individuals with a right to require the correction or amendment of personal health information about themselves, subject to limited and specific exceptions set out in this Act; and\n(d) to provide for independent review and resolution of complaints with respect to personal health information."
+    },
+    {
+      "number": "2",
+      "title": "Definitions",
+      "content": "In this Act,\n\n\"agent\" means a person who, with the authorization of a health information custodian, acts for or on behalf of the custodian in respect of personal health information for the purposes of the custodian, and not the agent's own purposes, whether or not the agent has the authority to bind the custodian, whether or not the agent is employed by the custodian and whether or not the agent is being remunerated;\n\n\"consent\" means a consent under Part III;\n\n\"health care\" means anything that is done for a therapeutic, preventive, palliative, diagnostic, cosmetic or other health-related purpose, and includes a service provided for that purpose;\n\n\"health information custodian\" has the meaning set out in section 3;\n\n\"personal health information\" has the meaning set out in section 4;\n\n\"substitute decision-maker\" has the meaning set out in section 5."
+    },
+    {
+      "number": "3",
+      "title": "Health information custodian",
+      "content": "A health information custodian is a person or organization described in one of the following paragraphs who has custody or control of personal health information as a result of or in connection with performing the person's or organization's powers or duties or the work described in the paragraph:\n\n1. A health care practitioner or a person who operates a group practice of health care practitioners.\n2. A service provider that operates one of the following facilities: hospitals, psychiatric facilities, independent health facilities, laboratories, ambulance services, homes for special care, community health centres, etc.\n3. The evaluator designated under the Mental Health Act.\n4. A community care access corporation.\n5. A pharmacist, a pharmacy or an operator of a pharmacy.\n6. A person who operates an out-of-hospital premises for the provision of health care to the public."
+    },
+    {
+      "number": "4",
+      "title": "Personal health information",
+      "content": "Personal health information means identifying information about an individual in oral or recorded form, if the information:\n(a) relates to the physical or mental health of the individual, including information that consists of the health history of the individual's family;\n(b) relates to the providing of health care to the individual, including the identification of a person as a provider of health care to the individual;\n(c) is a plan of service within the meaning of the Home Care and Community Services Act, 1994 for the individual;\n(d) relates to payments or eligibility for health care, or eligibility for coverage for health care, in respect of the individual;\n(e) relates to the donation by the individual of any body part or bodily substance of the individual or is derived from the testing or examination of any such body part or bodily substance;\n(f) is the individual's health number; or\n(g) identifies an individual's substitute decision-maker."
+    },
+    {
+      "number": "29",
+      "title": "Requirement for consent",
+      "content": "A health information custodian shall not collect, use or disclose personal health information about an individual unless:\n(a) it has the individual's consent under this Act and the collection, use or disclosure, as the case may be, is necessary for a lawful purpose; or\n(b) the collection, use or disclosure, as the case may be, is permitted or required by this Act without the individual's consent."
+    },
+    {
+      "number": "37",
+      "title": "Permitted use",
+      "content": "A health information custodian may use personal health information about an individual:\n(a) for purposes that are reasonably necessary to provide health care to the individual;\n(b) to compile data for the purposes of providing health care or making decisions about providing health care;\n(c) for planning, resourcing, evaluation or monitoring;\n(d) for managing, making decisions about or delivering programs or services, including the Ontario Health Insurance Plan, for which the custodian is responsible;\n(e) for risk management, error management or improvement of the quality of care;\n(f) for health or other research approved by a prescribed entity; and\n(g) as permitted or required by this Act or as otherwise permitted or required by law."
+    },
+    {
+      "number": "38",
+      "title": "Disclosures related to providing health care",
+      "content": "A health information custodian may disclose personal health information about an individual:\n(a) if the disclosure is made to a health information custodian who is providing health care to the individual or assisting in the provision of health care to the individual, for the purpose of providing health care or assisting in providing health care;\n(b) if the disclosure is made for the purpose of conducting a quality of care review or quality assurance program;\n(c) if the custodian believes on reasonable grounds that the disclosure is necessary for the purpose of eliminating or reducing a significant risk of serious bodily harm to a person or group of persons;\n(d) to assist in identifying an individual or to notify a person of an individual's death or possible death;\n(e) to enable contact to be made with the next-of-kin or other contact person of an individual who is injured, incapacitated or ill;\n(f) if the disclosure is made to a person who is an agent of the custodian and the custodian reasonably believes the agent requires the information for the provision of health care or assistance in the provision of health care to the individual."
+    },
+    {
+      "number": "52",
+      "title": "Individual's right of access",
+      "content": "An individual has a right of access to a record of personal health information about the individual that is in the custody or under the control of a health information custodian unless the record or the part of the record that contains the information falls within one of the exceptions under sections 52.1, 52.2 and 52.3."
+    }
+  ]
+}

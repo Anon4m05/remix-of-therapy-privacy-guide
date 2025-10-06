@@ -12,3 +12,6 @@ verify_jwt = false
 
 [functions.analyze-privacy-document]
 verify_jwt = false
+
+[functions.explain-legislation]
+verify_jwt = false

@@ -14,6 +14,10 @@ import DocumentAnalysis from "./pages/DocumentAnalysis";
 import DecisionTreeHub from "./pages/DecisionTreeHub";
 import DecisionTreeSession from "./pages/DecisionTreeSession";
 import DecisionTreeResults from "./pages/DecisionTreeResults";
+import LearnHub from "./pages/LearnHub";
+import LegislationDetail from "./pages/LegislationDetail";
+import AssessHub from "./pages/AssessHub";
+import ApplyHub from "./pages/ApplyHub";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +33,10 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/select-role" element={<RoleSelection />} />
+              <Route path="/learn" element={<LearnHub />} />
+              <Route path="/learn/:legislationId" element={<LegislationDetail />} />
+              <Route path="/assess" element={<AssessHub />} />
+              <Route path="/apply" element={<ApplyHub />} />
               <Route
                 path="/dashboard/healthcare_provider"
                 element={<RequireRole><HealthcareProviderDashboard /></RequireRole>}

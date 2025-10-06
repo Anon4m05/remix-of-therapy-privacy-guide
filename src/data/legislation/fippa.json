@@ -1,0 +1,40 @@
+{
+  "id": "fippa",
+  "title": "Freedom of Information and Protection of Privacy Act",
+  "shortTitle": "FIPPA",
+  "jurisdiction": "Ontario",
+  "citation": "R.S.O. 1990, Chapter F.31",
+  "lastAmendment": "2024, Bill 194",
+  "sections": [
+    {
+      "number": "1",
+      "title": "Purposes",
+      "content": "The purposes of this Act are:\n(a) to provide a right of access to information under the control of institutions in accordance with the principles that:\n  (i) information should be available to the public,\n  (ii) necessary exemptions from the right of access should be limited and specific, and\n  (iii) decisions on the disclosure of government information should be reviewed independently of government; and\n(b) to protect the privacy of individuals with respect to personal information about themselves held by institutions and to provide individuals with a right of access to that information."
+    },
+    {
+      "number": "2",
+      "title": "Definitions",
+      "content": "In this Act,\n\n\"head\" means:\n(a) in the case of a ministry, branch or office of government of Ontario, the member of the Executive Council who presides over it, or\n(b) in any other case, the person or body of persons who are vested with responsibility for the management of an institution;\n\n\"institution\" means:\n(a) a ministry of the Government of Ontario,\n(b) an agency, board, commission, corporation or other body designated as an institution in the regulations;\n\n\"personal information\" means recorded information about an identifiable individual, including:\n(a) information relating to the race, national or ethnic origin, colour, religion, age, sex, sexual orientation or marital or family status of the individual,\n(b) information relating to the education or the medical, psychiatric, psychological, criminal or employment history of the individual or information relating to financial transactions in which the individual has been involved,\n(c) any identifying number, symbol or other particular assigned to the individual,\n(d) the address, telephone number, fingerprints or blood type of the individual,\n(e) the personal opinions or views of the individual except if they relate to another individual,\n(f) correspondence sent to an institution by the individual that is implicitly or explicitly of a private or confidential nature, and replies to that correspondence that would reveal the contents of the original correspondence,\n(g) the views or opinions of another individual about the individual, and\n(h) the individual's name if it appears with other personal information relating to the individual or where the disclosure of the name would reveal other personal information about the individual."
+    },
+    {
+      "number": "34",
+      "title": "Annual report",
+      "content": "The head of every institution shall prepare an annual report for each calendar year on the operation of this Act in respect of the institution.\n\nThe annual report must specify:\n(a) the number of requests for access to records received;\n(b) the number of requests that were granted in whole or in part;\n(c) the number of requests that were denied in whole or in part;\n(d) the number of requests that were abandoned;\n(e) the number of thefts, losses or unauthorized uses or disclosures of personal information reported to the Commissioner during the year;\n(f) other prescribed information."
+    },
+    {
+      "number": "38",
+      "title": "Collection of personal information",
+      "content": "An institution shall assess the following before collecting personal information:\n(a) whether the collection is necessary;\n(b) the risks associated with the collection, including the risk of harm to an individual;\n(c) whether there are less privacy-invasive alternatives.\n\nThe head of an institution shall implement steps to prevent or reduce the likelihood of a theft, loss or unauthorized use or disclosure of personal information and to mitigate the risks to individuals in the event of such an occurrence.\n\nAssessments must be updated before making any significant change to the purpose for which personal information is used or disclosed."
+    },
+    {
+      "number": "39",
+      "title": "Use of personal information",
+      "content": "The head of an institution shall not use personal information in its custody or under its control except:\n(a) where the person to whom the information relates has identified that information in particular and consented to its use;\n(b) for the purpose for which it was obtained or compiled or for a consistent purpose;\n(c) for the purpose of complying with an Act of the Legislature or an Act of Parliament, a treaty, agreement or arrangement made under such an Act, or a subpoena, warrant or order issued or made by a court, person or body with jurisdiction to compel the production of information;\n(d) where the use of the information is permitted by this Act."
+    },
+    {
+      "number": "42",
+      "title": "Disclosure of personal information",
+      "content": "The head of an institution shall not disclose personal information in its custody or under its control except:\n(a) in accordance with Part I (Access to Information);\n(b) where the person to whom the information relates has identified that information in particular and consented to its disclosure;\n(c) for the purpose for which it was obtained or compiled or for a consistent purpose;\n(d) where disclosure is made to an officer or employee of the institution who needs the record in the performance of their duties;\n(e) for the purpose of complying with an Act of the Legislature or an Act of Parliament, a treaty, agreement or arrangement made under such an Act, or a subpoena, warrant or order issued or made by a court, person or body with jurisdiction to compel the production of information;\n(f) to a law enforcement agency in Canada to aid an investigation;\n(g) in compelling circumstances affecting the health or safety of any individual if upon disclosure notification thereof is mailed to the last known address of the individual to whom the information relates;\n(h) for the purpose of a proceeding before a court, tribunal or other entity imposing legal obligations;\n(i) where the Commissioner has authorized a research program."
+    }
+  ]
+}
