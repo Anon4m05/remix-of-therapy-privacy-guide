@@ -1,0 +1,229 @@
+{
+  "trees": [
+    {
+      "id": "family-sharing",
+      "title": "Information Sharing with Family Members",
+      "description": "Navigate consent and disclosure decisions when family members request patient information",
+      "role": "healthcare_provider",
+      "estimatedTime": "5-7 minutes",
+      "questionCount": 8,
+      "available": true,
+      "nodes": [
+        {
+          "id": "node-1",
+          "type": "question",
+          "question": "Is the patient capable of providing consent?",
+          "options": [
+            {
+              "id": "opt-1-1",
+              "text": "Yes, the patient is capable of consent",
+              "nextNode": "node-2"
+            },
+            {
+              "id": "opt-1-2",
+              "text": "No, the patient is incapable of consent",
+              "nextNode": "node-3"
+            },
+            {
+              "id": "opt-1-3",
+              "text": "Uncertain about patient's capacity",
+              "nextNode": "node-4"
+            }
+          ]
+        },
+        {
+          "id": "node-2",
+          "type": "question",
+          "question": "Has the patient provided consent for you to share information with this family member?",
+          "options": [
+            {
+              "id": "opt-2-1",
+              "text": "Yes, explicit written consent",
+              "nextNode": "terminal-1"
+            },
+            {
+              "id": "opt-2-2",
+              "text": "Yes, verbal consent documented in chart",
+              "nextNode": "terminal-2"
+            },
+            {
+              "id": "opt-2-3",
+              "text": "No, no consent obtained",
+              "nextNode": "node-5"
+            }
+          ]
+        },
+        {
+          "id": "node-3",
+          "type": "question",
+          "question": "Does the patient have a Substitute Decision Maker (SDM) appointed?",
+          "options": [
+            {
+              "id": "opt-3-1",
+              "text": "Yes, and the family member is the SDM",
+              "nextNode": "terminal-3"
+            },
+            {
+              "id": "opt-3-2",
+              "text": "Yes, but the family member is NOT the SDM",
+              "nextNode": "node-6"
+            },
+            {
+              "id": "opt-3-3",
+              "text": "No SDM appointed",
+              "nextNode": "node-7"
+            }
+          ]
+        },
+        {
+          "id": "node-4",
+          "type": "question",
+          "question": "Have you conducted a capacity assessment?",
+          "options": [
+            {
+              "id": "opt-4-1",
+              "text": "Yes, assessment complete",
+              "nextNode": "node-1"
+            },
+            {
+              "id": "opt-4-2",
+              "text": "No, not yet assessed",
+              "nextNode": "terminal-4"
+            }
+          ]
+        },
+        {
+          "id": "node-5",
+          "type": "question",
+          "question": "Is this an emergency situation where delayed disclosure could harm the patient?",
+          "options": [
+            {
+              "id": "opt-5-1",
+              "text": "Yes, immediate disclosure needed for patient safety",
+              "nextNode": "terminal-5"
+            },
+            {
+              "id": "opt-5-2",
+              "text": "No, not an emergency",
+              "nextNode": "terminal-6"
+            }
+          ]
+        },
+        {
+          "id": "node-6",
+          "type": "question",
+          "question": "Has the SDM authorized disclosure to this family member?",
+          "options": [
+            {
+              "id": "opt-6-1",
+              "text": "Yes, SDM has authorized",
+              "nextNode": "terminal-7"
+            },
+            {
+              "id": "opt-6-2",
+              "text": "No, SDM has not authorized",
+              "nextNode": "terminal-8"
+            }
+          ]
+        },
+        {
+          "id": "node-7",
+          "type": "question",
+          "question": "Is the family member the highest-ranking person in the SDM hierarchy?",
+          "options": [
+            {
+              "id": "opt-7-1",
+              "text": "Yes, they are highest-ranking available",
+              "nextNode": "terminal-9"
+            },
+            {
+              "id": "opt-7-2",
+              "text": "No, someone else ranks higher",
+              "nextNode": "terminal-10"
+            }
+          ]
+        },
+        {
+          "id": "terminal-1",
+          "type": "recommendation",
+          "title": "Proceed with Disclosure",
+          "content": "Since the patient is capable and has provided explicit written consent, you may share the requested information with the family member.\n\n**Steps to take:**\n1. Verify the consent form includes the specific family member and type of information\n2. Document the disclosure in the patient's chart\n3. Only share information covered by the consent\n4. Remind the family member that the information is confidential\n\n**Therapeutic Consideration:**\nInvolving family with patient consent often strengthens the circle of care and supports better outcomes. The patient's control over information sharing enhances their agency and trust in the care team.",
+          "legalReferences": ["PHIPA s.29(1)", "PHIPA s.37"]
+        },
+        {
+          "id": "terminal-2",
+          "type": "recommendation",
+          "title": "Proceed with Disclosure (Document Thoroughly)",
+          "content": "Since the patient is capable and has provided verbal consent that is documented, you may share the information with the family member.\n\n**Steps to take:**\n1. Confirm your documentation of verbal consent is clear and includes: date, time, specific family member, and scope of information\n2. Consider obtaining written consent for future disclosures\n3. Document this specific disclosure in the chart\n4. Only share information within the scope of consent\n\n**Therapeutic Consideration:**\nVerbal consent is valid, but written consent provides clearer boundaries and reduces potential for misunderstanding. Consider discussing with the patient whether they'd prefer written consent for ongoing family involvement.",
+          "legalReferences": ["PHIPA s.29(1)"]
+        },
+        {
+          "id": "terminal-3",
+          "type": "recommendation",
+          "title": "SDM Has Authority to Access Information",
+          "content": "Since the patient is incapable and the family member is the appointed Substitute Decision Maker, they have the authority to access the patient's health information.\n\n**Steps to take:**\n1. Verify SDM documentation (power of attorney for personal care, or other legal appointment)\n2. Share information relevant to making treatment decisions\n3. Document the disclosure in the chart\n4. Maintain therapeutic relationship with both patient and SDM\n\n**Therapeutic Consideration:**\nEven when patients are incapable, involving them in discussions to the extent possible supports their dignity and personhood. Balance the SDM's legal authority with the patient's ongoing relationship with their care.",
+          "legalReferences": ["PHIPA s.23", "PHIPA s.37(2)"]
+        },
+        {
+          "id": "terminal-4",
+          "type": "recommendation",
+          "title": "Conduct Capacity Assessment First",
+          "content": "Before proceeding with disclosure, you must assess the patient's capacity to consent to information sharing.\n\n**Steps to take:**\n1. Conduct capacity assessment for consent to disclosure\n2. Document the assessment clearly\n3. If capable: Follow pathway for capable patient (obtain consent)\n4. If incapable: Follow pathway for incapable patient (identify SDM)\n\n**Therapeutic Consideration:**\nCapacity assessments should be decision-specific and supportive. Use plain language, provide information in accessible formats, and give the patient time to understand. Assuming incapacity without assessment undermines patient autonomy.",
+          "legalReferences": ["Health Care Consent Act s.4"]
+        },
+        {
+          "id": "terminal-5",
+          "type": "recommendation",
+          "title": "Emergency Disclosure Permitted",
+          "content": "In emergency situations where delayed disclosure could harm the patient, PHIPA permits disclosure without consent.\n\n**Steps to take:**\n1. Limit disclosure to information necessary for the emergency\n2. Document the emergency circumstances clearly\n3. Document what information was shared and why\n4. Inform the patient as soon as reasonably possible after the emergency\n5. Consider obtaining consent for future disclosures\n\n**Therapeutic Consideration:**\nEmergency disclosures should be genuinely necessary for patient safety. Overusing emergency exceptions erodes patient trust. After the emergency, transparent communication about what was shared and why helps maintain therapeutic relationships.",
+          "legalReferences": ["PHIPA s.40(1)"]
+        },
+        {
+          "id": "terminal-6",
+          "type": "recommendation",
+          "title": "Obtain Patient Consent Before Disclosure",
+          "content": "Since the patient is capable and you have not obtained consent, you should not disclose information without first speaking with the patient.\n\n**Steps to take:**\n1. Politely explain to the family member that you need to speak with the patient first\n2. Discuss with the patient what information they are comfortable sharing\n3. Obtain explicit consent (preferably written)\n4. Document the consent in the chart\n5. Only share information within the scope of consent\n\n**Therapeutic Consideration:**\nRespecting patient control over their information strengthens the therapeutic relationship. Patients may have legitimate reasons for limiting family involvement. Facilitating patient-family communication, rather than bypassing the patient, often leads to better long-term outcomes.",
+          "legalReferences": ["PHIPA s.29(1)"]
+        },
+        {
+          "id": "terminal-7",
+          "type": "recommendation",
+          "title": "Proceed with Disclosure per SDM Authorization",
+          "content": "Since the patient is incapable, an SDM is appointed, and the SDM has authorized disclosure to this family member, you may share the information.\n\n**Steps to take:**\n1. Document the SDM's authorization\n2. Share information relevant to care decisions\n3. Document the disclosure\n4. Continue involving the patient to the extent possible\n\n**Therapeutic Consideration:**\nSDMs act on behalf of patients but should involve patients in decisions when possible. Encourage the SDM to share information directly with the patient and facilitate family communication that respects the patient's dignity.",
+          "legalReferences": ["PHIPA s.23", "PHIPA s.37(2)"]
+        },
+        {
+          "id": "terminal-8",
+          "type": "recommendation",
+          "title": "Do Not Disclose Without SDM Authorization",
+          "content": "Since the patient is incapable and the SDM has not authorized disclosure to this family member, you should not share the information.\n\n**Steps to take:**\n1. Politely explain to the family member that you need authorization from the SDM\n2. Offer to facilitate communication between the SDM and family member\n3. Document the request and your response\n4. If there are concerns about family dynamics, consider ethics consultation\n\n**Therapeutic Consideration:**\nFamily conflicts during incapacity are challenging. Focus on the patient's best interests while respecting the SDM's legal authority. Facilitate family communication where possible, and consider ethics consultation if conflicts threaten patient care.",
+          "legalReferences": ["PHIPA s.23"]
+        },
+        {
+          "id": "terminal-9",
+          "type": "recommendation",
+          "title": "This Family Member Can Act as SDM",
+          "content": "Since the patient is incapable, no SDM is appointed, and this family member is highest-ranking in the SDM hierarchy, they may act as the substitute decision maker and access health information.\n\n**Steps to take:**\n1. Verify their ranking in the SDM hierarchy\n2. Confirm they are available, willing, and capable\n3. Document their SDM status\n4. Share information relevant to making treatment decisions\n5. Consider encouraging formal SDM appointment\n\n**Therapeutic Consideration:**\nStatutory SDM hierarchy provides default decision-makers, but formal appointments (power of attorney) provide clearer authority and reduce family conflict. Encourage patients to appoint SDMs while capable.",
+          "legalReferences": ["Health Care Consent Act s.20", "PHIPA s.23"]
+        },
+        {
+          "id": "terminal-10",
+          "type": "recommendation",
+          "title": "Contact Higher-Ranking SDM First",
+          "content": "Since the patient is incapable, no SDM is appointed, and someone ranks higher in the hierarchy than this family member, you should contact the higher-ranking person.\n\n**Steps to take:**\n1. Identify the highest-ranking available person in SDM hierarchy\n2. Contact them to act as SDM\n3. If they authorize disclosure to this family member, document and proceed\n4. If unavailable/unwilling, move to next person in hierarchy\n\n**Therapeutic Consideration:**\nSDM hierarchy exists to identify the most appropriate decision-maker. However, rigid adherence to hierarchy can sometimes exclude family members with closer relationships to the patient. Balance legal requirements with therapeutic considerations and patient's previously expressed wishes.",
+          "legalReferences": ["Health Care Consent Act s.20"]
+        }
+      ]
+    },
+    {
+      "id": "breach-response",
+      "title": "Breach Response and Disclosure",
+      "description": "Determine appropriate response when a privacy breach occurs",
+      "role": "healthcare_provider",
+      "estimatedTime": "6-8 minutes",
+      "questionCount": 9,
+      "available": false,
+      "nodes": []
+    }
+  ]
+}
