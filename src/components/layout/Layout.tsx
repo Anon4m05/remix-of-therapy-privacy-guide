@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Header } from './Header';
+import { TherapeuticPrivacyChat } from '@/components/ai/TherapeuticPrivacyChat';
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,6 +13,7 @@ export function Layout({ children }: LayoutProps) {
       <main className="flex-1">
         {children}
       </main>
+      <TherapeuticPrivacyChat />
     </div>
   );
 }
