@@ -1,0 +1,339 @@
+{
+  "categories": [
+    {
+      "id": "tj-foundations",
+      "title": "Therapeutic Jurisprudence Foundations",
+      "description": "Core principles and theoretical framework of therapeutic jurisprudence in healthcare",
+      "resources": [
+        {
+          "id": "tj-intro",
+          "title": "Introduction to Therapeutic Jurisprudence",
+          "type": "article",
+          "content": "Therapeutic jurisprudence (TJ) is the study of how laws, legal processes, and the behavior of legal actors affect the psychological and emotional well-being of those involved. In healthcare settings, TJ recognizes that privacy laws and practices are not neutral—they are interventions that can heal or harm therapeutic relationships.\n\nKey principles:\n- Legal rules produce therapeutic or anti-therapeutic consequences\n- These consequences can be intended or unintended\n- Understanding these effects allows for more humane, effective practices\n- TJ provides a lens for examining how law functions in clinical contexts",
+          "keyTakeaways": [
+            "Privacy is a clinical variable affecting outcomes, not just legal compliance",
+            "Therapeutic consequences extend beyond individual rights to relationship dynamics",
+            "TJ bridges the gap between legal requirements and clinical realities"
+          ]
+        },
+        {
+          "id": "tj-privacy-paradigm",
+          "title": "The Therapeutic Privacy Paradigm Shift",
+          "type": "comparison",
+          "content": "Traditional privacy approaches focus on compliance and risk mitigation. The therapeutic privacy approach reframes privacy as foundational to therapeutic relationships and clinical outcomes.",
+          "comparison": {
+            "traditional": {
+              "view": "Privacy is legal obligation",
+              "focus": "Risk mitigation and compliance",
+              "question": "Are we following the rules?",
+              "outcome": "Privacy protects information",
+              "approach": "Binary: share or don't share",
+              "perception": "Clinicians see privacy as barrier"
+            },
+            "therapeutic": {
+              "view": "Privacy is clinical variable",
+              "focus": "Therapeutic impact on relationships",
+              "question": "Does this promote therapeutic outcomes?",
+              "outcome": "Privacy enables trust, agency, safety",
+              "approach": "Contextual: how to share therapeutically",
+              "perception": "Clinicians see privacy as enabler of care"
+            }
+          }
+        },
+        {
+          "id": "tj-five-dimensions",
+          "title": "Five Therapeutic Dimensions of Privacy",
+          "type": "framework",
+          "content": "Privacy practices impact therapeutic relationships through five interconnected dimensions:",
+          "dimensions": [
+            {
+              "name": "Trust Formation",
+              "description": "Privacy practices that respect boundaries build trust, enabling patients to disclose sensitive information critical for diagnosis and treatment",
+              "clinical Impact": "Patients withholding information due to privacy concerns creates diagnostic gaps and treatment delays"
+            },
+            {
+              "name": "Patient Agency",
+              "description": "Meaningful control over personal narrative empowers patients and supports autonomous decision-making",
+              "clinicalImpact": "Lack of agency leads to disempowerment, withdrawal, and non-engagement with care"
+            },
+            {
+              "name": "Psychological Safety",
+              "description": "Privacy creates conditions for emotional vulnerability necessary in therapeutic contexts",
+              "clinicalImpact": "Fear of disclosure prevents discussion of stigmatized conditions, mental health concerns, or sensitive symptoms"
+            },
+            {
+              "name": "Relational Boundaries",
+              "description": "Clear privacy boundaries enable coordinated care while respecting patient control",
+              "clinicalImpact": "Boundary confusion creates role strain and ethical distress for clinicians"
+            },
+            {
+              "name": "Dignity & Respect",
+              "description": "Privacy practices signal respect for persons and support human dignity",
+              "clinicalImpact": "Depersonalized privacy approaches undermine therapeutic alliance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "privacy-as-principle",
+      "title": "Privacy as Bioethical Principle",
+      "description": "Understanding privacy as foundational to bioethics, not derivative of other principles",
+      "resources": [
+        {
+          "id": "privacy-fragmentation",
+          "title": "The Fragmentation Problem",
+          "type": "article",
+          "content": "Privacy is present in bioethics discourse but fragmented across inadequate framings:\n\n1. **Derivative of Autonomy**: Privacy treated as subset of autonomous decision-making, not a distinct principle\n2. **Reduced to Confidentiality**: Privacy understood as negative right to secrecy, not positive agency over narrative\n3. **Relegated to Compliance**: Privacy framed as legal obligation (PHIPA requirements), not therapeutic dimension of care\n\nThis fragmentation obscures privacy's therapeutic potential and creates a false separation between law and ethics in clinical practice.",
+          "keyTakeaways": [
+            "Privacy deserves recognition as distinct bioethical principle",
+            "Current framings inadequately capture privacy's clinical significance",
+            "Integration of legal and ethical analysis reveals therapeutic dimensions"
+          ]
+        },
+        {
+          "id": "privacy-enables-principles",
+          "title": "How Privacy Enables Other Principles",
+          "type": "framework",
+          "content": "Privacy doesn't just serve autonomy, beneficence, non-maleficence, and justice—it enables them:",
+          "connections": [
+            {
+              "principle": "Autonomy",
+              "connection": "Privacy provides agency to control personal narrative, enabling meaningful autonomous decision-making beyond mere consent"
+            },
+            {
+              "principle": "Beneficence",
+              "connection": "Privacy-created trust enables disclosure of sensitive information necessary for accurate diagnosis and effective treatment"
+            },
+            {
+              "principle": "Non-Maleficence",
+              "connection": "Privacy practices prevent psychological harm, protect against stigma, and maintain therapeutic safety"
+            },
+            {
+              "principle": "Justice",
+              "connection": "Equitable privacy protections ensure fair treatment and equal information governance across populations"
+            }
+          ]
+        },
+        {
+          "id": "privacy-transparency",
+          "title": "Privacy as Transparency, Not Secrecy",
+          "type": "article",
+          "content": "A common misconception equates privacy with secrecy or concealment. From a therapeutic jurisprudence perspective, privacy is better understood as transparency—the ability to control one's narrative and participate meaningfully in information governance.\n\nPrivacy as transparency means:\n- Patients understand who has access to their information and why\n- Information sharing decisions are collaborative, not unilateral\n- Boundaries are visible and explicable, not hidden or arbitrary\n- Patients have agency over their story, not forced secrecy\n\nThis reframing shifts privacy from negative right ('keep out') to positive capability ('meaningful participation').",
+          "keyTakeaways": [
+            "Privacy is about control and participation, not concealment",
+            "Transparency in information governance builds trust",
+            "Agency over narrative is core to privacy's therapeutic value"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clinical-scenarios",
+      "title": "Clinical Scenarios & Case Studies",
+      "description": "Practical applications of therapeutic privacy principles in real healthcare contexts",
+      "resources": [
+        {
+          "id": "scenario-icu",
+          "title": "ICU Family Presence & Information Sharing",
+          "type": "case-study",
+          "scenario": "A critically ill patient's adult children arrive from different cities. Some have been estranged from the patient. The ICU team must navigate information sharing with multiple family members while respecting the unconscious patient's privacy.",
+          "therapeuticConsiderations": [
+            "Trust: Does unilateral decision by team build or erode family trust?",
+            "Agency: What evidence exists of patient's information-sharing preferences?",
+            "Boundaries: How is 'circle of care' defined for incapacitated patients?",
+            "Dignity: How do practices honor patient's relational autonomy?",
+            "Justice: Are all family members treated equitably in information access?"
+          ],
+          "antiTherapeuticRisks": [
+            "Excluding estranged family without patient input may violate patient wishes",
+            "Sharing equally without regard to patient relationships may breach privacy",
+            "Lack of clear process creates family conflict and clinical team distress"
+          ],
+          "therapeuticApproaches": [
+            "Review advance directives or previous expressed preferences",
+            "Engage available family in collaborative discussion of patient's likely wishes",
+            "Establish clear communication plan with defined spokesperson if appropriate",
+            "Document decisions and rationale to reduce future conflict"
+          ]
+        },
+        {
+          "id": "scenario-mental-health",
+          "title": "Adolescent Mental Health Disclosure",
+          "type": "case-study",
+          "scenario": "A 16-year-old patient discloses suicidal ideation during a mental health assessment. The patient explicitly requests that parents not be informed, fearing punitive response. The clinician must balance privacy, safety, and therapeutic relationship.",
+          "therapeuticConsiderations": [
+            "Trust: Breaking confidence may prevent future disclosure of safety concerns",
+            "Agency: Does adolescent have capacity for this privacy decision?",
+            "Safety: What level of risk requires overriding privacy preference?",
+            "Boundaries: How is confidentiality framework explained upfront?",
+            "Dignity: How are adolescent's concerns and fears validated?"
+          ],
+          "antiTherapeuticRisks": [
+            "Immediate disclosure without discussion destroys therapeutic alliance",
+            "Blanket confidentiality in face of serious risk enables harm",
+            "Failure to explain limits upfront creates sense of betrayal"
+          ],
+          "therapeuticApproaches": [
+            "Explain confidentiality limits clearly at outset of relationship",
+            "Explore patient's fears about parental involvement",
+            "Engage patient in collaborative safety planning",
+            "If disclosure necessary, involve patient in process and timing",
+            "Maintain therapeutic relationship through transparent decision-making"
+          ]
+        },
+        {
+          "id": "scenario-genetic",
+          "title": "Genetic Testing & Family Implications",
+          "type": "case-study",
+          "scenario": "A patient receives positive genetic testing for hereditary cancer syndrome with implications for adult siblings. The patient refuses permission to contact family members about their risk. Healthcare team faces tension between patient privacy and family members' health interests.",
+          "therapeuticConsiderations": [
+            "Agency: Patient has right to control own information",
+            "Beneficence: Siblings' health could benefit from testing",
+            "Boundaries: What obligations extend beyond individual patient?",
+            "Justice: Do family members have right to health-relevant information?",
+            "Trust: How does handling this affect patient's ongoing engagement?"
+          ],
+          "antiTherapeuticRisks": [
+            "Overriding patient privacy damages trust and autonomy",
+            "Passive acceptance may result in preventable family harm",
+            "Lack of clear policy creates inconsistent approaches and staff distress"
+          ],
+          "therapeuticApproaches": [
+            "Explore patient's reasons for non-disclosure",
+            "Provide education about family benefits and shared genetic risk",
+            "Offer genetic counseling to discuss family communication",
+            "Propose patient-controlled notification (patient informs family)",
+            "Document discussions and patient's informed refusal",
+            "Maintain therapeutic relationship regardless of decision"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legislation-context",
+      "title": "Ontario Privacy Legislation in Context",
+      "description": "Understanding PHIPA, FIPPA, and M/FIPPA through a therapeutic lens",
+      "resources": [
+        {
+          "id": "phipa-therapeutic",
+          "title": "PHIPA's Therapeutic Dimensions",
+          "type": "article",
+          "content": "The Personal Health Information Protection Act (PHIPA) can be understood not just as compliance framework but as therapeutic intervention shaping healthcare relationships.\n\nKey PHIPA provisions with therapeutic implications:\n\n**Circle of Care** (Section 29): Permits information sharing for healthcare purposes. Therapeutically, this enables coordinated care while maintaining boundaries.\n\n**Consent** (Sections 18-27): Requires meaningful consent for collection, use, and disclosure. Therapeutically, this supports patient agency and control.\n\n**Access Rights** (Sections 52-56): Patients can access their own information. Therapeutically, this enables patients to understand and participate in their care narrative.\n\n**Correction Rights** (Section 55): Patients can request corrections. Therapeutically, this supports accuracy and patient ownership of health story.\n\nTherapeutic implementation requires moving beyond minimal compliance to understanding how these provisions support or hinder clinical relationships.",
+          "keyTakeaways": [
+            "PHIPA provisions can support therapeutic goals when implemented thoughtfully",
+            "Circle of care enables collaboration while respecting privacy",
+            "Access and correction rights support patient agency"
+          ]
+        },
+        {
+          "id": "compliance-vs-therapeutic",
+          "title": "Beyond Compliance: Therapeutic Implementation",
+          "type": "comparison",
+          "content": "The same legal requirement can be implemented in compliance-focused or therapeutically-focused ways:",
+          "examples": [
+            {
+              "requirement": "Obtain consent for information disclosure",
+              "compliance": "Patient signs standard form without discussion",
+              "therapeutic": "Clinician explains who needs access and why, discusses patient's concerns, collaboratively identifies appropriate circle of care"
+            },
+            {
+              "requirement": "Provide access to health records",
+              "compliance": "Send records via mail after 30-day processing",
+              "therapeutic": "Offer records review with clinician support to discuss contents, context, and implications"
+            },
+            {
+              "requirement": "Maintain confidentiality",
+              "compliance": "Lock charts, password-protect systems",
+              "therapeutic": "Combine technical safeguards with respectful communication practices and visible privacy protections"
+            },
+            {
+              "requirement": "Define circle of care",
+              "compliance": "Apply institutional policy uniformly",
+              "therapeutic": "Engage patient in collaborative discussion of who should be included based on their care needs and preferences"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "implementation-tools",
+      "title": "Implementation Tools & Resources",
+      "description": "Practical tools for applying therapeutic privacy principles in healthcare settings",
+      "resources": [
+        {
+          "id": "tj-assessment-guide",
+          "title": "Using the Therapeutic Privacy Assessment",
+          "type": "guide",
+          "content": "The Therapeutic Privacy Impact Assessment (TJPIA) tool evaluates privacy practices across eight dimensions. This guide explains how to use it effectively.",
+          "steps": [
+            {
+              "step": "Assemble Stakeholder Team",
+              "description": "Include diverse voices: patients/families, clinicians, administrators, privacy officers. Multiple perspectives reveal different therapeutic impacts."
+            },
+            {
+              "step": "Review Each Dimension",
+              "description": "Work through assessment sections systematically. Don't rush—therapeutic insight requires reflection."
+            },
+            {
+              "step": "Use Concrete Examples",
+              "description": "Ground responses in specific incidents, policies, or practices. Abstract answers miss therapeutic nuances."
+            },
+            {
+              "step": "Identify Patterns",
+              "description": "Look for themes across dimensions. Are issues systemic or isolated? Do certain practices repeatedly appear as anti-therapeutic?"
+            },
+            {
+              "step": "Develop Action Plan",
+              "description": "Prioritize changes based on therapeutic impact, feasibility, and stakeholder input. Include both immediate fixes and longer-term cultural shifts."
+            },
+            {
+              "step": "Monitor and Iterate",
+              "description": "Therapeutic privacy is ongoing practice, not one-time compliance. Establish regular review cycles."
+            }
+          ]
+        },
+        {
+          "id": "tj-decision-framework",
+          "title": "Therapeutic Decision-Making Framework",
+          "type": "framework",
+          "content": "When facing privacy decisions, use this framework to consider therapeutic implications:",
+          "questions": [
+            {
+              "category": "Trust",
+              "question": "Will this decision build or erode trust in the therapeutic relationship?"
+            },
+            {
+              "category": "Agency",
+              "question": "Does the patient have meaningful control and participation in this decision?"
+            },
+            {
+              "category": "Safety",
+              "question": "Does this create psychological safety for vulnerable disclosure?"
+            },
+            {
+              "category": "Boundaries",
+              "question": "Are relational boundaries clear, appropriate, and mutually understood?"
+            },
+            {
+              "category": "Dignity",
+              "question": "Does this approach treat the patient as person with rights vs. data subject?"
+            },
+            {
+              "category": "Clinician Impact",
+              "question": "Does this create or reduce ethical distress for healthcare providers?"
+            },
+            {
+              "category": "Equity",
+              "question": "Are privacy protections applied equitably across all patient populations?"
+            },
+            {
+              "category": "Outcomes",
+              "question": "What therapeutic outcomes (positive or negative) might result from this approach?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

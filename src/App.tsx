@@ -36,7 +36,8 @@ const App = () => (
               <Route path="/learn" element={<LearnHub />} />
               <Route path="/learn/:legislationId" element={<LegislationDetail />} />
               <Route path="/assess" element={<AssessHub />} />
-              <Route path="/apply" element={<ApplyHub />} />
+        <Route path="/apply" element={<ApplyHub />} />
+        <Route path="/therapeutic-privacy-assessment" element={<TherapeuticPrivacyAssessment />} />
               <Route
                 path="/dashboard/healthcare_provider"
                 element={<RequireRole><HealthcareProviderDashboard /></RequireRole>}

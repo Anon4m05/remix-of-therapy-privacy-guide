@@ -1,0 +1,341 @@
+{
+  "id": "tj-privacy-assessment",
+  "title": "Therapeutic Privacy Impact Assessment",
+  "description": "A comprehensive assessment evaluating how privacy practices affect therapeutic relationships, patient agency, and clinical outcomes in healthcare settings",
+  "sections": [
+    {
+      "id": "trust-formation",
+      "title": "Trust Formation & Therapeutic Alliance",
+      "description": "Evaluate how privacy practices impact the development and maintenance of trust between patients and healthcare providers",
+      "questions": [
+        {
+          "id": "trust-1",
+          "text": "How do current privacy practices signal respect for patient boundaries?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Practices undermine trust",
+            "maxLabel": "Practices actively build trust"
+          },
+          "guidance": "Consider whether privacy practices create visible boundaries, whether patients understand how their information is protected, and whether there are mechanisms for patients to voice concerns"
+        },
+        {
+          "id": "trust-2",
+          "text": "Do patients feel safe disclosing sensitive information necessary for diagnosis and treatment?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Patients withhold information",
+            "maxLabel": "Patients freely share sensitive details"
+          },
+          "guidance": "Look for evidence of diagnostic gaps, treatment delays, or incomplete histories that may stem from privacy concerns"
+        },
+        {
+          "id": "trust-3",
+          "text": "Have there been privacy breaches or near-misses that eroded therapeutic relationships?",
+          "type": "select",
+          "options": [
+            "No incidents",
+            "Minor incidents with quick resolution",
+            "Moderate incidents requiring intervention",
+            "Serious breaches causing relationship breakdown"
+          ],
+          "guidance": "Consider both actual breaches and perceived violations that affected patient confidence"
+        }
+      ],
+      "therapeuticLens": [
+        "Trust is foundational to therapeutic relationships",
+        "Privacy practices are visible signals of respect",
+        "Breaches have cascading effects beyond information disclosure"
+      ]
+    },
+    {
+      "id": "patient-agency",
+      "title": "Patient Agency & Control",
+      "description": "Assess whether privacy practices empower patients to exercise meaningful control over their narrative and information",
+      "questions": [
+        {
+          "id": "agency-1",
+          "text": "Do patients have meaningful participation in decisions about information sharing?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "No patient involvement",
+            "maxLabel": "Full collaborative decision-making"
+          },
+          "guidance": "Agency is not blanket secrecy but meaningful control. Evaluate consent processes, information governance discussions, and patient understanding"
+        },
+        {
+          "id": "agency-2",
+          "text": "Can patients easily access, correct, or understand their own health information?",
+          "type": "select",
+          "options": [
+            "No access mechanisms in place",
+            "Access available but difficult/delayed",
+            "Access available with moderate ease",
+            "Immediate, clear access with support"
+          ],
+          "guidance": "Consider both formal access rights and practical barriers to exercising them"
+        },
+        {
+          "id": "agency-3",
+          "text": "Are there processes for patients to express privacy preferences beyond standard consent?",
+          "type": "textarea",
+          "guidance": "Describe mechanisms for patients to indicate specific privacy concerns, partial disclosures, or contextual sharing preferences"
+        }
+      ],
+      "therapeuticLens": [
+        "Agency enables autonomy, not just protects it",
+        "Control over narrative is control over identity",
+        "Participation in governance reduces powerlessness"
+      ]
+    },
+    {
+      "id": "psychological-safety",
+      "title": "Psychological Safety & Vulnerability",
+      "description": "Examine whether privacy practices create conditions for the emotional vulnerability necessary in therapeutic contexts",
+      "questions": [
+        {
+          "id": "safety-1",
+          "text": "Do privacy practices create safe spaces for discussing stigmatized conditions?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Unsafe - patients avoid disclosure",
+            "maxLabel": "Safe - patients openly discuss concerns"
+          },
+          "guidance": "Consider mental health, substance use, sexual health, and other potentially stigmatized areas"
+        },
+        {
+          "id": "safety-2",
+          "text": "Are there physical/environmental privacy protections during sensitive conversations?",
+          "type": "select",
+          "options": [
+            "Minimal privacy (open areas, thin walls)",
+            "Basic privacy with known limitations",
+            "Good privacy for most situations",
+            "Excellent privacy infrastructure"
+          ],
+          "guidance": "Evaluate physical spaces, soundproofing, visual privacy, and conversation locations"
+        },
+        {
+          "id": "safety-3",
+          "text": "How do staff behaviors and attitudes reinforce or undermine privacy safety?",
+          "type": "textarea",
+          "guidance": "Consider hallway conversations, electronic device usage in public areas, casual information sharing, and respect for closed doors/curtains"
+        }
+      ],
+      "therapeuticLens": [
+        "Vulnerability requires safety",
+        "Fear of disclosure creates diagnostic gaps",
+        "Privacy is both policy and practice"
+      ]
+    },
+    {
+      "id": "relational-boundaries",
+      "title": "Relational Boundaries & Circle of Care",
+      "description": "Evaluate how privacy practices define therapeutic boundaries while enabling coordinated care",
+      "questions": [
+        {
+          "id": "boundaries-1",
+          "text": "Is the 'circle of care' clearly defined and understood by all parties?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Unclear - role confusion common",
+            "maxLabel": "Crystal clear - all understand boundaries"
+          },
+          "guidance": "Consider whether patients know who has access, whether clinicians understand their access rights, and whether there's clarity about information flow"
+        },
+        {
+          "id": "boundaries-2",
+          "text": "Do privacy practices support or hinder interdisciplinary collaboration?",
+          "type": "select",
+          "options": [
+            "Significant hindrance - siloed care",
+            "Some barriers to coordination",
+            "Generally supportive with minor issues",
+            "Optimal - enables seamless collaboration"
+          ],
+          "guidance": "Evaluate balance between privacy protection and care coordination needs"
+        },
+        {
+          "id": "boundaries-3",
+          "text": "Describe how boundary violations are prevented, detected, and addressed",
+          "type": "textarea",
+          "guidance": "Include technical controls, policy enforcement, staff training, and remediation processes"
+        }
+      ],
+      "therapeuticLens": [
+        "Boundaries enable relationships, not restrict them",
+        "Clarity reduces ethical distress for clinicians",
+        "Circle of care should be visible, not invisible"
+      ]
+    },
+    {
+      "id": "dignity-respect",
+      "title": "Dignity & Respect Signaling",
+      "description": "Assess how privacy practices communicate respect for persons and support human dignity",
+      "questions": [
+        {
+          "id": "dignity-1",
+          "text": "Do privacy practices treat patients as persons with rights vs. data subjects?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Depersonalized - data management focus",
+            "maxLabel": "Person-centered - dignity prioritized"
+          },
+          "guidance": "Consider language used, consent processes, and whether practices acknowledge individual circumstances"
+        },
+        {
+          "id": "dignity-2",
+          "text": "Are privacy practices respectful of cultural and individual variations?",
+          "type": "textarea",
+          "guidance": "Describe how practices accommodate diverse privacy norms, family structures, communication preferences, and cultural contexts"
+        },
+        {
+          "id": "dignity-3",
+          "text": "How do privacy practices handle vulnerable populations differently?",
+          "type": "textarea",
+          "guidance": "Consider children, elderly, cognitively impaired, non-English speakers, and others requiring tailored approaches"
+        }
+      ],
+      "therapeuticLens": [
+        "Privacy practices signal value of the person",
+        "Dignity is experienced through respect for boundaries",
+        "One-size-fits-all approaches undermine personhood"
+      ]
+    },
+    {
+      "id": "clinician-experience",
+      "title": "Clinician Experience & Ethical Distress",
+      "description": "Examine how privacy requirements impact clinician well-being and therapeutic capacity",
+      "questions": [
+        {
+          "id": "clinician-1",
+          "text": "Do clinicians view privacy as barrier or enabler of therapeutic care?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Barrier - impedes care delivery",
+            "maxLabel": "Enabler - supports therapeutic work"
+          },
+          "guidance": "Consider whether privacy is seen as bureaucratic burden vs. integral to patient-centered care"
+        },
+        {
+          "id": "clinician-2",
+          "text": "How often do clinicians experience ethical distress related to privacy conflicts?",
+          "type": "select",
+          "options": [
+            "Frequently - ongoing source of distress",
+            "Regularly - periodic conflicts arise",
+            "Occasionally - isolated incidents",
+            "Rarely - systems support ethical practice"
+          ],
+          "guidance": "Look for conflicts between privacy rules and perceived patient interests, documentation burdens, or role confusion"
+        },
+        {
+          "id": "clinician-3",
+          "text": "Are clinicians adequately trained and supported in therapeutic privacy practices?",
+          "type": "textarea",
+          "guidance": "Describe training content, ongoing support, ethics consultation availability, and confidence levels"
+        }
+      ],
+      "therapeuticLens": [
+        "Clinician well-being affects therapeutic capacity",
+        "Privacy as burden reduces therapeutic effectiveness",
+        "Clear frameworks reduce ethical distress"
+      ]
+    },
+    {
+      "id": "systemic-justice",
+      "title": "Systemic Justice & Equity",
+      "description": "Evaluate whether privacy practices promote or hinder equitable access and fair treatment",
+      "questions": [
+        {
+          "id": "justice-1",
+          "text": "Are privacy protections equitably applied across all patient populations?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Unequal - disparate protections",
+            "maxLabel": "Equitable - consistent protections"
+          },
+          "guidance": "Consider whether certain groups receive greater scrutiny, reduced privacy, or differential treatment"
+        },
+        {
+          "id": "justice-2",
+          "text": "Do privacy practices inadvertently create barriers to care access?",
+          "type": "textarea",
+          "guidance": "Identify whether consent requirements, documentation processes, or information-sharing restrictions prevent or delay care for specific populations"
+        },
+        {
+          "id": "justice-3",
+          "text": "How are power imbalances addressed in privacy decision-making?",
+          "type": "textarea",
+          "guidance": "Consider institutional power vs. patient agency, clinician authority vs. patient autonomy, and mechanisms for balancing these dynamics"
+        }
+      ],
+      "therapeuticLens": [
+        "Justice requires equal information governance",
+        "Privacy protections should not create new inequities",
+        "Power imbalances shape privacy experiences"
+      ]
+    },
+    {
+      "id": "therapeutic-outcomes",
+      "title": "Therapeutic Outcomes & Clinical Impact",
+      "description": "Connect privacy practices to measurable therapeutic and clinical outcomes",
+      "questions": [
+        {
+          "id": "outcomes-1",
+          "text": "Can you identify cases where privacy practices improved therapeutic outcomes?",
+          "type": "textarea",
+          "guidance": "Provide specific examples where respecting privacy enhanced disclosure, treatment adherence, or patient engagement"
+        },
+        {
+          "id": "outcomes-2",
+          "text": "Can you identify cases where privacy practices hindered therapeutic outcomes?",
+          "type": "textarea",
+          "guidance": "Provide specific examples where privacy barriers delayed diagnosis, prevented coordination, or impaired treatment"
+        },
+        {
+          "id": "outcomes-3",
+          "text": "How are privacy-related therapeutic impacts currently measured or monitored?",
+          "type": "select",
+          "options": [
+            "Not measured at all",
+            "Ad hoc incident tracking only",
+            "Some metrics but inconsistent",
+            "Systematic monitoring with regular review"
+          ],
+          "guidance": "Consider existing quality indicators, patient feedback mechanisms, and outcome tracking"
+        }
+      ],
+      "therapeuticLens": [
+        "Privacy is clinical variable affecting outcomes",
+        "Therapeutic impact should be measured",
+        "Data should inform continuous improvement"
+      ]
+    }
+  ],
+  "scoringGuidance": {
+    "interpretation": "This assessment is not scored numerically. Instead, responses create a holistic picture of therapeutic privacy practices. The goal is insight and improvement, not compliance checking.",
+    "nextSteps": [
+      "Identify anti-therapeutic practices requiring immediate attention",
+      "Recognize therapeutic strengths to build upon",
+      "Develop action plan addressing key gaps",
+      "Establish ongoing monitoring mechanisms",
+      "Engage stakeholders in collaborative improvement"
+    ]
+  }
+}
