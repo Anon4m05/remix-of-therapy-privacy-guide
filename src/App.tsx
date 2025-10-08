@@ -21,6 +21,7 @@ import ApplyHub from "./pages/ApplyHub";
 import TherapeuticPrivacyAssessment from "./pages/TherapeuticPrivacyAssessment";
 import AssessmentResults from "./pages/AssessmentResults";
 import EducationalLibrary from "./pages/EducationalLibrary";
+import IPCDecisions from "./pages/IPCDecisions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,8 +37,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/select-role" element={<RoleSelection />} />
-              <Route path="/learn" element={<LearnHub />} />
-              <Route path="/learn/:legislationId" element={<LegislationDetail />} />
+          <Route path="/learn" element={<LearnHub />} />
+          <Route path="/learn/:legislationId" element={<LegislationDetail />} />
+          <Route path="/ipc-decisions" element={<IPCDecisions />} />
               <Route path="/assess" element={<AssessHub />} />
         <Route path="/apply" element={<ApplyHub />} />
         <Route path="/therapeutic-privacy-assessment" element={<TherapeuticPrivacyAssessment />} />
