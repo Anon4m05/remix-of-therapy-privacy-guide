@@ -1,7 +1,7 @@
 import { Layout } from '@/components/layout/Layout';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpenIcon, ScaleIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline';
+import { BookOpenIcon, ScaleIcon, BuildingLibraryIcon, AcademicCapIcon } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 
 export default function LearnHub() {
@@ -20,7 +20,7 @@ export default function LearnHub() {
           </div>
 
           {/* Legislation Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <Card
               className="p-6 hover:shadow-lg transition-all cursor-pointer group"
               onClick={() => navigate('/learn/phipa')}
@@ -68,6 +68,22 @@ export default function LearnHub() {
                 </p>
                 <Button variant="outline" className="w-full">
                   Read M/FIPPA
+                </Button>
+              </div>
+            </Card>
+
+            <Card
+              className="p-6 hover:shadow-lg transition-all cursor-pointer group"
+              onClick={() => navigate('/educational-library')}
+            >
+              <div className="flex flex-col h-full">
+                <AcademicCapIcon className="h-12 w-12 text-orange mb-4 group-hover:scale-110 transition-transform" />
+                <h2 className="text-xl font-semibold mb-2">Educational Library</h2>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  Comprehensive guides on therapeutic jurisprudence and privacy principles.
+                </p>
+                <Button className="w-full bg-orange hover:bg-orange/90">
+                  Browse Library
                 </Button>
               </div>
             </Card>

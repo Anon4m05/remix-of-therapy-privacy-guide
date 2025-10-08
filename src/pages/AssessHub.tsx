@@ -53,15 +53,18 @@ export default function AssessHub() {
               </div>
             </Card>
 
-            <Card className="p-6 bg-muted/50">
+            <Card
+              className="p-6 hover:shadow-lg transition-all cursor-pointer group"
+              onClick={() => navigate('/therapeutic-privacy-assessment')}
+            >
               <div className="flex flex-col h-full">
-                <ClipboardDocumentCheckIcon className="h-12 w-12 text-muted-foreground mb-4" />
-                <h2 className="text-xl font-semibold mb-2">Privacy Impact Assessment</h2>
+                <ClipboardDocumentCheckIcon className="h-12 w-12 text-orange mb-4 group-hover:scale-110 transition-transform" />
+                <h2 className="text-xl font-semibold mb-2">Therapeutic Privacy Assessment</h2>
                 <p className="text-sm text-muted-foreground mb-4 flex-1">
-                  Comprehensive assessment tool for evaluating organizational privacy practices.
+                  Comprehensive assessment evaluating how privacy practices affect therapeutic relationships.
                 </p>
-                <Button variant="outline" className="w-full" disabled>
-                  Coming Soon
+                <Button className="w-full bg-orange hover:bg-orange/90">
+                  Start Assessment
                 </Button>
               </div>
             </Card>

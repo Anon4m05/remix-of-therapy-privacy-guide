@@ -18,6 +18,9 @@ import LearnHub from "./pages/LearnHub";
 import LegislationDetail from "./pages/LegislationDetail";
 import AssessHub from "./pages/AssessHub";
 import ApplyHub from "./pages/ApplyHub";
+import TherapeuticPrivacyAssessment from "./pages/TherapeuticPrivacyAssessment";
+import AssessmentResults from "./pages/AssessmentResults";
+import EducationalLibrary from "./pages/EducationalLibrary";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +41,8 @@ const App = () => (
               <Route path="/assess" element={<AssessHub />} />
         <Route path="/apply" element={<ApplyHub />} />
         <Route path="/therapeutic-privacy-assessment" element={<TherapeuticPrivacyAssessment />} />
+        <Route path="/assessment-results" element={<AssessmentResults />} />
+        <Route path="/educational-library" element={<EducationalLibrary />} />
               <Route
                 path="/dashboard/healthcare_provider"
                 element={<RequireRole><HealthcareProviderDashboard /></RequireRole>}
