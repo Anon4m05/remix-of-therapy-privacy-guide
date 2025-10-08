@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState, useMemo } from 'react';
-import { MagnifyingGlassIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { MagnifyingGlassIcon, ArrowTopRightOnSquareIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import ipcDecisions from '@/data/ipcDecisions.json';
+import { IPCBrowserViewer } from '@/components/legislation/IPCBrowserViewer';
 
 interface IPCDecision {
   title: string;
@@ -21,6 +22,7 @@ interface IPCDecision {
 export default function IPCDecisions() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLegislation, setSelectedLegislation] = useState<string>('all');
+  const [browserOpen, setBrowserOpen] = useState(false);
 
   const decisions = ipcDecisions as IPCDecision[];
 
@@ -74,13 +76,25 @@ export default function IPCDecisions() {
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              IPC Ontario Decisions Database
-            </h1>
-            <p className="text-base md:text-lg text-muted-foreground">
-              Comprehensive database of Information and Privacy Commissioner of Ontario decisions,
-              orders, and reports across PHIPA, FIPPA, MFIPPA, and CYFSA.
-            </p>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                  IPC Ontario Decisions Database
+                </h1>
+                <p className="text-base md:text-lg text-muted-foreground">
+                  Comprehensive database of Information and Privacy Commissioner of Ontario decisions,
+                  orders, and reports across PHIPA, FIPPA, MFIPPA, and CYFSA.
+                </p>
+              </div>
+              <Button
+                size="lg"
+                onClick={() => setBrowserOpen(true)}
+                className="gap-2 shrink-0"
+              >
+                <GlobeAltIcon className="h-5 w-5" />
+                Browse IPC Website
+              </Button>
+            </div>
           </div>
 
           {/* Search and Filters */}
@@ -190,6 +204,8 @@ export default function IPCDecisions() {
           </div>
         </div>
       </div>
+
+      <IPCBrowserViewer open={browserOpen} onOpenChange={setBrowserOpen} />
     </Layout>
   );
 }
