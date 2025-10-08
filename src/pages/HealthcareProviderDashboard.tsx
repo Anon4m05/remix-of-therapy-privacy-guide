@@ -2,57 +2,18 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
+import { useState, useEffect } from 'react';
 import { 
   ClipboardDocumentListIcon, 
   AcademicCapIcon, 
   ShieldCheckIcon,
-  ChartBarIcon,
-  UserGroupIcon,
+  LightBulbIcon,
+  SparklesIcon,
   BookOpenIcon
 } from '@heroicons/react/24/outline';
 
 export default function HealthcareProviderDashboard() {
   const navigate = useNavigate();
-
-  const tools = [
-    {
-      id: 'decision-trees',
-      icon: ClipboardDocumentListIcon,
-      title: 'Decision Trees',
-      description: 'Navigate complex privacy scenarios with step-by-step therapeutic guidance',
-      action: 'Start Decision Tree',
-      route: '/decision-tree',
-      available: true,
-      color: 'teal'
-    },
-    {
-      id: 'capacity-assessment',
-      icon: ShieldCheckIcon,
-      title: 'Capacity Assessment Guide',
-      description: 'Decision-specific capacity evaluation framework with therapeutic considerations',
-      action: 'Access Guide',
-      available: false,
-      color: 'teal'
-    },
-    {
-      id: 'consent-toolkit',
-      icon: UserGroupIcon,
-      title: 'Consent & Disclosure Toolkit',
-      description: 'Templates, checklists, and guidance for obtaining and documenting consent',
-      action: 'View Toolkit',
-      available: false,
-      color: 'teal'
-    },
-    {
-      id: 'learning-library',
-      icon: AcademicCapIcon,
-      title: 'Learning Library',
-      description: 'Educational resources on therapeutic privacy, PHIPA, and relational ethics',
-      action: 'Browse Resources',
-      available: false,
-      color: 'teal'
-    }
-  ];
 
   const insights = [
     {
@@ -75,23 +36,64 @@ export default function HealthcareProviderDashboard() {
     }
   ];
 
-  const quickStats = [
+  const privacyFacts = [
     {
-      label: 'Most Common Scenario',
-      value: 'Family Information Requests',
-      icon: ChartBarIcon
+      icon: LightBulbIcon,
+      title: 'Did You Know?',
+      facts: [
+        'Therapeutic jurisprudence views privacy law as a clinical intervention that can heal or harm',
+        'Patients are 31% more likely to disclose sensitive information when privacy practices are explained transparently',
+        'The "circle of care" in PHIPA was designed to balance information flow with patient privacy in healthcare teams',
+        'Strategic omission—what you don\'t tell patients—can erode trust as much as disclosure violations',
+        'Capacity assessment must be decision-specific under PHIPA, not a blanket determination',
+        'In therapeutic privacy, silence can be as harmful as a breach when patients don\'t understand how their data flows'
+      ]
     },
     {
-      label: 'Average Decision Time',
-      value: '5-7 minutes',
-      icon: ClipboardDocumentListIcon
+      icon: SparklesIcon,
+      title: 'Privacy Tip',
+      facts: [
+        'Always explain WHY you\'re collecting information, not just WHAT you\'re collecting—it builds therapeutic alliance',
+        'Document privacy conversations in clinical notes; they\'re part of informed consent and circle of care decisions',
+        'When families ask for information, pause to assess: Does disclosure serve the patient\'s therapeutic needs?',
+        'Use plain language when explaining privacy rights—legal jargon can be anti-therapeutic',
+        'Consider the relational context: autonomy exists within relationships, not in isolation from them',
+        'Before denying a privacy request, ask: What therapeutic harm might this refusal cause?'
+      ]
     },
     {
-      label: 'Learning Resources',
-      value: '12 modules',
-      icon: BookOpenIcon
+      icon: BookOpenIcon,
+      title: 'Quick Insight',
+      facts: [
+        'Privacy decisions shape therapeutic relationships—they\'re clinical variables, not just legal checkboxes',
+        'Informational asymmetry (patients not knowing what\'s shared) can damage trust even without formal breaches',
+        'Relational autonomy means respecting patient control while honoring the relational context of care',
+        'Therapeutic privacy balances patient rights with therapeutic outcomes and family involvement',
+        'IPC decisions show patterns: transparency and documentation protect both patients and providers',
+        'Privacy law can be therapeutic when applied with clinical wisdom, anti-therapeutic when applied mechanically'
+      ]
     }
   ];
+
+  const [currentFacts, setCurrentFacts] = useState(() => 
+    privacyFacts.map(category => ({
+      ...category,
+      currentFact: category.facts[Math.floor(Math.random() * category.facts.length)]
+    }))
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFacts(prev => 
+        prev.map(category => ({
+          ...category,
+          currentFact: category.facts[Math.floor(Math.random() * category.facts.length)]
+        }))
+      );
+    }, 8000); // Rotate every 8 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Layout>
@@ -106,15 +108,17 @@ export default function HealthcareProviderDashboard() {
           </p>
         </div>
 
-        {/* Quick Stats */}
+        {/* Privacy Facts & Tips - Rotating */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {quickStats.map((stat) => (
-            <Card key={stat.label} className="p-4 md:p-6">
-              <div className="flex items-center gap-3 md:gap-4">
-                <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-teal flex-shrink-0" />
-                <div>
-                  <p className="text-xs md:text-sm text-muted-foreground">{stat.label}</p>
-                  <p className="text-base md:text-lg font-semibold text-foreground">{stat.value}</p>
+          {currentFacts.map((item, index) => (
+            <Card key={index} className="p-4 md:p-6 bg-gradient-to-br from-teal/5 to-teal/10 border-teal/20">
+              <div className="flex items-start gap-3 md:gap-4">
+                <item.icon className="w-8 h-8 md:w-10 md:h-10 text-teal flex-shrink-0 mt-1" />
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs md:text-sm font-semibold text-teal mb-2">{item.title}</p>
+                  <p className="text-sm leading-relaxed text-foreground">
+                    {item.currentFact}
+                  </p>
                 </div>
               </div>
             </Card>
