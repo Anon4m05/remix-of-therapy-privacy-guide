@@ -133,13 +133,13 @@ export default function HealthcareProviderDashboard() {
     fetchAllInsights();
   }, [fetchAllInsights]);
 
-  // Auto-refresh every 45 seconds
+  // Auto-refresh every 15 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       // Randomly refresh one insight at a time for smoother experience
       const randomIndex = Math.floor(Math.random() * 3);
       refreshSingleInsight(randomIndex);
-    }, 45000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, [refreshSingleInsight]);
