@@ -37,7 +37,7 @@ export default function RoleSelection() {
 
         <div className="space-y-4">
           {/* Healthcare Provider - ACTIVE */}
-          <Card className="p-6 hover:shadow-md transition-all cursor-pointer border-2 hover:border-teal" onClick={() => handleRoleSelect('healthcare_provider')}>
+          <Card className="p-6 hover:shadow-md transition-all cursor-pointer border-2 hover:border-provider-blue" onClick={() => handleRoleSelect('healthcare_provider')}>
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="text-2xl mb-2">🏥</div>
@@ -46,14 +46,14 @@ export default function RoleSelection() {
                   Clinicians, nurses, administrators, care coordinators
                 </p>
               </div>
-              <Button variant="default" className="bg-teal hover:bg-teal/90">
+              <Button variant="default" className="bg-provider-blue hover:bg-provider-blue/90">
                 Select →
               </Button>
             </div>
           </Card>
 
           {/* Patient & Family - ACTIVE */}
-          <Card className="p-6 hover:shadow-md transition-all cursor-pointer border-2 hover:border-purple" onClick={() => handleRoleSelect('patient_family')}>
+          <Card className="p-6 hover:shadow-md transition-all cursor-pointer border-2 hover:border-patient-green" onClick={() => handleRoleSelect('patient_family')}>
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="text-2xl mb-2">👤</div>
@@ -62,7 +62,7 @@ export default function RoleSelection() {
                   Patients, family members, caregivers
                 </p>
               </div>
-              <Button variant="default" className="bg-purple hover:bg-purple/90">
+              <Button variant="default" className="bg-patient-green hover:bg-patient-green/90">
                 Select →
               </Button>
             </div>
@@ -73,7 +73,7 @@ export default function RoleSelection() {
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="text-2xl mb-2">🔒</div>
-                <h2 className="text-xl font-semibold mb-2">Other</h2>
+                <h2 className="text-xl font-semibold mb-2 text-other-purple">Other</h2>
                 <p className="text-sm text-muted-foreground mb-2">
                   Privacy professionals, researchers, administrators, legal counsel
                 </p>

@@ -245,7 +245,7 @@ export default function HealthcareProviderDashboard() {
                         strokeWidth="2"
                         strokeDasharray={62.83}
                         strokeDashoffset={62.83 * (1 - countdown / 15)}
-                        className="transition-all duration-1000 text-teal"
+                        className="transition-all duration-1000 text-provider-blue"
                       />
                     </svg>
                   </div>
@@ -260,7 +260,7 @@ export default function HealthcareProviderDashboard() {
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsPaused(!isPaused)}
-                className="gap-1.5 text-muted-foreground hover:text-teal"
+                className="gap-1.5 text-muted-foreground hover:text-provider-blue"
                 aria-label={isPaused ? "Resume auto-refresh" : "Pause auto-refresh"}
               >
                 {isPaused ? (
@@ -276,7 +276,7 @@ export default function HealthcareProviderDashboard() {
                 size="sm"
                 onClick={refreshAllInsights}
                 disabled={isRefreshing}
-                className="gap-1.5 text-muted-foreground hover:text-teal"
+                className="gap-1.5 text-muted-foreground hover:text-provider-blue"
                 aria-label="Refresh all insights"
               >
                 <ArrowPathIcon className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
@@ -306,13 +306,13 @@ export default function HealthcareProviderDashboard() {
           <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Tools & Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* AI Decision Trees - PRIMARY TOOL */}
-            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer border-2 border-teal" onClick={() => navigate('/generate-decision-tree')}>
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer border-2 border-provider-blue" onClick={() => navigate('/generate-decision-tree')}>
               <div className="text-3xl mb-4">🤖</div>
               <h3 className="text-xl font-semibold mb-2">AI Decision Trees</h3>
               <p className="text-sm text-muted-foreground mb-4">
                 Generate personalized decision trees with real-time PHIPA citations for your specific scenario
               </p>
-              <Button variant="default" className="w-full bg-teal hover:bg-teal/90">
+              <Button variant="default" className="w-full bg-provider-blue hover:bg-provider-blue/90">
                 Generate Custom Tree →
               </Button>
             </Card>
@@ -324,14 +324,14 @@ export default function HealthcareProviderDashboard() {
               <p className="text-sm text-muted-foreground mb-4">
                 Browse pre-built decision trees for common privacy scenarios
               </p>
-              <Button variant="outline" className="w-full border-teal text-teal hover:bg-teal/10">
+              <Button variant="outline" className="w-full border-provider-blue text-provider-blue hover:bg-provider-blue/10">
                 View Examples →
               </Button>
             </Card>
 
             {/* Capacity Assessment - Coming Soon */}
             <Card className="p-6 opacity-60">
-              <ShieldCheckIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-teal" />
+              <ShieldCheckIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-provider-blue" />
               <h3 className="text-lg md:text-xl font-semibold mb-2">Capacity Assessment Guide</h3>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 Decision-specific capacity evaluation framework with therapeutic considerations
@@ -343,7 +343,7 @@ export default function HealthcareProviderDashboard() {
 
             {/* Learning Library - Coming Soon */}
             <Card className="p-6 opacity-60">
-              <AcademicCapIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-teal" />
+              <AcademicCapIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-provider-blue" />
               <h3 className="text-lg md:text-xl font-semibold mb-2">Learning Library</h3>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 Educational resources on therapeutic privacy, PHIPA, and relational ethics
@@ -360,7 +360,7 @@ export default function HealthcareProviderDashboard() {
           <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Therapeutic Privacy Insights</h2>
           <div className="space-y-4 md:space-y-6">
             {therapeuticInsights.map((insight, index) => (
-              <Card key={index} className="p-6 bg-card border-l-4 border-l-teal">
+              <Card key={index} className="p-6 bg-card border-l-4 border-l-provider-blue">
                 <div className="flex items-start gap-4">
                   <div className="text-3xl flex-shrink-0">{insight.icon}</div>
                   <div className="flex-1">
@@ -368,7 +368,7 @@ export default function HealthcareProviderDashboard() {
                     <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
                       {insight.content}
                     </p>
-                    <button className="text-sm font-medium text-teal hover:underline">
+                    <button className="text-sm font-medium text-provider-blue hover:underline">
                       {insight.link} →
                     </button>
                   </div>

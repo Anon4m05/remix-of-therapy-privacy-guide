@@ -24,6 +24,22 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
           hover: "hsl(var(--primary-hover))",
         },
+        // Role-based accent colors
+        'provider-blue': {
+          DEFAULT: "hsl(var(--provider-blue))",
+          light: "hsl(var(--provider-blue-light))",
+          foreground: "hsl(var(--provider-blue-foreground))",
+        },
+        'patient-green': {
+          DEFAULT: "hsl(var(--patient-green))",
+          light: "hsl(var(--patient-green-light))",
+          foreground: "hsl(var(--patient-green-foreground))",
+        },
+        'other-purple': {
+          DEFAULT: "hsl(var(--other-purple))",
+          light: "hsl(var(--other-purple-light))",
+        },
+        // Legacy aliases for backwards compatibility
         teal: {
           DEFAULT: "hsl(var(--teal))",
           light: "hsl(var(--teal-light))",

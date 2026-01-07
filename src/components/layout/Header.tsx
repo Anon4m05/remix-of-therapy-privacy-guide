@@ -1,4 +1,4 @@
-import { Menu, Home, TreeDeciduous, Sparkles, FileText, BookOpen, UserCircle } from 'lucide-react';
+import { Menu, Home, TreeDeciduous, Sparkles, FileText, BookOpen, UserCircle, Bookmark } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRole } from '@/context/RoleContext';
 import { useNavigate } from 'react-router-dom';
@@ -21,9 +21,9 @@ export function Header() {
     if (!role) return null;
     
     const roleConfig = {
-      healthcare_provider: { emoji: '🏥', label: 'Healthcare Provider', className: 'bg-teal-light text-foreground' },
-      patient_family: { emoji: '👤', label: 'Patient & Family', className: 'bg-purple-light text-foreground' },
-      privacy_professional: { emoji: '🔒', label: 'Privacy Professional', className: 'bg-orange-light text-foreground' },
+      healthcare_provider: { emoji: '🏥', label: 'Healthcare Provider', className: 'bg-provider-blue-light text-foreground' },
+      patient_family: { emoji: '👤', label: 'Patient & Family', className: 'bg-patient-green-light text-foreground' },
+      privacy_professional: { emoji: '🔒', label: 'Privacy Professional', className: 'bg-other-purple-light text-foreground' },
     };
 
     const config = roleConfig[role];
@@ -50,6 +50,7 @@ export function Header() {
     { icon: Sparkles, label: 'AI Decision Tree', onClick: () => navigate('/generate-decision-tree') },
     { icon: FileText, label: 'Document Analysis', onClick: () => navigate('/document-analysis') },
     { icon: BookOpen, label: 'Legislation', onClick: () => navigate('/learn') },
+    { icon: Bookmark, label: 'Saved Insights', onClick: () => navigate('/saved-insights') },
   ];
 
   return (
