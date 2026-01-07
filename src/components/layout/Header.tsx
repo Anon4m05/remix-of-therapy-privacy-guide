@@ -1,12 +1,19 @@
-import { Menu } from 'lucide-react';
+import { Menu, Home, TreeDeciduous, Sparkles, FileText, BookOpen, UserCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRole } from '@/context/RoleContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { MobileMenu } from './MobileMenu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export function Header() {
-  const { role } = useRole();
+  const { role, setRole } = useRole();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -37,6 +44,14 @@ export function Header() {
     }
   };
 
+  const menuItems = [
+    { icon: Home, label: 'Dashboard', onClick: () => navigate(role ? `/dashboard/${role}` : '/select-role') },
+    { icon: TreeDeciduous, label: 'Decision Trees', onClick: () => navigate('/decision-tree') },
+    { icon: Sparkles, label: 'AI Decision Tree', onClick: () => navigate('/generate-decision-tree') },
+    { icon: FileText, label: 'Document Analysis', onClick: () => navigate('/document-analysis') },
+    { icon: BookOpen, label: 'Legislation', onClick: () => navigate('/learn') },
+  ];
+
   return (
     <>
       <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
@@ -61,7 +76,50 @@ export function Header() {
             </button>
           </div>
           
-          {getRoleBadge()}
+          <div className="flex items-center gap-3">
+            {getRoleBadge()}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Open navigation menu"
+                  className="hover:bg-muted"
+                >
+                  <Menu className="w-5 h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                align="end" 
+                className="w-56 z-[100] bg-popover border shadow-lg"
+              >
+                {menuItems.map((item) => (
+                  <DropdownMenuItem
+                    key={item.label}
+                    onClick={item.onClick}
+                    className="flex items-center gap-3 cursor-pointer py-2.5 bg-popover hover:bg-accent focus:bg-accent"
+                  >
+                    <item.icon className="w-4 h-4 text-muted-foreground" />
+                    <span>{item.label}</span>
+                  </DropdownMenuItem>
+                ))}
+                
+                {role && (
+                  <>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={() => setRole(null)}
+                      className="flex items-center gap-3 cursor-pointer py-2.5 text-muted-foreground bg-popover hover:bg-accent focus:bg-accent"
+                    >
+                      <UserCircle className="w-4 h-4" />
+                      <span>Change Role</span>
+                    </DropdownMenuItem>
+                  </>
+                )}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </header>
 
