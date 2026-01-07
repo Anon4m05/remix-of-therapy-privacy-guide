@@ -22,6 +22,7 @@ import TherapeuticPrivacyAssessment from "./pages/TherapeuticPrivacyAssessment";
 import AssessmentResults from "./pages/AssessmentResults";
 import EducationalLibrary from "./pages/EducationalLibrary";
 import IPCDecisions from "./pages/IPCDecisions";
+import SavedInsights from "./pages/SavedInsights";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
         <Route path="/therapeutic-privacy-assessment" element={<TherapeuticPrivacyAssessment />} />
         <Route path="/assessment-results" element={<AssessmentResults />} />
         <Route path="/educational-library" element={<EducationalLibrary />} />
+        <Route path="/saved-insights" element={<SavedInsights />} />
               <Route
                 path="/dashboard/healthcare_provider"
                 element={<RequireRole><HealthcareProviderDashboard /></RequireRole>}

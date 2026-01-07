@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SYSTEM_PROMPT = `You are an expert in Ontario healthcare privacy law, therapeutic jurisprudence, and the Information and Privacy Commissioner (IPC) of Ontario's decisions. Your role is to generate educational insights about privacy in healthcare settings.
+const HEALTHCARE_PROVIDER_SYSTEM_PROMPT = `You are an expert in Ontario healthcare privacy law, therapeutic jurisprudence, and the Information and Privacy Commissioner (IPC) of Ontario's decisions. Your role is to generate educational insights about privacy in healthcare settings for HEALTHCARE PROVIDERS.
 
 You have deep knowledge of:
 
@@ -30,11 +30,6 @@ You have deep knowledge of:
 - Section 58, 61: Enforcement and AMPs
 - Circle of care concept: sharing within healthcare team for direct care
 
-**FIPPA/MFIPPA Connections:**
-- Public sector institutions subject to FIPPA
-- Municipalities and local boards under MFIPPA
-- Interplay when healthcare delivered by government bodies
-
 **THERAPEUTIC JURISPRUDENCE PRINCIPLES:**
 - Privacy law as therapeutic agent that can heal or harm
 - Anti-therapeutic effects of privacy misapplication
@@ -49,7 +44,47 @@ Generate insights that are:
 2. Therapeutically framed - connect legal requirements to patient wellbeing
 3. Varied in format - facts, tips, case lessons, legal insights
 4. Grounded in Ontario law - PHIPA, FIPPA, MFIPPA as appropriate
-5. Clinically relevant - connect to real healthcare scenarios`;
+5. Clinically relevant - connect to real healthcare scenarios
+6. Focused on healthcare provider responsibilities and best practices`;
+
+const PATIENT_FAMILY_SYSTEM_PROMPT = `You are a compassionate expert in Ontario healthcare privacy law who helps patients and families understand their privacy rights. Your role is to generate educational insights that empower patients and families to navigate healthcare privacy confidently.
+
+You have deep knowledge of:
+
+**PATIENT RIGHTS UNDER PHIPA:**
+- Section 52-54: Right to access your own health records within 30 days
+- Section 55: Right to request corrections to your health information
+- Section 17: Lock-box rights - you can restrict access to your records even within circle of care
+- Section 29: Your consent is required for most uses and disclosures outside direct care
+- Right to know who has accessed your health information
+- Right to file complaints with the IPC if your privacy is violated
+
+**SUBSTITUTE DECISION MAKERS (SDM):**
+- Who becomes SDM when you can't make decisions (spouse, parent, child, sibling hierarchy)
+- How SDMs should follow your known wishes
+- Your right to appoint someone in advance using Power of Attorney for Personal Care
+- SDM access to your health information for decision-making
+
+**CIRCLE OF CARE:**
+- Who can see your information for direct care (doctors, nurses, pharmacists)
+- What is NOT included (family, employers, insurance without consent)
+- Your right to know who is in your circle of care
+- How to limit information sharing within the circle
+
+**PRACTICAL EMPOWERMENT:**
+- How to request your medical records
+- Questions to ask about who sees your information
+- How to give or withdraw consent
+- What to do if you think your privacy was breached
+- Understanding consent forms you're asked to sign
+
+Generate insights that are:
+1. Written in clear, accessible language (avoid jargon)
+2. Empowering - help patients feel in control of their information
+3. Practical - give actionable steps they can take
+4. Reassuring - acknowledge concerns while providing helpful information
+5. Rights-focused - emphasize what patients CAN do
+6. Trust-building - explain why privacy protections exist`;
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -57,19 +92,32 @@ serve(async (req) => {
   }
 
   try {
-    const { category } = await req.json();
+    const { category, role = 'healthcare_provider' } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
     
     if (!LOVABLE_API_KEY) {
       throw new Error('LOVABLE_API_KEY is not configured');
     }
 
-    const categoryPrompts = {
+    // Choose system prompt based on role
+    const systemPrompt = role === 'patient_family' 
+      ? PATIENT_FAMILY_SYSTEM_PROMPT 
+      : HEALTHCARE_PROVIDER_SYSTEM_PROMPT;
+
+    // Different prompts for healthcare providers vs patients
+    const healthcareProviderPrompts = {
       did_you_know: "Generate a surprising 'Did You Know?' fact about Ontario healthcare privacy law. Include a specific legal reference, IPC decision pattern, or therapeutic jurisprudence insight. Make it memorable and educational. 1-2 sentences maximum.",
       privacy_tip: "Generate a practical 'Privacy Tip' for healthcare providers navigating PHIPA. Focus on actionable guidance that balances legal compliance with therapeutic outcomes. Reference specific sections or principles. 1-2 sentences maximum.",
       quick_insight: "Generate a 'Quick Insight' connecting privacy law to therapeutic outcomes. Draw on therapeutic jurisprudence principles, relational autonomy, or IPC decision patterns. Make it thought-provoking. 1-2 sentences maximum."
     };
 
+    const patientFamilyPrompts = {
+      did_you_know: "Generate a 'Did You Know?' fact that helps patients understand their privacy rights in Ontario healthcare. Focus on empowering information about what patients can do or what protections exist. Use simple, clear language. 1-2 sentences maximum.",
+      privacy_tip: "Generate a 'Privacy Tip' for patients navigating their healthcare privacy rights. Give practical, actionable advice they can use when talking to healthcare providers or managing their health information. 1-2 sentences maximum.",
+      quick_insight: "Generate a 'Quick Insight' that helps patients feel more confident about their privacy in healthcare. Focus on trust, empowerment, or understanding how privacy protections work for them. 1-2 sentences maximum."
+    };
+
+    const categoryPrompts = role === 'patient_family' ? patientFamilyPrompts : healthcareProviderPrompts;
     const userPrompt = categoryPrompts[category as keyof typeof categoryPrompts] || categoryPrompts.did_you_know;
 
     const response = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
@@ -81,7 +129,7 @@ serve(async (req) => {
       body: JSON.stringify({
         model: 'google/gemini-2.5-flash',
         messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt }
         ],
         tools: [
@@ -99,7 +147,7 @@ serve(async (req) => {
                   },
                   source: {
                     type: "string",
-                    description: "Optional source type: 'IPC Decision', 'PHIPA', 'FIPPA', 'MFIPPA', 'Therapeutic Jurisprudence', or null"
+                    description: "Optional source type: 'IPC Decision', 'PHIPA', 'FIPPA', 'MFIPPA', 'Therapeutic Jurisprudence', 'Patient Rights', or null"
                   },
                   citation: {
                     type: "string",
@@ -148,6 +196,7 @@ serve(async (req) => {
     
     return new Response(JSON.stringify({
       category,
+      role,
       content: insight.content,
       source: insight.source || null,
       citation: insight.citation || null,
