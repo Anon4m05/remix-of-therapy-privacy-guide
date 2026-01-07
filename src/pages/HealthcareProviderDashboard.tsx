@@ -9,7 +9,9 @@ import {
   LightBulbIcon,
   SparklesIcon,
   BookOpenIcon,
-  ArrowPathIcon
+  ArrowPathIcon,
+  PlayIcon,
+  PauseIcon
 } from '@heroicons/react/24/outline';
 import { InsightCard } from '@/components/insights/InsightCard';
 import { SavedInsightsDialog } from '@/components/insights/SavedInsightsDialog';
@@ -71,6 +73,8 @@ export default function HealthcareProviderDashboard() {
   ]);
 
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [countdown, setCountdown] = useState(15);
 
   const getRandomFallback = (category: string): string => {
     const pool = fallbackInsights[category] || fallbackInsights.did_you_know;
@@ -126,6 +130,7 @@ export default function HealthcareProviderDashboard() {
     setInsights(prev => prev.map(insight => ({ ...insight, isLoading: true })));
     await fetchAllInsights();
     setIsRefreshing(false);
+    setCountdown(15);
   }, [fetchAllInsights]);
 
   // Initial fetch
@@ -135,22 +140,45 @@ export default function HealthcareProviderDashboard() {
 
   // Auto-refresh every 15 seconds
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       // Randomly refresh one insight at a time for smoother experience
       const randomIndex = Math.floor(Math.random() * 3);
       refreshSingleInsight(randomIndex);
+      setCountdown(15);
     }, 15000);
 
     return () => clearInterval(interval);
-  }, [refreshSingleInsight]);
+  }, [refreshSingleInsight, isPaused]);
+
+  // Countdown timer
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const timer = setInterval(() => {
+      setCountdown(prev => (prev <= 1 ? 15 : prev - 1));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const handleSaveInsight = (insight: Insight) => {
-    return saveInsight({
+    const result = saveInsight({
       category: insight.category,
       content: insight.content,
       source: insight.source,
       citation: insight.citation
     });
+    
+    if (result.success) {
+      toast({
+        title: "Insight saved!",
+        description: "You can view your saved insights anytime.",
+      });
+    }
+    
+    return result;
   };
 
   const isInsightSaved = (content: string) => {
@@ -197,14 +225,58 @@ export default function HealthcareProviderDashboard() {
             <h2 className="text-lg font-semibold text-muted-foreground">
               Privacy Insights
             </h2>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              {/* Countdown indicator */}
+              {!isPaused && (
+                <div className="flex items-center gap-1.5 text-muted-foreground">
+                  <div className="relative w-5 h-5">
+                    <svg className="w-5 h-5 -rotate-90" viewBox="0 0 24 24">
+                      <circle
+                        cx="12" cy="12" r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        opacity="0.2"
+                      />
+                      <circle
+                        cx="12" cy="12" r="10"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeDasharray={62.83}
+                        strokeDashoffset={62.83 * (1 - countdown / 15)}
+                        className="transition-all duration-1000 text-teal"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-xs tabular-nums w-4">{countdown}s</span>
+                </div>
+              )}
+              
               <SavedInsightsDialog />
+              
+              {/* Pause/Resume button */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsPaused(!isPaused)}
+                className="gap-1.5 text-muted-foreground hover:text-teal"
+                aria-label={isPaused ? "Resume auto-refresh" : "Pause auto-refresh"}
+              >
+                {isPaused ? (
+                  <PlayIcon className="w-4 h-4" />
+                ) : (
+                  <PauseIcon className="w-4 h-4" />
+                )}
+                <span className="hidden sm:inline">{isPaused ? 'Resume' : 'Pause'}</span>
+              </Button>
+              
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={refreshAllInsights}
                 disabled={isRefreshing}
-                className="gap-2 text-muted-foreground hover:text-teal"
+                className="gap-1.5 text-muted-foreground hover:text-teal"
                 aria-label="Refresh all insights"
               >
                 <ArrowPathIcon className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
