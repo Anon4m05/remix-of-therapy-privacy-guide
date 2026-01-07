@@ -98,7 +98,7 @@ export function InsightCard({
 
       <div className="flex items-start gap-3 md:gap-4">
         <Icon className="w-8 h-8 md:w-10 md:h-10 text-teal flex-shrink-0 mt-1" />
-        <div className="flex-1 min-w-0 pr-16">
+        <div className="flex-1 min-w-0 pr-8">
           <p className="text-xs md:text-sm font-semibold text-teal mb-2">{title}</p>
           {isLoading ? (
             <div className="space-y-2">

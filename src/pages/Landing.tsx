@@ -9,7 +9,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary via-teal to-primary px-4 py-16">
+      <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#2E5C8A] via-[#1B998B] to-[#2E5C8A] px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Navigate Privacy as Therapeutic Intervention, Not Just Compliance
