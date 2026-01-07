@@ -16,25 +16,31 @@ export function useSavedInsights() {
   const [savedInsights, setSavedInsights] = useLocalStorage<SavedInsight[]>(STORAGE_KEY, []);
   
   const saveInsight = useCallback((insight: Omit<SavedInsight, 'id' | 'savedAt'>) => {
-    // Check for duplicates based on content
-    const isDuplicate = savedInsights.some(saved => saved.content === insight.content);
-    if (isDuplicate) {
-      return { success: false, message: 'Already saved' };
-    }
+    let result = { success: false, message: 'Already saved' };
+    
+    setSavedInsights(prev => {
+      // Check for duplicates based on content
+      const isDuplicate = prev.some(saved => saved.content === insight.content);
+      if (isDuplicate) {
+        return prev;
+      }
 
-    const newInsight: SavedInsight = {
-      ...insight,
-      id: `insight-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      savedAt: new Date().toISOString()
-    };
+      const newInsight: SavedInsight = {
+        ...insight,
+        id: `insight-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        savedAt: new Date().toISOString()
+      };
 
-    setSavedInsights([newInsight, ...savedInsights]);
-    return { success: true, message: 'Saved!' };
-  }, [savedInsights, setSavedInsights]);
+      result = { success: true, message: 'Saved!' };
+      return [newInsight, ...prev];
+    });
+    
+    return result;
+  }, [setSavedInsights]);
 
   const removeInsight = useCallback((id: string) => {
-    setSavedInsights(savedInsights.filter(insight => insight.id !== id));
-  }, [savedInsights, setSavedInsights]);
+    setSavedInsights(prev => prev.filter(insight => insight.id !== id));
+  }, [setSavedInsights]);
 
   const clearAll = useCallback(() => {
     setSavedInsights([]);
