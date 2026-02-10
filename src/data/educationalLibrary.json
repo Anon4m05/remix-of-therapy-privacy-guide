@@ -49,7 +49,7 @@
             {
               "name": "Trust Formation",
               "description": "Privacy practices that respect boundaries build trust, enabling patients to disclose sensitive information critical for diagnosis and treatment",
-              "clinical Impact": "Patients withholding information due to privacy concerns creates diagnostic gaps and treatment delays"
+              "clinicalImpact": "Patients withholding information due to privacy concerns creates diagnostic gaps and treatment delays"
             },
             {
               "name": "Patient Agency",
@@ -71,6 +71,42 @@
               "description": "Privacy practices signal respect for persons and support human dignity",
               "clinicalImpact": "Depersonalized privacy approaches undermine therapeutic alliance"
             }
+          ]
+        },
+        {
+          "id": "tj-origins",
+          "title": "Origins and Evolution of Therapeutic Jurisprudence",
+          "type": "article",
+          "content": "Therapeutic jurisprudence was created by David Wexler and Bruce Winick in the late 1980s, initially within the field of mental health law. As Winick (1991) defined it, TJ is 'the study of the role of the law as a therapeutic agent.' The framework recognizes that legal rules, legal procedures, and the roles of legal actors (such as lawyers and judges) produce therapeutic or anti-therapeutic consequences—whether intended or not.\n\nAs Perlin (2019) documents, TJ rapidly expanded beyond mental health law to encompass health law, contracts, family law, criminal law, and virtually the entire legal spectrum. What began as a niche academic lens has become, in Perlin's words, 'an intellectual movement' that has transformed legal scholarship and practice worldwide.\n\nTJ functions simultaneously as:\n- A **heuristic**: A practical tool for analyzing legal rules and processes\n- A **methodology**: A systematic approach to evaluating therapeutic consequences\n- A **lens**: A perspective that reveals otherwise hidden effects of legal interactions\n- A **community of scholars**: An international network advancing therapeutic approaches to law\n\nFor healthcare privacy, TJ's expansion means that every privacy provision in PHIPA, FIPPA, and MFIPPA can be examined for its therapeutic or anti-therapeutic effects on patients, providers, and institutional relationships.",
+          "keyTakeaways": [
+            "TJ was created by Wexler and Winick in the late 1980s, initially in mental health law",
+            "The framework has expanded to encompass virtually all areas of law, including health law",
+            "TJ reveals that legal rules produce therapeutic or anti-therapeutic consequences whether intended or not",
+            "TJ provides both a theoretical lens and practical methodology for evaluating privacy law"
+          ]
+        },
+        {
+          "id": "tj-measurement",
+          "title": "Measuring Therapeutic Jurisprudence: From Theory to Empirical Practice",
+          "type": "article",
+          "content": "A persistent challenge in TJ has been the empirical measurement of therapeutic values. Kawalek (2020) addressed this gap by developing and validating a tool for measuring TJ values during empirical research, using Principal Component Analysis (PCA) to confirm core behavioral scales.\n\nThe research builds on Goldberg's Canadian National Judicial Institute bench book, which identified seven core TJ values observable in legal interactions:\n\n1. **Empathy** — Understanding and acknowledging the emotional experience of others\n2. **Respect** — Treating individuals as persons with inherent dignity\n3. **Active Listening** — Fully attending to and comprehending what is communicated\n4. **Positive Focus** — Orienting toward strengths and possibilities rather than deficits\n5. **Non-Coercion** — Avoiding pressure, manipulation, or threats in decision-making\n6. **Non-Paternalism** — Supporting autonomy rather than imposing 'best interest' judgments\n7. **Clarity** — Communicating clearly, transparently, and accessibly\n\nThese same interpersonal values define therapeutic privacy interactions in healthcare. When a clinician explains privacy rights with empathy and clarity, respects patient choices without paternalism, and listens actively to privacy concerns, the legal interaction itself becomes therapeutic. Kawalek's PCA validation demonstrates that these values are not merely aspirational—they are measurable, observable, and empirically distinguishable dimensions of therapeutic interaction.",
+          "keyTakeaways": [
+            "Kawalek (2020) developed an empirically validated tool for measuring TJ values",
+            "Seven core TJ values—empathy, respect, active listening, positive focus, non-coercion, non-paternalism, clarity—define therapeutic interactions",
+            "These values are directly applicable to healthcare privacy interactions",
+            "TJ values are measurable and observable, not merely aspirational"
+          ]
+        },
+        {
+          "id": "tj-health-policy",
+          "title": "TJ as Evidence-Informed Health Policy Framework",
+          "type": "article",
+          "content": "Campbell (2010) proposed therapeutic jurisprudence as a framework for evidence-informed health care policymaking, fundamentally shifting how we evaluate health policy. Rather than asking only 'Is this policy evidence-based?', TJ asks: 'Does this policy produce therapeutic or anti-therapeutic consequences for those it affects?'\n\nCampbell's key insight is that health policy itself functions as an intervention that impacts health. Privacy policies in Ontario healthcare—PHIPA regulations, IPC guidance documents, institutional consent procedures—are not neutral administrative tools. They are health interventions with measurable effects on patient trust, disclosure behavior, treatment adherence, and clinical outcomes.\n\nCampbell's TJ framing questions for health policy evaluation:\n- Does this policy support or undermine the psychological well-being of those affected?\n- Are there unintended anti-therapeutic consequences that could be mitigated?\n- Could the policy achieve the same protective goals through less therapeutically harmful means?\n- Does implementation consider the lived experience of patients and providers?\n\nApplied to Ontario privacy policy, this framework transforms how we evaluate PHIPA implementation. A consent form that technically satisfies PHIPA s.29 requirements may nonetheless be anti-therapeutic if it confuses patients, creates anxiety, or reduces trust in the care relationship.",
+          "keyTakeaways": [
+            "Campbell (2010) reframes health policy as intervention with therapeutic consequences",
+            "The key question shifts from 'Is it evidence-based?' to 'Does it produce therapeutic outcomes?'",
+            "Privacy policies are health interventions, not neutral administrative tools",
+            "TJ framing questions can systematically evaluate Ontario privacy policy implementation"
           ]
         }
       ]
@@ -124,6 +160,72 @@
             "Privacy is about control and participation, not concealment",
             "Transparency in information governance builds trust",
             "Agency over narrative is core to privacy's therapeutic value"
+          ]
+        },
+        {
+          "id": "privacy-fifth-principle",
+          "title": "Privacy as Fifth Bioethical Principle",
+          "type": "framework",
+          "content": "Privacy deserves recognition as a foundational bioethical principle alongside autonomy, beneficence, non-maleficence, and justice—not relegated to compliance or subsumed under autonomy. The case for privacy as a fifth principle rests on four pillars:",
+          "dimensions": [
+            {
+              "name": "Privacy Enables Autonomy",
+              "description": "Privacy provides agency over one's personal narrative. Without control over health information, autonomous decision-making becomes performative rather than substantive. Consent without privacy is consent without power.",
+              "clinicalImpact": "Patients who lack information agency make less informed decisions and engage less meaningfully in shared decision-making"
+            },
+            {
+              "name": "Privacy Supports Beneficence",
+              "description": "Trust, built through privacy practices, enables the disclosure necessary for accurate diagnosis and effective treatment. Privacy is the precondition for the therapeutic relationship that makes beneficence possible.",
+              "clinicalImpact": "Erosion of trust through privacy violations leads to withheld information, delayed care-seeking, and reduced treatment adherence"
+            },
+            {
+              "name": "Privacy Prevents Harm",
+              "description": "Privacy protects psychological safety and dignity. It shields individuals from stigma, discrimination, and the psychological harm of involuntary exposure. Privacy violations cause measurable psychological distress.",
+              "clinicalImpact": "Privacy breaches in healthcare settings produce anxiety, shame, avoidance of care, and erosion of therapeutic alliance"
+            },
+            {
+              "name": "Privacy Promotes Justice",
+              "description": "Equitable information governance ensures that all populations receive fair privacy protections. Privacy mechanisms enforce accountability and transparency, which are necessary conditions for institutional justice.",
+              "clinicalImpact": "Inequitable privacy practices disproportionately harm marginalized populations who already face barriers to healthcare access"
+            }
+          ]
+        },
+        {
+          "id": "anti-therapeutic-patterns",
+          "title": "Anti-Therapeutic Privacy Patterns in Healthcare",
+          "type": "framework",
+          "content": "Six named anti-therapeutic privacy patterns have been identified through therapeutic jurisprudence analysis of healthcare privacy practices. These patterns represent recurring ways that privacy law and policy, when misapplied, produce anti-therapeutic consequences:",
+          "dimensions": [
+            {
+              "name": "1. Privacy as Weapon",
+              "description": "Privacy invoked to obscure accountability, hide institutional failures, or prevent legitimate scrutiny. Privacy becomes a shield for secrecy rather than a tool for empowerment.",
+              "clinicalImpact": "Erodes institutional trust, prevents systemic learning from errors, and silences legitimate concerns from patients and staff"
+            },
+            {
+              "name": "2. Bureaucratic Rituals",
+              "description": "Consent reduced to box-checking exercises that satisfy legal requirements without achieving meaningful patient understanding or genuine informed consent.",
+              "clinicalImpact": "Patients sign forms without comprehension, creating false documentation of 'consent' while undermining actual autonomous decision-making"
+            },
+            {
+              "name": "3. Information Silos",
+              "description": "Overly restrictive information sharing within the circle of care, where privacy is used to justify withholding information that care team members need for effective treatment.",
+              "clinicalImpact": "Creates diagnostic gaps, duplicated investigations, fragmented care, and increased risk of medical errors"
+            },
+            {
+              "name": "4. Paternalistic Withholding",
+              "description": "Clinicians decide what patients 'need to know' about their own health information, using privacy as justification for limiting patient access to their own records or diagnoses.",
+              "clinicalImpact": "Undermines patient autonomy, prevents informed decision-making, and infantilizes patients in their own care"
+            },
+            {
+              "name": "5. Cultural Insensitivity",
+              "description": "One-size-fits-all consent and privacy practices that ignore collectivist cultural norms, family-centred decision-making traditions, and diverse understandings of information ownership.",
+              "clinicalImpact": "Alienates patients from diverse cultural backgrounds, creates barriers to care access, and imposes Western individualist privacy norms inappropriately"
+            },
+            {
+              "name": "6. Technological Barriers",
+              "description": "EHR systems and digital health tools that prioritize data security over clinical usability, creating privacy protections that impede rather than support care delivery.",
+              "clinicalImpact": "Clinicians develop workarounds that may be less secure, experience alert fatigue, and spend time on system navigation rather than patient care"
+            }
           ]
         }
       ]
@@ -206,6 +308,92 @@
             "Propose patient-controlled notification (patient informs family)",
             "Document discussions and patient's informed refusal",
             "Maintain therapeutic relationship regardless of decision"
+          ]
+        },
+        {
+          "id": "scenario-ed-privacy",
+          "title": "Emergency Department Privacy Dilemma",
+          "type": "case-study",
+          "scenario": "A patient arrives unconscious in the emergency department after a motor vehicle accident. Their long-term partner (not legally married) arrives and requests information about the patient's condition and treatment plan. The partner is distressed and identifies themselves as the patient's primary caregiver. The ED team must navigate PHIPA's Substitute Decision Maker (SDM) hierarchy while honoring the patient's dignity and the partner's genuine concern.",
+          "therapeuticConsiderations": [
+            "Trust: How does excluding a devoted partner affect the care team's relationship with the patient's support network?",
+            "Agency: What evidence exists of the patient's wishes regarding this partner's involvement?",
+            "Safety: Does the partner have information critical to treatment (medications, allergies, medical history)?",
+            "Boundaries: PHIPA s.23 SDM hierarchy does not automatically include unmarried partners—how is this navigated compassionately?",
+            "Dignity: How do practices honor the patient's relational autonomy and lived family structure?",
+            "Justice: Does rigid adherence to statutory hierarchy disadvantage non-traditional family structures?"
+          ],
+          "antiTherapeuticRisks": [
+            "Rigid application of SDM hierarchy excludes the person most knowledgeable about the patient's wishes and medical history",
+            "Refusing information to a distressed partner without empathetic explanation erodes trust in the healthcare system",
+            "Oversharing without legal authority creates liability and may conflict with patient's actual wishes",
+            "Failure to obtain critical medical history from the partner may compromise emergency treatment"
+          ],
+          "therapeuticApproaches": [
+            "Acknowledge the partner's distress and validate their concern before discussing legal frameworks",
+            "Explain the SDM hierarchy compassionately, emphasizing that it exists to protect the patient's interests",
+            "Gather medically relevant information FROM the partner (medications, allergies, conditions) as this does not require consent",
+            "Identify who in the SDM hierarchy is available and whether they would authorize the partner's involvement",
+            "Document the partner's relationship and any evidence of the patient's preferences",
+            "Consider whether the partner could be appointed as SDM through the hierarchy if no higher-ranking person is available or willing",
+            "Provide general (non-specific) reassurance about the patient's care while navigating legal requirements"
+          ]
+        },
+        {
+          "id": "scenario-end-of-life",
+          "title": "End-of-Life Care and Advance Directives",
+          "type": "case-study",
+          "scenario": "A patient with advanced cancer has an advance directive specifying that they do not want their estranged adult child to receive any health information. The patient is now in palliative care and losing capacity. The estranged child arrives at the hospital requesting information about their parent's condition and prognosis, expressing regret and desire for reconciliation. The palliative care team must navigate the intersection of advance directives, privacy law, and therapeutic considerations around end-of-life care.",
+          "therapeuticConsiderations": [
+            "Trust: The patient explicitly expressed privacy preferences while capable—honoring these maintains trust in the advance directive system",
+            "Agency: The advance directive represents the patient's autonomous wishes, exercised prospectively through 'planning for the rest of life' (Johnston, in McKibbon 2025)",
+            "Safety: Violating the advance directive could cause distress to the dying patient and undermine the palliative care relationship",
+            "Dignity: The patient's right to control their narrative extends through the dying process",
+            "Justice: The estranged child's desire for reconciliation, while sympathetic, does not override the patient's expressed wishes",
+            "Therapeutic Jurisprudence: Johnston's 'planning for the rest of life' framework recognizes that advance directives serve therapeutic functions—they reduce anxiety, provide control, and enable dignified dying"
+          ],
+          "antiTherapeuticRisks": [
+            "Disclosing information contrary to the advance directive undermines the entire advance care planning system",
+            "Refusing the child's request without compassion may cause unnecessary additional suffering",
+            "Rigid enforcement without exploring alternatives (e.g., a message to the patient) misses therapeutic opportunities",
+            "SDM conflicts when family disagrees about the patient's wishes can create moral distress for the care team"
+          ],
+          "therapeuticApproaches": [
+            "Honor the advance directive as the patient's autonomous expression of their wishes",
+            "Explain to the child, with empathy, why the directive must be respected—validating their feelings while maintaining boundaries",
+            "Explore whether the patient, if still capable of any communication, would wish to modify their directive",
+            "Offer the child access to chaplaincy, social work, or grief support regardless of information access",
+            "Apply Johnston's preventive law + TJ framework: encourage future patients to discuss advance directive implications with family while capable",
+            "Document the interaction and the rationale for honoring the directive"
+          ]
+        },
+        {
+          "id": "scenario-indigenous",
+          "title": "Privacy in Indigenous Healthcare Contexts",
+          "type": "case-study",
+          "scenario": "Based on IPC Decision 290 (Maamwesying North Shore Community Health Services): A community health centre serving an Indigenous community discovers that a registered nurse—who is both an agent of the custodian and an employee of the community—has been viewing patient charts without authorization. The breach came to light when a large number of community patients submitted lockbox requests (PHIPA s.17) to restrict the nurse's access. The custodian must navigate privacy breach response, cultural safety, community trust, and the unique dynamics of healthcare delivery in a close-knit Indigenous community.",
+          "therapeuticConsiderations": [
+            "Trust: In a small community where the nurse is known personally, the breach has amplified impacts on community-wide trust in the health centre",
+            "Agency: The patients' lockbox requests represent therapeutic use of PHIPA s.17—exercising autonomy to protect their information after discovering unauthorized access",
+            "Safety: Community members may avoid seeking care if they fear their information will be shared inappropriately within the community",
+            "Boundaries: The dual role of the nurse (agent of custodian AND community employee) created boundary confusion that enabled the breach",
+            "Dignity: Collectivist privacy norms in Indigenous communities may differ from Western individualist assumptions embedded in PHIPA",
+            "Justice: PHIPA s.12 requires 'reasonable steps' to protect PHI—the IPC found the custodian initially lacked adequate safeguards"
+          ],
+          "antiTherapeuticRisks": [
+            "Applying one-size-fits-all privacy practices without considering Indigenous collectivist privacy norms (Anti-Therapeutic Pattern #5: Cultural Insensitivity)",
+            "Minimizing the breach because it occurred within a small community where 'everyone knows everyone'",
+            "Failing to address the systemic issue of dual roles that blur professional boundaries",
+            "Inadequate remediation that doesn't rebuild community trust in the health centre"
+          ],
+          "therapeuticApproaches": [
+            "Remove the nurse's access immediately and investigate thoroughly (as the custodian did in Decision 290)",
+            "Implement culturally appropriate remediation that engages community leadership and respects Indigenous governance",
+            "Strengthen onboarding and training for agents in community health settings, emphasizing privacy obligations",
+            "Implement technical safeguards (audit logs, access controls) appropriate for the clinical setting",
+            "Recognize that lockbox requests are therapeutic tools and ensure patients know they can use them",
+            "Address the structural issue of dual employment roles that create inherent boundary challenges",
+            "Build privacy awareness programs that respect and incorporate Indigenous perspectives on information sharing"
           ]
         }
       ]
@@ -331,6 +519,49 @@
               "category": "Outcomes",
               "question": "What therapeutic outcomes (positive or negative) might result from this approach?"
             }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "academic-foundations",
+      "title": "Academic Foundations & Evidence Base",
+      "description": "Peer-reviewed scholarship grounding therapeutic jurisprudence in healthcare privacy",
+      "resources": [
+        {
+          "id": "scholarly-bibliography",
+          "title": "Scholarly Bibliography: Therapeutic Jurisprudence in Healthcare",
+          "type": "article",
+          "content": "This curated bibliography draws from peer-reviewed publications that ground the Therapeutic Privacy Assessment Tool in empirical and theoretical scholarship. Each entry includes its relevance to Ontario healthcare privacy.\n\n**TJ Origins:**\n- Wexler, D.B. & Winick, B.J. (1991). Essays in Therapeutic Jurisprudence. — Foundational text defining TJ as the study of the law's role as therapeutic agent. Establishes the framework applied throughout this tool.\n- Perlin, M.L. (2019). 'Changing of the Guards: David Wexler, TJ, and the transformation of legal scholarship.' Int'l J. Law & Psychiatry, 63, 3-7. — Documents TJ's expansion from mental health law into health law, demonstrating its applicability to PHIPA and Ontario privacy practice.\n\n**TJ in Health Law:**\n- Campbell, A.T. (2010). 'TJ: A framework for evidence-informed health care policymaking.' Int'l J. Law & Psychiatry, 33, 281-292. — Reframes health policy as therapeutic intervention; directly applicable to evaluating PHIPA implementation.\n- Cerminara, K.L. (2019). 'TJ's future in health law: Bringing the patient back into the picture.' Int'l J. Law & Psychiatry, 63, 56-62. — Patient-centred health law analysis integrating end-of-life care, advance directives, and palliative care privacy.\n- Hall, M.A. (2019). 'Health law's TJ potential.' Int'l J. Law & Psychiatry, 63, 63-67. — Explores TJ's potential to transform health law from compliance framework to therapeutic tool.\n\n**TJ Measurement:**\n- Kawalek, A. (2020). 'A tool for measuring TJ values during empirical research.' Int'l J. Law & Psychiatry, 71, 101581. — Validates seven core TJ values (empathy, respect, active listening, positive focus, non-coercion, non-paternalism, clarity) through Principal Component Analysis.\n\n**TJ and Bioethics:**\n- Johnston, C. (in McKibbon, 2025). — Integrates preventive law with TJ in 'planning for the rest of life,' directly applicable to advance directives and end-of-life privacy in Ontario.\n\n**TJ and Procedural Justice:**\n- Howieson, J. (in McKibbon, 2025). — Develops the 'legal therapeutic alliance' concept—procedural justice + trust + self-determination create therapeutic legal interactions. Applicable to healthcare privacy processes.\n\n**TJ and Autonomy:**\n- Arstein-Kerslake, A. & Black, J. (in McKibbon, 2025). — Critiques TJ models that undermine autonomy through paternalistic 'best interest' reasoning. Argues for supported decision-making aligned with CRPD Article 12. Relevant to PHIPA consent frameworks.",
+          "keyTakeaways": [
+            "TJ scholarship spans three decades and has expanded from mental health law to encompass all health law",
+            "Core TJ values have been empirically validated and are measurable in healthcare interactions",
+            "Multiple scholars have applied TJ specifically to healthcare policy, end-of-life care, and patient autonomy",
+            "Ontario-specific application connects international TJ scholarship to PHIPA, FIPPA, and MFIPPA implementation"
+          ]
+        },
+        {
+          "id": "legal-therapeutic-alliance",
+          "title": "The Legal Therapeutic Alliance",
+          "type": "article",
+          "content": "Howieson (in McKibbon, 2025) develops the concept of a 'legal therapeutic alliance'—an analogue to the therapeutic alliance in clinical practice. Just as the quality of the therapist-patient relationship predicts therapeutic outcomes, the quality of legal interactions predicts whether law functions therapeutically or anti-therapeutically.\n\nThe legal therapeutic alliance rests on three pillars:\n\n**1. Procedural Justice**\nPeople experience law as therapeutic when legal processes are perceived as fair. Procedural justice requires:\n- Voice: Individuals have opportunity to be heard\n- Validation: Their concerns are acknowledged and taken seriously\n- Neutrality: Decision-makers are perceived as unbiased\n- Trustworthiness: The process is perceived as honest and transparent\n\n**2. Trust**\nTrust in legal processes develops when individuals experience consistent, fair, and transparent treatment. Trust is relational—it builds through repeated positive interactions and erodes through perceived injustice.\n\n**3. Self-Determination**\nTherapeutic legal interactions support individuals' sense of autonomy and control. Even when outcomes are unfavorable, processes that respect self-determination produce more therapeutic results.\n\n**Application to Healthcare Privacy:**\nWhen privacy processes in healthcare settings embody procedural justice (patients feel heard about their privacy concerns), build trust (consistent and transparent information governance), and support self-determination (meaningful control over health information), the privacy interaction itself becomes therapeutic. Conversely, privacy processes that feel arbitrary, opaque, or dismissive produce anti-therapeutic effects regardless of legal compliance.",
+          "keyTakeaways": [
+            "The legal therapeutic alliance mirrors the clinical therapeutic alliance—relationship quality predicts outcomes",
+            "Procedural justice (voice, validation, neutrality, trustworthiness) makes legal interactions therapeutic",
+            "Privacy processes in healthcare can be evaluated for their procedural justice characteristics",
+            "Therapeutic legal interactions support self-determination even when outcomes are unfavorable"
+          ]
+        },
+        {
+          "id": "autonomy-legal-capacity",
+          "title": "Autonomy, Legal Capacity, and TJ",
+          "type": "article",
+          "content": "Arstein-Kerslake and Black (in McKibbon, 2025) raise a critical challenge for therapeutic jurisprudence: traditional TJ models can inadvertently undermine autonomy when they prioritize professional decision-making over individual self-determination.\n\nTheir argument centres on Article 12 of the UN Convention on the Rights of Persons with Disabilities (CRPD), which establishes the right to equal recognition before the law—including the right to legal capacity. This means:\n\n- **Legal capacity is a universal right**, not contingent on cognitive ability or professional assessment\n- **Supported decision-making** should replace substitute decision-making wherever possible\n- **'Best interest' reasoning** can mask paternalism—who defines 'best interest' and through whose lens?\n- **Autonomy includes the right to make decisions others disagree with**, including about privacy\n\n**Application to Ontario Healthcare Privacy:**\nPHIPA's consent framework must be examined through this lens:\n- Does capacity assessment for consent to information sharing respect legal capacity or default to substitute judgment?\n- Are patients offered supported decision-making about privacy choices, or are they simply deemed 'capable' or 'incapable'?\n- When SDMs make privacy decisions, do they follow the patient's known wishes (supported decision-making) or their own judgment of 'best interest' (substitute decision-making)?\n- Does the lockbox mechanism (PHIPA s.17) function as a tool for supported autonomy or an administrative burden that undermines it?\n\nArstein-Kerslake and Black's critique ensures that TJ in healthcare privacy genuinely empowers patients rather than replacing one form of paternalism (legal) with another (therapeutic).",
+          "keyTakeaways": [
+            "Traditional TJ models can undermine autonomy by prioritizing professional 'therapeutic' judgment over patient self-determination",
+            "Article 12 of the CRPD establishes legal capacity as a universal right, not contingent on cognitive assessment",
+            "Supported decision-making should replace substitute decision-making wherever possible in privacy contexts",
+            "PHIPA consent frameworks should be examined for whether they genuinely support autonomy or mask paternalism"
           ]
         }
       ]

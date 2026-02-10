@@ -14,21 +14,9 @@
           "type": "question",
           "question": "Is the patient capable of providing consent?",
           "options": [
-            {
-              "id": "opt-1-1",
-              "text": "Yes, the patient is capable of consent",
-              "nextNode": "node-2"
-            },
-            {
-              "id": "opt-1-2",
-              "text": "No, the patient is incapable of consent",
-              "nextNode": "node-3"
-            },
-            {
-              "id": "opt-1-3",
-              "text": "Uncertain about patient's capacity",
-              "nextNode": "node-4"
-            }
+            { "id": "opt-1-1", "text": "Yes, the patient is capable of consent", "nextNode": "node-2" },
+            { "id": "opt-1-2", "text": "No, the patient is incapable of consent", "nextNode": "node-3" },
+            { "id": "opt-1-3", "text": "Uncertain about patient's capacity", "nextNode": "node-4" }
           ]
         },
         {
@@ -36,21 +24,9 @@
           "type": "question",
           "question": "Has the patient provided consent for you to share information with this family member?",
           "options": [
-            {
-              "id": "opt-2-1",
-              "text": "Yes, explicit written consent",
-              "nextNode": "terminal-1"
-            },
-            {
-              "id": "opt-2-2",
-              "text": "Yes, verbal consent documented in chart",
-              "nextNode": "terminal-2"
-            },
-            {
-              "id": "opt-2-3",
-              "text": "No, no consent obtained",
-              "nextNode": "node-5"
-            }
+            { "id": "opt-2-1", "text": "Yes, explicit written consent", "nextNode": "terminal-1" },
+            { "id": "opt-2-2", "text": "Yes, verbal consent documented in chart", "nextNode": "terminal-2" },
+            { "id": "opt-2-3", "text": "No, no consent obtained", "nextNode": "node-5" }
           ]
         },
         {
@@ -58,21 +34,9 @@
           "type": "question",
           "question": "Does the patient have a Substitute Decision Maker (SDM) appointed?",
           "options": [
-            {
-              "id": "opt-3-1",
-              "text": "Yes, and the family member is the SDM",
-              "nextNode": "terminal-3"
-            },
-            {
-              "id": "opt-3-2",
-              "text": "Yes, but the family member is NOT the SDM",
-              "nextNode": "node-6"
-            },
-            {
-              "id": "opt-3-3",
-              "text": "No SDM appointed",
-              "nextNode": "node-7"
-            }
+            { "id": "opt-3-1", "text": "Yes, and the family member is the SDM", "nextNode": "terminal-3" },
+            { "id": "opt-3-2", "text": "Yes, but the family member is NOT the SDM", "nextNode": "node-6" },
+            { "id": "opt-3-3", "text": "No SDM appointed", "nextNode": "node-7" }
           ]
         },
         {
@@ -80,16 +44,8 @@
           "type": "question",
           "question": "Have you conducted a capacity assessment?",
           "options": [
-            {
-              "id": "opt-4-1",
-              "text": "Yes, assessment complete",
-              "nextNode": "node-1"
-            },
-            {
-              "id": "opt-4-2",
-              "text": "No, not yet assessed",
-              "nextNode": "terminal-4"
-            }
+            { "id": "opt-4-1", "text": "Yes, assessment complete", "nextNode": "node-1" },
+            { "id": "opt-4-2", "text": "No, not yet assessed", "nextNode": "terminal-4" }
           ]
         },
         {
@@ -97,16 +53,8 @@
           "type": "question",
           "question": "Is this an emergency situation where delayed disclosure could harm the patient?",
           "options": [
-            {
-              "id": "opt-5-1",
-              "text": "Yes, immediate disclosure needed for patient safety",
-              "nextNode": "terminal-5"
-            },
-            {
-              "id": "opt-5-2",
-              "text": "No, not an emergency",
-              "nextNode": "terminal-6"
-            }
+            { "id": "opt-5-1", "text": "Yes, immediate disclosure needed for patient safety", "nextNode": "terminal-5" },
+            { "id": "opt-5-2", "text": "No, not an emergency", "nextNode": "terminal-6" }
           ]
         },
         {
@@ -114,16 +62,8 @@
           "type": "question",
           "question": "Has the SDM authorized disclosure to this family member?",
           "options": [
-            {
-              "id": "opt-6-1",
-              "text": "Yes, SDM has authorized",
-              "nextNode": "terminal-7"
-            },
-            {
-              "id": "opt-6-2",
-              "text": "No, SDM has not authorized",
-              "nextNode": "terminal-8"
-            }
+            { "id": "opt-6-1", "text": "Yes, SDM has authorized", "nextNode": "terminal-7" },
+            { "id": "opt-6-2", "text": "No, SDM has not authorized", "nextNode": "terminal-8" }
           ]
         },
         {
@@ -131,16 +71,8 @@
           "type": "question",
           "question": "Is the family member the highest-ranking person in the SDM hierarchy?",
           "options": [
-            {
-              "id": "opt-7-1",
-              "text": "Yes, they are highest-ranking available",
-              "nextNode": "terminal-9"
-            },
-            {
-              "id": "opt-7-2",
-              "text": "No, someone else ranks higher",
-              "nextNode": "terminal-10"
-            }
+            { "id": "opt-7-1", "text": "Yes, they are highest-ranking available", "nextNode": "terminal-9" },
+            { "id": "opt-7-2", "text": "No, someone else ranks higher", "nextNode": "terminal-10" }
           ]
         },
         {
@@ -218,12 +150,287 @@
     {
       "id": "breach-response",
       "title": "Breach Response and Disclosure",
-      "description": "Determine appropriate response when a privacy breach occurs",
+      "description": "Determine appropriate response when a privacy breach occurs, with therapeutic considerations for notification, remediation, and systemic learning",
       "role": "healthcare_provider",
       "estimatedTime": "6-8 minutes",
       "questionCount": 9,
-      "available": false,
-      "nodes": []
+      "available": true,
+      "nodes": [
+        {
+          "id": "br-node-1",
+          "type": "question",
+          "question": "What type of privacy incident has occurred?",
+          "options": [
+            { "id": "br-opt-1-1", "text": "Accidental access (e.g., opened wrong chart, system error)", "nextNode": "br-node-2" },
+            { "id": "br-opt-1-2", "text": "Unauthorized use (e.g., accessing records without care relationship)", "nextNode": "br-node-3" },
+            { "id": "br-opt-1-3", "text": "Unauthorized disclosure (e.g., PHI shared with unauthorized person)", "nextNode": "br-node-4" },
+            { "id": "br-opt-1-4", "text": "Loss or theft (e.g., missing records, stolen device)", "nextNode": "br-node-5" }
+          ]
+        },
+        {
+          "id": "br-node-2",
+          "type": "question",
+          "question": "Was the accidental access immediately recognized and documented?",
+          "options": [
+            { "id": "br-opt-2-1", "text": "Yes, recognized immediately and chart closed", "nextNode": "br-terminal-1" },
+            { "id": "br-opt-2-2", "text": "No, the information was viewed before the error was noticed", "nextNode": "br-node-6" }
+          ]
+        },
+        {
+          "id": "br-node-3",
+          "type": "question",
+          "question": "How many individuals' PHI was accessed without authorization?",
+          "options": [
+            { "id": "br-opt-3-1", "text": "A single individual", "nextNode": "br-node-6" },
+            { "id": "br-opt-3-2", "text": "Multiple individuals (targeted searches or pattern of access)", "nextNode": "br-node-7" }
+          ]
+        },
+        {
+          "id": "br-node-4",
+          "type": "question",
+          "question": "Who was the information disclosed to?",
+          "options": [
+            { "id": "br-opt-4-1", "text": "Another healthcare provider within the organization", "nextNode": "br-node-6" },
+            { "id": "br-opt-4-2", "text": "A family member or person known to the patient", "nextNode": "br-node-8" },
+            { "id": "br-opt-4-3", "text": "An external party (employer, insurer, media, public)", "nextNode": "br-node-7" }
+          ]
+        },
+        {
+          "id": "br-node-5",
+          "type": "question",
+          "question": "What type of records or device was lost or stolen?",
+          "options": [
+            { "id": "br-opt-5-1", "text": "Encrypted device or encrypted digital records", "nextNode": "br-terminal-2" },
+            { "id": "br-opt-5-2", "text": "Unencrypted device or paper records", "nextNode": "br-node-7" }
+          ]
+        },
+        {
+          "id": "br-node-6",
+          "type": "question",
+          "question": "Does the information accessed or disclosed include highly sensitive PHI?",
+          "options": [
+            { "id": "br-opt-6-1", "text": "Yes (mental health, HIV/STI, substance use, reproductive, genetic)", "nextNode": "br-node-9" },
+            { "id": "br-opt-6-2", "text": "No, general health information (appointments, routine results)", "nextNode": "br-terminal-3" }
+          ]
+        },
+        {
+          "id": "br-node-7",
+          "type": "question",
+          "question": "Is there a risk of significant harm to the affected individuals?",
+          "options": [
+            { "id": "br-opt-7-1", "text": "Yes, risk of identity theft, discrimination, stigma, or physical safety", "nextNode": "br-terminal-4" },
+            { "id": "br-opt-7-2", "text": "Moderate risk requiring assessment", "nextNode": "br-node-9" },
+            { "id": "br-opt-7-3", "text": "Low risk but breach still occurred", "nextNode": "br-terminal-5" }
+          ]
+        },
+        {
+          "id": "br-node-8",
+          "type": "question",
+          "question": "Was the disclosure related to the patient's care, or was it for other purposes?",
+          "options": [
+            { "id": "br-opt-8-1", "text": "Related to care but without proper consent", "nextNode": "br-terminal-6" },
+            { "id": "br-opt-8-2", "text": "Unrelated to care (e.g., personal curiosity, gossip, commercial purposes)", "nextNode": "br-terminal-7" }
+          ]
+        },
+        {
+          "id": "br-node-9",
+          "type": "question",
+          "question": "Has the breach been contained, or is there ongoing risk of further access or disclosure?",
+          "options": [
+            { "id": "br-opt-9-1", "text": "Contained — access removed, records secured, no further risk", "nextNode": "br-terminal-5" },
+            { "id": "br-opt-9-2", "text": "Not yet contained — ongoing risk exists", "nextNode": "br-terminal-8" }
+          ]
+        },
+        {
+          "id": "br-terminal-1",
+          "type": "recommendation",
+          "title": "Document and Monitor — Low-Risk Accidental Access",
+          "content": "The incident appears to be a genuine accidental access that was immediately recognized and corrected.\n\n**Steps to take:**\n1. Document the incident in the privacy incident log (date, time, records accessed, duration, circumstances)\n2. Confirm no information was retained, copied, or further shared\n3. Review whether system safeguards could prevent similar accidents\n4. No patient notification typically required for immediately-corrected accidental access\n5. Consider whether the access was flagged by audit systems\n\n**Therapeutic Consideration:**\nTransparency about the incident, even when low-risk, demonstrates institutional accountability. If the patient inquires about access logs, be forthcoming. Audit systems that flag accidental access serve a therapeutic function—they demonstrate that the institution is actively monitoring and protecting PHI.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Minimizing or failing to document the incident (Privacy as Weapon pattern)\n- Not reviewing system safeguards for prevention\n\n**IPC Decision Pattern:**\nIPC Decision 290 demonstrated that even when individual incidents seem minor, patterns of access without authorization can indicate systemic failures requiring remediation.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.12(2)"]
+        },
+        {
+          "id": "br-terminal-2",
+          "type": "recommendation",
+          "title": "Encrypted Device — Reduced Risk but Still Report Internally",
+          "content": "Encryption significantly reduces the risk of unauthorized access to PHI on lost or stolen devices.\n\n**Steps to take:**\n1. Confirm the encryption standard meets PHIPA requirements (full-disk encryption, strong passwords)\n2. Remotely wipe the device if possible\n3. Document the loss/theft and report to your privacy officer\n4. Assess whether any unencrypted data could be accessible (e.g., if device was unlocked when stolen)\n5. Report to law enforcement if theft is involved\n\n**Therapeutic Consideration:**\nEven with encryption, the loss of a device containing PHI creates anxiety for patients who learn about it. Proactive and transparent communication demonstrates respect for patients' informational autonomy. Patients should never learn about a breach affecting them from a third party.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Assuming encryption eliminates all risk without investigation\n- Failing to report internally because 'it was encrypted'\n\n**IPC Decision Pattern:**\nIPC Decision 287 demonstrated that even well-designed systems can have unexpected disclosure pathways. Thorough investigation is always warranted.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.12(2)", "O. Reg. 329/04 s.13"]
+        },
+        {
+          "id": "br-terminal-3",
+          "type": "recommendation",
+          "title": "Internal Breach Protocol — Standard Response Required",
+          "content": "A breach of general health information with limited sensitivity still requires proper response.\n\n**Steps to take:**\n1. Document the breach fully (who, what, when, how, and how discovered)\n2. Contain the breach (remove access, secure records, address the gap that allowed the breach)\n3. Notify your privacy officer immediately\n4. Assess whether patient notification is required (consider the specific circumstances)\n5. Implement corrective measures to prevent recurrence\n6. Determine whether IPC notification is required based on institutional thresholds\n\n**Therapeutic Consideration:**\nEvery breach, even of routine information, affects trust. Notification to patients should be transparent, empathetic, and focused on what happened, what you've done to address it, and what patients can do. Avoid defensive or legalistic language—it signals that you are protecting the institution rather than the patient.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Downplaying the breach because the information seems 'not that sensitive'\n- Using legalistic notification language that alienates patients\n- Blame-shifting to individual staff without examining systemic factors\n\n**IPC Decision Pattern:**\nIPC Decision 290 found that even when a custodian responded adequately to a breach, the absence of reasonable pre-existing safeguards constituted a PHIPA s.12 violation.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.58(1)"]
+        },
+        {
+          "id": "br-terminal-4",
+          "type": "recommendation",
+          "title": "High-Risk Breach — Immediate Containment, Notification, and IPC Reporting Required",
+          "content": "This breach presents significant risk of harm to affected individuals and requires urgent, comprehensive response.\n\n**Steps to take:**\n1. **Contain immediately**: Remove all unauthorized access, secure affected records, prevent further disclosure\n2. **Notify your privacy officer** and institutional leadership immediately\n3. **Notify affected individuals** as soon as reasonably possible — include:\n   - What happened (in plain, non-defensive language)\n   - What information was involved\n   - What you have done to contain and address the breach\n   - What patients can do to protect themselves\n   - How to contact the privacy officer and the IPC\n4. **Report to the IPC** — High-risk breaches with potential for significant harm trigger reporting obligations under PHIPA s.58\n5. **Engage law enforcement** if criminal activity is suspected\n6. **Conduct root cause analysis** — identify systemic failures, not just individual actors\n7. **Implement systemic remediation** — policy changes, technical safeguards, training\n8. **Securely dispose** of any improperly obtained PHI\n\n**Therapeutic Consideration:**\nHigh-risk breaches demand radical transparency. Patients who discover breaches through sources other than the custodian experience amplified betrayal. Notification should be timely, empathetic, and action-oriented. Acknowledge the harm, take responsibility, and describe concrete steps taken. Kawalek's TJ values apply directly: empathy, respect, clarity, and non-defensiveness.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Delay in notification while 'investigating' (perceived as cover-up)\n- Legalistic, blame-minimizing notification language\n- Focusing on individual blame rather than systemic remediation\n- Treating the incident as closed once notification is sent, without ongoing monitoring\n\n**IPC Decision Pattern:**\nIPC Decision 298 imposed Administrative Monetary Penalties ($5,000 + $7,500) for a physician who used hospital EHR access to target newborn parents for private clinic marketing — abuse of legitimate access causing significant trust erosion. The Commissioner ordered secure disposal of all improperly obtained records.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.58(1)", "PHIPA s.61", "PHIPA s.61.1"]
+        },
+        {
+          "id": "br-terminal-5",
+          "type": "recommendation",
+          "title": "Contained Breach — Document, Remediate, and Monitor",
+          "content": "The breach has been contained and the risk level is manageable, but proper documentation and remediation are essential.\n\n**Steps to take:**\n1. Document the complete breach timeline (discovery, containment, investigation, resolution)\n2. Notify your privacy officer with full documentation\n3. Assess whether patient notification is appropriate even though risk is lower — err on the side of transparency\n4. Implement specific corrective measures to prevent recurrence\n5. Monitor for any signs that the breach is more extensive than initially assessed\n6. Update privacy training if the breach revealed knowledge gaps\n\n**Therapeutic Consideration:**\nContained breaches are opportunities for systemic learning. A therapeutic response treats breaches as signals of system vulnerability, not individual failure. Use the incident to strengthen privacy culture, improve safeguards, and demonstrate institutional commitment to patient trust.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Treating containment as the end of the response\n- Failing to investigate root causes\n- Not sharing lessons learned with relevant staff\n\n**IPC Decision Pattern:**\nIPC Decision 290: The IPC investigator found the custodian responded adequately to the breach through remedial steps, including new policies, improved onboarding, and enhanced safeguards. Adequate response after discovery can mitigate further regulatory action.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.12(2)"]
+        },
+        {
+          "id": "br-terminal-6",
+          "type": "recommendation",
+          "title": "Care-Related Disclosure Without Consent — Process Gap",
+          "content": "The disclosure was related to patient care but lacked proper consent or legal authority. This often indicates a process gap rather than malicious intent.\n\n**Steps to take:**\n1. Assess whether the disclosure fell within implied consent for circle of care (PHIPA s.29)\n2. If not within circle of care, document as a breach\n3. Review consent processes for the specific clinical workflow where the gap occurred\n4. Notify the patient transparently — explain what happened and why\n5. Obtain proper consent going forward\n6. Train staff on the specific consent requirements for this type of disclosure\n\n**Therapeutic Consideration:**\nCare-related disclosures without consent often reflect the tension between clinical efficiency and legal requirements. A therapeutic response addresses the systemic issue (unclear consent processes) rather than blaming the individual clinician. Use this as an opportunity to make consent processes more practical and clinically integrated.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Dismissing the breach because 'it was for the patient's benefit'\n- Blaming clinicians for process failures that are systemic\n- Bureaucratic Rituals pattern: adding more consent forms without addressing the underlying workflow issue\n\n**IPC Decision Pattern:**\nIPC Decision 281 examined the relationship between a hospital and its foundation, finding that even well-intentioned uses of PHI (fundraising) require proper legal authority and transparent patient communication.",
+          "legalReferences": ["PHIPA s.29(1)", "PHIPA s.37(1)(a)"]
+        },
+        {
+          "id": "br-terminal-7",
+          "type": "recommendation",
+          "title": "Unauthorized Disclosure for Non-Care Purposes — Serious Breach",
+          "content": "Disclosure of PHI for purposes unrelated to patient care (personal curiosity, gossip, commercial gain) is a serious breach that may constitute a contravention under PHIPA.\n\n**Steps to take:**\n1. **Contain immediately**: Remove the individual's access to PHI\n2. **Document thoroughly**: Record all details of the unauthorized disclosure\n3. **Report to privacy officer** and institutional leadership\n4. **Investigate the scope**: Determine if this is an isolated incident or part of a pattern\n5. **Notify affected patients**: Be transparent about what happened and what information was involved\n6. **Report to the IPC**: This level of breach typically triggers IPC reporting obligations\n7. **Consider disciplinary action**: Consistent with institutional policies and employment law\n8. **Report to regulatory body** if the individual is a regulated health professional\n9. **Assess for Administrative Monetary Penalties (AMPs)**: PHIPA s.61 allows AMPs for serious contraventions\n\n**Therapeutic Consideration:**\nNon-care disclosures represent the most fundamental violation of the therapeutic relationship — the patient's trust that information shared for healing will not be used against them. Notification must be deeply empathetic, acknowledging the betrayal of trust. Institutional response must be visible and decisive to rebuild community trust.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Cover-up or minimization (Privacy as Weapon pattern at its most dangerous)\n- Delayed notification while 'managing' the situation internally\n- Inadequate consequences that signal institutional tolerance of privacy violations\n\n**IPC Decision Pattern:**\nIPC Decision 298: Physician used hospital EHR to search for newborns and contact parents for private clinic circumcision services. Commissioner imposed AMPs of $5,000 (physician) + $7,500 (clinic) and ordered secure disposal of all improperly obtained records. This represents abuse of legitimate access for commercial purposes — a paradigmatic non-care disclosure.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.29", "PHIPA s.58(1)", "PHIPA s.61", "PHIPA s.61.1"]
+        },
+        {
+          "id": "br-terminal-8",
+          "type": "recommendation",
+          "title": "Ongoing Breach — Immediate Containment Required Before Proceeding",
+          "content": "The breach has not been contained and there is ongoing risk of further unauthorized access or disclosure. Containment is the immediate priority.\n\n**Steps to take:**\n1. **Stop the breach NOW**: Revoke access credentials, disable accounts, secure physical records, isolate affected systems\n2. **Preserve evidence**: Do not delete audit logs, communications, or other evidence during containment\n3. **Notify privacy officer and IT security** immediately\n4. **Assess the full scope**: How many individuals are affected? What information is at risk?\n5. **Implement emergency safeguards**: Temporary access restrictions, enhanced monitoring, password resets if needed\n6. Once contained, return to the breach response process to assess severity and notification requirements\n\n**Therapeutic Consideration:**\nOngoing breaches create compounding harm. Every moment of continued unauthorized access increases the number of affected individuals and the severity of trust erosion. Swift, decisive action — even if it temporarily disrupts normal operations — demonstrates that patient privacy is the institutional priority. Patients who learn that a breach continued after discovery experience amplified betrayal.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Delayed containment while waiting for 'authorization' or 'investigation'\n- Prioritizing operational continuity over immediate containment\n- Inadequate containment that leaves residual access\n\n**IPC Decision Pattern:**\nIPC Decision 290: The custodian immediately removed the nurse's access to all electronic medical records and relieved her of duties upon confirming unauthorized access. The IPC investigator cited this prompt containment as evidence of adequate response.",
+          "legalReferences": ["PHIPA s.12(1)", "PHIPA s.12(2)", "PHIPA s.58(1)"]
+        }
+      ]
+    },
+    {
+      "id": "circle-of-care",
+      "title": "Circle of Care Boundaries",
+      "description": "Determine who is inside or outside the circle of care and navigate information sharing with therapeutic considerations",
+      "role": "healthcare_provider",
+      "estimatedTime": "4-6 minutes",
+      "questionCount": 7,
+      "available": true,
+      "nodes": [
+        {
+          "id": "coc-node-1",
+          "type": "question",
+          "question": "What is the purpose of the proposed information sharing?",
+          "options": [
+            { "id": "coc-opt-1-1", "text": "Direct patient care (diagnosis, treatment, ongoing care)", "nextNode": "coc-node-2" },
+            { "id": "coc-opt-1-2", "text": "Research or quality improvement", "nextNode": "coc-terminal-1" },
+            { "id": "coc-opt-1-3", "text": "Administrative purposes (billing, scheduling, reporting)", "nextNode": "coc-terminal-2" },
+            { "id": "coc-opt-1-4", "text": "Public health reporting or mandatory disclosure", "nextNode": "coc-terminal-3" }
+          ]
+        },
+        {
+          "id": "coc-node-2",
+          "type": "question",
+          "question": "Is the proposed recipient a health information custodian or their agent?",
+          "options": [
+            { "id": "coc-opt-2-1", "text": "Yes, a regulated health professional providing care to the patient", "nextNode": "coc-node-3" },
+            { "id": "coc-opt-2-2", "text": "Yes, a staff member within the healthcare organization", "nextNode": "coc-node-4" },
+            { "id": "coc-opt-2-3", "text": "No, not a health information custodian or agent (e.g., family, employer, school)", "nextNode": "coc-terminal-4" }
+          ]
+        },
+        {
+          "id": "coc-node-3",
+          "type": "question",
+          "question": "Has the patient placed a lockbox (consent directive) restricting access to their information?",
+          "options": [
+            { "id": "coc-opt-3-1", "text": "No lockbox — standard circle of care sharing applies", "nextNode": "coc-terminal-5" },
+            { "id": "coc-opt-3-2", "text": "Yes, lockbox restricts access by this specific provider", "nextNode": "coc-terminal-6" },
+            { "id": "coc-opt-3-3", "text": "Yes, but lockbox does not apply to this specific provider", "nextNode": "coc-terminal-5" },
+            { "id": "coc-opt-3-4", "text": "Unsure whether a lockbox exists", "nextNode": "coc-node-5" }
+          ]
+        },
+        {
+          "id": "coc-node-4",
+          "type": "question",
+          "question": "Does the staff member need the information to carry out their duties related to the patient's care?",
+          "options": [
+            { "id": "coc-opt-4-1", "text": "Yes, directly involved in patient's care or support of care delivery", "nextNode": "coc-node-3" },
+            { "id": "coc-opt-4-2", "text": "No, not involved in this patient's care", "nextNode": "coc-terminal-7" }
+          ]
+        },
+        {
+          "id": "coc-node-5",
+          "type": "question",
+          "question": "Can you verify the lockbox status before sharing the information?",
+          "options": [
+            { "id": "coc-opt-5-1", "text": "Yes, I can check the system/chart", "nextNode": "coc-terminal-8" },
+            { "id": "coc-opt-5-2", "text": "No, the patient is unavailable and the system doesn't clearly indicate lockbox status", "nextNode": "coc-node-6" }
+          ]
+        },
+        {
+          "id": "coc-node-6",
+          "type": "question",
+          "question": "Is this an emergency where withholding the information could endanger the patient?",
+          "options": [
+            { "id": "coc-opt-6-1", "text": "Yes, patient safety is at risk", "nextNode": "coc-terminal-9" },
+            { "id": "coc-opt-6-2", "text": "No, sharing can wait until lockbox status is confirmed", "nextNode": "coc-terminal-8" }
+          ]
+        },
+        {
+          "id": "coc-terminal-1",
+          "type": "recommendation",
+          "title": "Research/Quality Improvement — Circle of Care Does Not Apply",
+          "content": "The circle of care applies only to direct patient care. Research and quality improvement activities require separate legal authority.\n\n**Steps to take:**\n1. For research: Obtain Research Ethics Board (REB) approval and comply with PHIPA s.44\n2. For quality improvement: Determine whether de-identified data is sufficient\n3. If identifiable data is needed: Obtain patient consent or rely on specific PHIPA exceptions\n4. Consult your privacy officer about the appropriate pathway\n\n**Therapeutic Consideration:**\nResearch and QI activities ultimately serve patients, but patients have a right to know how their information is used beyond direct care. Transparent communication about research participation and QI programs builds trust and supports the therapeutic relationship. Consent for research should be genuine, not a Bureaucratic Ritual (Anti-Therapeutic Pattern #2).\n\n**PHIPA Reference:**\nPHIPA s.44 governs use of PHI for research. Consent is generally required unless the Research Ethics Board approves a waiver based on specific criteria.",
+          "legalReferences": ["PHIPA s.44", "PHIPA s.37(1)(j)"]
+        },
+        {
+          "id": "coc-terminal-2",
+          "type": "recommendation",
+          "title": "Administrative Purposes — Limited Sharing Permitted",
+          "content": "Administrative uses of PHI are governed by PHIPA s.37, which permits certain uses for managing the health information custodian's operations.\n\n**Steps to take:**\n1. Determine whether the specific administrative purpose is permitted under PHIPA s.37\n2. Share only the minimum information necessary for the administrative purpose\n3. Ensure the recipient understands their confidentiality obligations\n4. Document the sharing and its purpose\n\n**Therapeutic Consideration:**\nPatients expect their information to be used for care, not administration. When administrative uses are necessary, minimize the PHI shared and ensure patients are aware through general privacy notices. Administrative uses that feel surprising or invasive to patients erode trust — even when legally permitted.\n\n**IPC Decision Pattern:**\nIPC Decision 281 (Sunnybrook Foundation): The use of PHI for fundraising through the hospital's foundation was found to be a 'use' requiring legal authority, even though the foundation acted as the hospital's agent.",
+          "legalReferences": ["PHIPA s.37(1)", "PHIPA s.37(1)(c)", "PHIPA s.37(1)(d)"]
+        },
+        {
+          "id": "coc-terminal-3",
+          "type": "recommendation",
+          "title": "Public Health / Mandatory Reporting — Specific Provisions Apply",
+          "content": "Certain disclosures are required or permitted by law regardless of consent. These override normal circle of care requirements.\n\n**Steps to take:**\n1. Identify the specific statutory reporting requirement (e.g., communicable disease, child protection, gunshot wounds)\n2. Share only the information required by the specific reporting obligation\n3. Document the disclosure and the legal authority under which it was made\n4. Inform the patient that a mandatory report has been made (unless doing so would compromise the purpose of the report)\n\n**Therapeutic Consideration:**\nMandatory reporting can feel like a betrayal of trust to patients. Wherever possible, explain mandatory reporting obligations at the outset of the therapeutic relationship—before a reportable situation arises. When a report must be made, involve the patient in the process to the extent possible, explain the purpose of the report, and maintain the therapeutic relationship through transparent communication.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Failing to explain mandatory reporting obligations before they arise (surprises erode trust)\n- Making reports without informing the patient when notification is appropriate\n- Over-reporting or under-reporting based on discomfort rather than legal requirements",
+          "legalReferences": ["PHIPA s.38(1)", "PHIPA s.40"]
+        },
+        {
+          "id": "coc-terminal-4",
+          "type": "recommendation",
+          "title": "Outside Circle of Care — Explicit Consent Required",
+          "content": "The proposed recipient is not within the circle of care. Information cannot be shared without the patient's explicit consent.\n\n**Steps to take:**\n1. Do NOT share information without explicit patient consent\n2. Explain to the requesting party that privacy law prevents disclosure without consent\n3. If the patient wishes to share, obtain written consent specifying the recipient and scope\n4. Consider whether the patient can share the information directly (supports patient agency)\n5. Document the request and your response\n\n**Therapeutic Consideration:**\nRequests from outside the circle of care (employers, schools, family members without SDM authority) create opportunities to support patient agency. Rather than simply refusing, help the patient understand their options and support their decision about whether and how to share. This transforms a potentially negative interaction into one that reinforces patient control.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Sharing information 'because the family asked' without patient authorization\n- Dismissing the requesting party rudely rather than explaining the process\n- Paternalistic Withholding: deciding not to even inform the patient about the request",
+          "legalReferences": ["PHIPA s.29(1)", "PHIPA s.38"]
+        },
+        {
+          "id": "coc-terminal-5",
+          "type": "recommendation",
+          "title": "Within Circle of Care — Implied Consent for Direct Care Sharing",
+          "content": "The proposed sharing is within the circle of care for purposes of direct healthcare, and no lockbox restricts it. PHIPA permits information sharing under implied consent.\n\n**Steps to take:**\n1. Share information necessary for the patient's care with the receiving provider\n2. Limit sharing to information relevant to the care being provided\n3. Ensure secure transmission methods appropriate to the information's sensitivity\n4. Document the sharing as part of normal clinical documentation\n\n**Therapeutic Consideration:**\nCircle of care sharing is therapeutically essential — it enables coordinated, comprehensive care. However, patients may not understand who is in their circle of care or what information is shared. Proactively explaining information flows (e.g., 'Your cardiologist will receive your test results so they can adjust your treatment') builds trust and supports agency. Transparency about circle of care sharing prevents the Information Silos pattern while respecting patient awareness.\n\n**TJ Values in Action:**\nKawalek's core TJ values apply: communicate with clarity about who sees information and why, demonstrate respect for patient boundaries, and listen actively if patients express concerns about specific providers in their circle.",
+          "legalReferences": ["PHIPA s.29(1)", "PHIPA s.37(1)(a)", "PHIPA s.38(1)(a)"]
+        },
+        {
+          "id": "coc-terminal-6",
+          "type": "recommendation",
+          "title": "Lockbox Active — Do Not Share Without Patient Authorization",
+          "content": "The patient has placed a lockbox (consent directive) under PHIPA s.17 restricting this provider's access. The lockbox must be honoured unless a specific exception applies.\n\n**Steps to take:**\n1. Do NOT share the information with the restricted provider\n2. Inform the requesting provider that a consent directive restricts access (without disclosing the contents)\n3. If the information is clinically critical, discuss with the patient whether they wish to modify or lift the lockbox\n4. Document the lockbox restriction and your compliance\n5. If the patient is incapable, consult the SDM about the lockbox\n\n**Therapeutic Consideration:**\nLockbox requests are a therapeutic exercise of patient autonomy under PHIPA s.17. They may reflect legitimate concerns about specific providers, safety considerations, or personal boundaries. Honour the lockbox without judgment or pressure. The patient's decision to restrict access is itself a therapeutic act—it represents control over their narrative and their care.\n\n**IPC Decision Pattern:**\nIPC Decision 290: Lockbox requests from community patients revealed unauthorized chart access by a nurse. The lockbox mechanism functioned therapeutically—patients used it to protect themselves, and the pattern of requests triggered investigation of the underlying breach.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Pressuring patients to remove lockboxes for 'their own good' (Paternalistic Withholding)\n- Sharing locked information because you believe it's 'necessary' without meeting legal exceptions\n- Treating lockbox requests as suspicious or problematic rather than as legitimate privacy tools",
+          "legalReferences": ["PHIPA s.17", "PHIPA s.29"]
+        },
+        {
+          "id": "coc-terminal-7",
+          "type": "recommendation",
+          "title": "No Care Relationship — Access Not Permitted",
+          "content": "Staff members who are not involved in the patient's care do not have access rights under the circle of care, even if they work in the same organization.\n\n**Steps to take:**\n1. Do NOT provide the information — clearly explain that access requires a care relationship\n2. If the staff member believes they have a legitimate need, direct them to the privacy officer\n3. Document the request and your response\n4. If this represents unauthorized access, follow breach response procedures\n\n**Therapeutic Consideration:**\nUnauthorized access by staff within the organization is one of the most common and damaging privacy breaches. It may be driven by curiosity, concern for a known patient, or misunderstanding of access rights. Addressing it compassionately while maintaining firm boundaries demonstrates institutional commitment to privacy.\n\n**IPC Decision Pattern:**\nIPC Decision 290: A nurse accessed patient charts without authorization despite being an agent of the custodian. IPC Decision 298: A physician used legitimate EHR access to search for newborns for commercial purposes. Both demonstrate that organizational membership does not equal access authorization.",
+          "legalReferences": ["PHIPA s.29", "PHIPA s.12(1)"]
+        },
+        {
+          "id": "coc-terminal-8",
+          "type": "recommendation",
+          "title": "Verify Lockbox Status Before Sharing",
+          "content": "Before sharing information, verify whether the patient has placed any consent directives (lockboxes) that restrict access.\n\n**Steps to take:**\n1. Check the patient's chart/EHR for consent directives or lockbox flags\n2. If the system clearly indicates no lockbox: proceed with circle of care sharing\n3. If a lockbox is present: follow the lockbox pathway\n4. If you cannot determine lockbox status: wait for confirmation before sharing (unless emergency)\n5. Document your verification steps\n\n**Therapeutic Consideration:**\nTaking the time to verify lockbox status before sharing demonstrates respect for patient autonomy. It signals that the institution takes patient privacy preferences seriously. The verification process itself is therapeutic—it enforces the principle that patient control over information is not merely symbolic but operationally real.",
+          "legalReferences": ["PHIPA s.17", "PHIPA s.29"]
+        },
+        {
+          "id": "coc-terminal-9",
+          "type": "recommendation",
+          "title": "Emergency Override — Share Despite Uncertain Lockbox Status",
+          "content": "In a genuine emergency where withholding information could endanger the patient, you may share information even if lockbox status is uncertain.\n\n**Steps to take:**\n1. Share only the information necessary to address the immediate danger\n2. Document the emergency circumstances and your clinical reasoning\n3. Verify lockbox status as soon as the emergency is stabilized\n4. If a lockbox exists, inform the patient that information was shared during the emergency and explain why\n5. Obtain proper consent for any ongoing sharing\n\n**Therapeutic Consideration:**\nEmergency overrides of privacy protections are therapeutically justified when patient safety is genuinely at risk. However, the override should be as narrow as possible, and post-emergency communication should be transparent and respectful. The patient should never feel that the emergency was used as a pretext to circumvent their privacy choices.\n\n**Anti-Therapeutic Risks to Avoid:**\n- Defining 'emergency' broadly to justify routine sharing without consent\n- Failing to re-establish privacy boundaries after the emergency resolves\n- Not informing the patient about information shared during the emergency",
+          "legalReferences": ["PHIPA s.40(1)", "PHIPA s.17"]
+        }
+      ]
     }
   ]
 }
