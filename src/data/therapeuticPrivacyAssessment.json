@@ -2,6 +2,22 @@
   "id": "tj-privacy-assessment",
   "title": "Therapeutic Privacy Impact Assessment",
   "description": "A comprehensive assessment evaluating how privacy practices affect therapeutic relationships, patient agency, and clinical outcomes in healthcare settings",
+  "dualTrackGuidance": {
+    "title": "Dual-Track Evaluation: Compliance AND Therapeutic Impact",
+    "description": "This assessment employs a dual-track approach recognizing that legal compliance is necessary but insufficient for therapeutic privacy practice. Track 1 evaluates whether privacy practices meet Ontario legislative requirements (PHIPA, FIPPA, MFIPPA). Track 2 evaluates whether those same practices produce therapeutic or anti-therapeutic consequences for patients, providers, and institutional relationships. A practice can be fully compliant yet anti-therapeutic, or therapeutically beneficial yet legally incomplete. The goal is alignment: practices that satisfy legal obligations WHILE maximizing therapeutic outcomes.",
+    "tracks": [
+      {
+        "name": "Compliance Track",
+        "question": "Does this practice satisfy the requirements of PHIPA and applicable Ontario privacy legislation?",
+        "focus": "Legal obligations, regulatory compliance, risk mitigation"
+      },
+      {
+        "name": "Therapeutic Track",
+        "question": "Does this practice produce therapeutic or anti-therapeutic consequences for those it affects?",
+        "focus": "Trust, agency, safety, dignity, relational boundaries, clinician well-being, equity, clinical outcomes"
+      }
+    ]
+  },
   "sections": [
     {
       "id": "trust-formation",
@@ -43,6 +59,30 @@
             "Serious breaches causing relationship breakdown"
           ],
           "guidance": "Consider both actual breaches and perceived violations that affected patient confidence"
+        },
+        {
+          "id": "trust-4",
+          "text": "Would patients feel safer or more vulnerable because of this practice?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Significantly more vulnerable",
+            "maxLabel": "Significantly safer"
+          },
+          "guidance": "Consider the practice from the patient's perspective—does it create a sense of protection or exposure? Think about how a patient first encountering this practice would experience it emotionally."
+        },
+        {
+          "id": "trust-5",
+          "text": "Could this practice inadvertently breach patient trust, even without a formal privacy violation?",
+          "type": "select",
+          "options": [
+            "High risk of trust erosion",
+            "Moderate risk — some patients may feel uncomfortable",
+            "Low risk — practice is generally trust-supportive",
+            "No risk — practice actively reinforces trust"
+          ],
+          "guidance": "Trust breaches can occur without legal breaches. Consider whether the practice feels respectful, whether patients understand it, and whether it aligns with patient expectations about how their information is handled."
         }
       ],
       "therapeuticLens": [
@@ -85,6 +125,30 @@
           "text": "Are there processes for patients to express privacy preferences beyond standard consent?",
           "type": "textarea",
           "guidance": "Describe mechanisms for patients to indicate specific privacy concerns, partial disclosures, or contextual sharing preferences"
+        },
+        {
+          "id": "agency-4",
+          "text": "Is consent genuine or bureaucratic ritual?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Pure ritual — patients sign without understanding",
+            "maxLabel": "Genuinely informed — patients understand and choose"
+          },
+          "guidance": "Evaluate whether consent processes achieve actual patient understanding or merely produce signed forms. Does the patient know what they agreed to? Could they explain it back? (Anti-Therapeutic Pattern #2: Bureaucratic Rituals)"
+        },
+        {
+          "id": "agency-5",
+          "text": "Can patients change their mind about information sharing without negative consequences?",
+          "type": "select",
+          "options": [
+            "No — once consent is given, it cannot be withdrawn easily",
+            "Theoretically possible but practically difficult",
+            "Possible with moderate effort and no negative consequences",
+            "Easy to modify or withdraw consent at any time with full support"
+          ],
+          "guidance": "True agency requires the ability to change course. Consider whether withdrawing consent affects care quality, provider attitudes, or access to services. PHIPA s.17 lockbox rights should be practically accessible, not merely theoretically available."
         }
       ],
       "therapeuticLens": [
@@ -127,6 +191,30 @@
           "text": "How do staff behaviors and attitudes reinforce or undermine privacy safety?",
           "type": "textarea",
           "guidance": "Consider hallway conversations, electronic device usage in public areas, casual information sharing, and respect for closed doors/curtains"
+        },
+        {
+          "id": "safety-4",
+          "text": "Could this practice trigger trauma or psychological harm for patients?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "High risk of triggering trauma",
+            "maxLabel": "Practice is trauma-informed and protective"
+          },
+          "guidance": "Consider patients with histories of abuse, institutional harm, or medical trauma. Does the practice account for re-traumatization risks? Is it implemented with sensitivity to diverse trauma experiences?"
+        },
+        {
+          "id": "safety-5",
+          "text": "Does this practice create a protective environment for difficult conversations?",
+          "type": "select",
+          "options": [
+            "No — the practice makes difficult conversations harder",
+            "Somewhat — provides basic conditions but could be improved",
+            "Mostly — creates reasonable conditions for sensitive discussions",
+            "Yes — actively facilitates safe, supported disclosure"
+          ],
+          "guidance": "Difficult conversations (mental health, end-of-life, substance use, sexuality, abuse) require privacy practices that create safety without creating barriers to care."
         }
       ],
       "therapeuticLens": [
@@ -169,6 +257,30 @@
           "text": "Describe how boundary violations are prevented, detected, and addressed",
           "type": "textarea",
           "guidance": "Include technical controls, policy enforcement, staff training, and remediation processes"
+        },
+        {
+          "id": "boundaries-4",
+          "text": "Does this practice enable or inhibit therapeutic rapport?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Significantly inhibits rapport",
+            "maxLabel": "Actively enables therapeutic rapport"
+          },
+          "guidance": "Consider whether the practice creates barriers between clinician and patient or facilitates connection. Does it support authentic therapeutic interaction or introduce awkwardness, distrust, or distance? (Anti-Therapeutic Pattern #3: Information Silos)"
+        },
+        {
+          "id": "boundaries-5",
+          "text": "Can clinicians honor this practice authentically without compromising care?",
+          "type": "select",
+          "options": [
+            "No — clinicians routinely work around this practice to deliver care",
+            "Sometimes — workarounds are occasionally needed",
+            "Mostly — the practice aligns with clinical workflow with minor friction",
+            "Yes — the practice integrates seamlessly with therapeutic care delivery"
+          ],
+          "guidance": "Practices that clinicians cannot honor authentically will generate workarounds that may be less secure and more anti-therapeutic than the original problem. If clinicians are routinely bypassing a privacy practice, the practice needs redesign, not stricter enforcement."
         }
       ],
       "therapeuticLens": [
@@ -205,6 +317,18 @@
           "text": "How do privacy practices handle vulnerable populations differently?",
           "type": "textarea",
           "guidance": "Consider children, elderly, cognitively impaired, non-English speakers, and others requiring tailored approaches"
+        },
+        {
+          "id": "dignity-4",
+          "text": "Could this practice disproportionately harm marginalized groups?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "Significant disproportionate harm likely",
+            "maxLabel": "Practice is equity-promoting and culturally responsive"
+          },
+          "guidance": "Consider Indigenous communities (see IPC Decision 290 — Maamwesying), racialized populations, LGBTQ2S+ individuals, persons with disabilities, newcomers, and others who may experience privacy practices differently due to systemic factors. (Anti-Therapeutic Pattern #5: Cultural Insensitivity)"
         }
       ],
       "therapeuticLens": [
@@ -247,6 +371,12 @@
           "text": "Are clinicians adequately trained and supported in therapeutic privacy practices?",
           "type": "textarea",
           "guidance": "Describe training content, ongoing support, ethics consultation availability, and confidence levels"
+        },
+        {
+          "id": "clinician-4",
+          "text": "What workarounds might clinicians develop if privacy practices are too restrictive?",
+          "type": "textarea",
+          "guidance": "Identify potential or observed workarounds (sharing passwords, verbal handoffs to avoid documentation, informal communication channels). Workarounds signal that privacy practices are misaligned with clinical reality and may create greater risks than the original practice intended to address. (Anti-Therapeutic Pattern #6: Technological Barriers)"
         }
       ],
       "therapeuticLens": [
@@ -283,6 +413,18 @@
           "text": "How are power imbalances addressed in privacy decision-making?",
           "type": "textarea",
           "guidance": "Consider institutional power vs. patient agency, clinician authority vs. patient autonomy, and mechanisms for balancing these dynamics"
+        },
+        {
+          "id": "justice-4",
+          "text": "Do privacy practices accommodate cultural and contextual privacy needs?",
+          "type": "scale",
+          "scale": {
+            "min": 1,
+            "max": 5,
+            "minLabel": "One-size-fits-all with no accommodation",
+            "maxLabel": "Flexibly designed for diverse cultural contexts"
+          },
+          "guidance": "Consider whether practices accommodate collectivist family decision-making, Indigenous governance structures, religious considerations, and other cultural contexts. Howieson's procedural justice framework emphasizes that individuals must perceive processes as fair — cultural accommodation is essential to procedural justice."
         }
       ],
       "therapeuticLens": [
@@ -319,6 +461,12 @@
             "Systematic monitoring with regular review"
           ],
           "guidance": "Consider existing quality indicators, patient feedback mechanisms, and outcome tracking"
+        },
+        {
+          "id": "outcomes-4",
+          "text": "Are there alternative approaches that maintain compliance while enhancing therapeutic outcomes?",
+          "type": "textarea",
+          "guidance": "For each anti-therapeutic practice identified in earlier sections, consider whether an alternative implementation could satisfy the same legal requirement while producing better therapeutic outcomes. Campbell's TJ framing asks: 'Could the same protective goals be achieved through less therapeutically harmful means?'"
         }
       ],
       "therapeuticLens": [
@@ -329,13 +477,32 @@
     }
   ],
   "scoringGuidance": {
-    "interpretation": "This assessment is not scored numerically. Instead, responses create a holistic picture of therapeutic privacy practices. The goal is insight and improvement, not compliance checking.",
+    "interpretation": "This assessment uses a dual-track evaluation. For quantitative questions (scale and select), responses map to a therapeutic impact score from +2 (Strongly Therapeutic) to -2 (Strongly Anti-Therapeutic) per dimension.",
+    "scoringScale": {
+      "description": "Each dimension receives a therapeutic impact score based on aggregated responses:",
+      "levels": [
+        { "score": "+2", "label": "Strongly Therapeutic", "description": "Practices actively build trust, empower patients, and enhance clinical outcomes beyond compliance requirements" },
+        { "score": "+1", "label": "Therapeutic", "description": "Practices generally support therapeutic relationships while meeting legal obligations" },
+        { "score": "0", "label": "Neutral/Mixed", "description": "Practices meet compliance requirements but have mixed or unclear therapeutic impact" },
+        { "score": "-1", "label": "Anti-Therapeutic", "description": "Practices are legally compliant but undermine trust, agency, or therapeutic relationships" },
+        { "score": "-2", "label": "Strongly Anti-Therapeutic", "description": "Practices actively harm therapeutic relationships, erode trust, or disempower patients, even if technically compliant" }
+      ]
+    },
+    "overallCategories": [
+      { "range": "Average +1.5 to +2", "category": "Exemplary", "description": "Privacy practices are deeply therapeutic, exceeding compliance requirements and actively strengthening care relationships" },
+      { "range": "Average +0.5 to +1.4", "category": "Therapeutic", "description": "Privacy practices generally support therapeutic relationships with opportunities for further enhancement" },
+      { "range": "Average -0.4 to +0.4", "category": "Mixed", "description": "Privacy practices meet compliance but have inconsistent therapeutic impact — requires targeted improvements" },
+      { "range": "Average -1.4 to -0.5", "category": "Anti-Therapeutic", "description": "Privacy practices are undermining therapeutic relationships despite legal compliance — significant redesign needed" },
+      { "range": "Average -2 to -1.5", "category": "Harmful", "description": "Privacy practices are actively causing harm to therapeutic relationships — urgent intervention required" }
+    ],
     "nextSteps": [
-      "Identify anti-therapeutic practices requiring immediate attention",
-      "Recognize therapeutic strengths to build upon",
-      "Develop action plan addressing key gaps",
-      "Establish ongoing monitoring mechanisms",
-      "Engage stakeholders in collaborative improvement"
+      "Identify anti-therapeutic practices requiring immediate attention (score -1 or below)",
+      "Recognize therapeutic strengths to build upon (score +1 or above)",
+      "For each anti-therapeutic practice, identify alternative implementations that maintain compliance while improving therapeutic outcomes",
+      "Develop action plan addressing key gaps with specific timelines and responsible parties",
+      "Establish ongoing monitoring mechanisms using this assessment as a baseline",
+      "Engage stakeholders in collaborative improvement — patients, clinicians, administrators, and privacy officers",
+      "Re-assess at regular intervals (recommended: annually, or after significant policy changes)"
     ]
   }
 }
