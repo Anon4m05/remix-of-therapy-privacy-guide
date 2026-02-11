@@ -11,9 +11,9 @@ export default function Landing() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-[#2E5C8A] via-[#1B998B] to-[#2E5C8A] px-4 py-16">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Navigate Privacy as Therapeutic Intervention, Not Just Compliance
-          </h1>
+           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+             PriviCare: helping you understand the therapeutic impacts of Health Privacy decisions.
+           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8">
             A tool for healthcare professionals, patients, and privacy officers to assess privacy through a therapeutic lens.
           </p>
