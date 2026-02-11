@@ -1,0 +1,31 @@
+{
+  "id": "pha",
+  "title": "Public Hospitals Act — Hospital Management Regulation",
+  "shortTitle": "PHA (R.R.O. 1990, Reg. 965)",
+  "jurisdiction": "Ontario",
+  "citation": "R.R.O. 1990, Regulation 965 under the Public Hospitals Act, R.S.O. 1990, c. P.40",
+  "consolidationPeriod": "Current to 2024",
+  "lastAmendment": "O. Reg. 232/23",
+  "sections": [
+    {
+      "number": "19-21",
+      "title": "Records of Personal Health Information",
+      "content": "Sections 19-21 of Regulation 965 establish requirements for maintaining records of personal health information in public hospitals:\n\n- s.19: Every hospital must maintain a medical record for each in-patient and out-patient, containing prescribed information including admitting diagnosis, history, progress notes, orders, reports, and discharge summary\n- s.20: Medical records must be maintained for at least 10 years after the last entry (or 10 years after the patient reaches age 18, whichever is later)\n- s.21: The hospital administrator is responsible for the safekeeping of all medical records and must ensure they are available only to authorized persons\n\nTherapeutic significance: These retention and access requirements create the foundational record infrastructure that PHIPA governs. Lengthy retention periods mean privacy practices must be sustained over decades, and the interplay between PHA record-keeping obligations and PHIPA access/correction rights creates both therapeutic opportunities (patients can access their complete care history) and risks (decades-old records may contain outdated or stigmatizing information)."
+    },
+    {
+      "number": "22-23",
+      "title": "Disclosure of Records",
+      "content": "Sections 22-23 address disclosure of hospital records:\n\n- s.22: No person shall disclose or give any person access to a medical record or part thereof except as authorized by the hospital and in accordance with applicable law\n- s.23: Medical records may be disclosed in response to a court order, subpoena, or other legal process; to the patient's attending physician; or as otherwise authorized by law\n\nTherapeutic significance: The PHA disclosure framework operates alongside PHIPA's more detailed disclosure provisions. The dual regulatory framework can create confusion for healthcare providers, representing a potential psycho-policy soft spot (Campbell 2010): when providers are uncertain which law governs, they may default to restrictive interpretations that are anti-therapeutic."
+    },
+    {
+      "number": "2(3.1)-(6)",
+      "title": "Critical Incident Reporting",
+      "content": "The critical incident reporting provisions require hospitals to:\n\n- Establish a system for reporting critical incidents (events resulting in death or serious harm that did not result primarily from the patient's underlying condition)\n- Investigate critical incidents and take action to reduce the risk of similar incidents\n- Disclose critical incidents to patients and/or their substitute decision-makers\n\nTherapeutic significance: Critical incident reporting directly intersects with privacy when incidents involve privacy breaches. The PHA's emphasis on disclosure and systemic learning aligns with the Health Privacy Officer Handbook's Just Culture framework: investigation should focus on systemic improvement, not individual blame. Open disclosure of incidents to patients embodies the TJPIA's Therapeutic Accountability design principle."
+    },
+    {
+      "number": "General",
+      "title": "Relationship to PHIPA",
+      "content": "The Public Hospitals Act and its regulations operate alongside PHIPA, creating a layered regulatory framework for health information in Ontario hospitals:\n\n- PHA establishes what records must be created and maintained (the infrastructure)\n- PHIPA governs how personal health information within those records is collected, used, disclosed, and protected (the information governance)\n- Where PHA and PHIPA overlap, PHIPA generally prevails for personal health information matters\n- Hospital administrators must comply with both frameworks simultaneously\n\nFor privacy officers, understanding the PHA context is essential because:\n1. PHA record-keeping obligations define the scope of information that falls under PHIPA protection\n2. PHA disclosure provisions must be read together with PHIPA's more detailed consent and disclosure framework\n3. Critical incident reporting under PHA may trigger PHIPA breach notification obligations\n4. The interplay between the two acts can create confusion that itself has therapeutic consequences"
+    }
+  ]
+}

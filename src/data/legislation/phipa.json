@@ -46,6 +46,21 @@
       "number": "52",
       "title": "Individual's right of access",
       "content": "An individual has a right of access to a record of personal health information about the individual that is in the custody or under the control of a health information custodian unless the record or the part of the record that contains the information falls within one of the exceptions under sections 52.1, 52.2 and 52.3."
+    },
+    {
+      "number": "55.15-55.27",
+      "title": "Part V.2 — Digital Health Identifier Activities (2025 Amendments)",
+      "content": "Part V.2 was added by the 2025 amendments (c. 7, Sched. 6, s. 1-13) establishing a framework for Digital Health Identifier Activities.\n\nKey provisions:\n- s.55.15: Interpretation and definitions for digital health identifier activities\n- s.55.16: Powers and duties of prescribed organization to carry out digital health identifier activities\n- s.55.17: Rules for collection, use, and disclosure of personal health information for digital health identifier activities\n- s.55.18: Application of Part III (consent) to digital health identifiers\n- s.55.19-55.20: Administrative requirements including practices/procedures and public descriptions\n- s.55.21: Protection of information held for digital health identifier purposes\n- s.55.22: Disposal of inactive digital health identifiers\n- s.55.23: Requirements for persons acting on the prescribed organization's behalf\n- s.55.24: Breach notification requirements specific to digital health identifiers\n- s.55.25: Prescribed organization's assessment obligations\n- s.55.26-55.27: Ministerial directives and regulation-making powers\n\nTherapeutic significance: Digital health identifiers create new pathways for information sharing across the healthcare system. The 2025 amendments establish safeguards that must be evaluated for both compliance and therapeutic impact on patient trust, agency, and privacy."
+    },
+    {
+      "number": "40",
+      "title": "Disclosures related to risks",
+      "content": "A health information custodian may disclose personal health information about an individual if the custodian believes on reasonable grounds that the disclosure is necessary for the purpose of eliminating or reducing a significant risk of serious bodily harm to a person or group of persons. This 'safety trumps privacy' provision represents a critical balancing point: the therapeutic value of physical safety is a precondition for all other therapeutic benefits."
+    },
+    {
+      "number": "17",
+      "title": "Agents and lockbox (consent directives)",
+      "content": "Section 17 (Agents and information) combined with s.37(1) and s.38(1) establish the lockbox/consent directive mechanism:\n- s.37(1): A client may expressly instruct that information collected with consent not be used within the organization (restricted use/lockbox)\n- s.38(1): A client may expressly instruct the custodian not to disclose information to external health care providers (restricted disclosure)\n- s.38(2): If a lockbox prevents disclosure of information the custodian considers necessary, the custodian must notify the receiving provider that information has been withheld\n\nHealth information custodians must PROACTIVELY determine a client's wishes about lockbox/consent directives (IPC Decision 213). Failure to do so constitutes a violation of safeguarding obligations."
     }
   ]
 }

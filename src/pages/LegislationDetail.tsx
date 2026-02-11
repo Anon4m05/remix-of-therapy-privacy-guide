@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import phipaData from '@/data/legislation/phipa.json';
 import fippaData from '@/data/legislation/fippa.json';
 import mfippaData from '@/data/legislation/mfippa.json';
+import phaData from '@/data/legislation/pha.json';
 
 export default function LegislationDetail() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function LegislationDetail() {
     phipa: phipaData,
     fippa: fippaData,
     mfippa: mfippaData,
+    pha: phaData,
   };
 
   const legislation = legislationMap[legislationId || ''];

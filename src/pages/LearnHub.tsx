@@ -20,7 +20,7 @@ export default function LearnHub() {
           </div>
 
           {/* Legislation Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card
               className="p-6 hover:shadow-lg transition-all cursor-pointer group"
               onClick={() => navigate('/learn/phipa')}
@@ -30,7 +30,7 @@ export default function LearnHub() {
                 <h2 className="text-xl font-semibold mb-2">PHIPA</h2>
                 <p className="text-sm text-muted-foreground mb-4 flex-1">
                   Personal Health Information Protection Act, 2004 - The primary legislation governing
-                  health information privacy in Ontario.
+                  health information privacy in Ontario. Updated with 2025 Digital Health Identifier amendments.
                 </p>
                 <Button variant="outline" className="w-full">
                   Read PHIPA
@@ -68,6 +68,23 @@ export default function LearnHub() {
                 </p>
                 <Button variant="outline" className="w-full">
                   Read M/FIPPA
+                </Button>
+              </div>
+            </Card>
+
+            <Card
+              className="p-6 hover:shadow-lg transition-all cursor-pointer group"
+              onClick={() => navigate('/learn/pha')}
+            >
+              <div className="flex flex-col h-full">
+                <BuildingLibraryIcon className="h-12 w-12 text-teal mb-4 group-hover:scale-110 transition-transform" />
+                <h2 className="text-xl font-semibold mb-2">PHA</h2>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  Public Hospitals Act — Hospital Management Regulation (R.R.O. 1990, Reg. 965). Governs
+                  medical records, disclosure, and critical incident reporting in Ontario hospitals.
+                </p>
+                <Button variant="outline" className="w-full">
+                  Read PHA
                 </Button>
               </div>
             </Card>
