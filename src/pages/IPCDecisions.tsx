@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useState, useMemo } from 'react';
 import { MagnifyingGlassIcon, ArrowTopRightOnSquareIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import ipcDecisions from '@/data/ipcDecisions.json';
@@ -17,6 +18,7 @@ interface IPCDecision {
   related_legislation: string[];
   summary: string;
   citation: string;
+  therapeuticAnalysis?: string;
 }
 
 export default function IPCDecisions() {
@@ -187,6 +189,21 @@ export default function IPCDecisions() {
                         <p className="text-sm leading-relaxed text-muted-foreground">
                           {decision.summary}
                         </p>
+
+                        {decision.therapeuticAnalysis && (
+                          <Accordion type="single" collapsible>
+                            <AccordionItem value="tj-analysis" className="border-t border-b-0">
+                              <AccordionTrigger className="py-3 text-sm font-semibold text-primary hover:no-underline">
+                                Therapeutic Jurisprudence Analysis
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <div className="p-4 bg-primary/5 rounded-lg text-sm leading-relaxed whitespace-pre-line text-foreground">
+                                  {decision.therapeuticAnalysis}
+                                </div>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </Accordion>
+                        )}
                       </div>
                     </Card>
                   ))}
