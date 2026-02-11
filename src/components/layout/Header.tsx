@@ -2,8 +2,6 @@ import { Menu, Home, TreeDeciduous, Sparkles, FileText, BookOpen, UserCircle, Bo
 import { Button } from '@/components/ui/button';
 import { useRole } from '@/context/RoleContext';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { MobileMenu } from './MobileMenu';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +13,7 @@ import {
 export function Header() {
   const { role, setRole } = useRole();
   const navigate = useNavigate();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   const getRoleBadge = () => {
     if (!role) return null;
@@ -58,17 +56,6 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-background border-b border-border shadow-sm">
         <div className="flex items-center justify-between h-16 px-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            {role && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setMobileMenuOpen(true)}
-                className="md:hidden"
-                aria-label="Open menu"
-              >
-                <Menu className="w-5 h-5" />
-              </Button>
-            )}
             <button
               onClick={handleLogoClick}
               className="font-semibold text-lg text-foreground hover:text-primary transition-colors"
@@ -124,7 +111,6 @@ export function Header() {
         </div>
       </header>
 
-      <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </>
   );
 }
