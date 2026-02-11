@@ -188,7 +188,7 @@ export default function HealthcareProviderDashboard() {
   const therapeuticInsights = [
     {
       title: 'Privacy as Therapeutic Agent',
-      content: 'Privacy decisions are not merely compliance checkboxes—they are clinical variables that affect therapeutic relationships, patient trust, and treatment outcomes. Research shows that transparent privacy practices increase therapeutic alliance by 23% and patient disclosure of sensitive information by 31%.',
+      content: 'Privacy decisions are not merely compliance checkboxes—they are clinical variables that affect therapeutic relationships, patient trust, and treatment outcomes. As Campbell (2010) argues, privacy policies are health interventions with measurable effects on patient disclosure, treatment adherence, and therapeutic alliance.',
       link: 'Learn about therapeutic privacy',
       to: '/educational-library',
       icon: '🔬'
