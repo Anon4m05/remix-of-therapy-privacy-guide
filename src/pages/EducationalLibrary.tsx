@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ArrowLeft, BookOpen, Lightbulb, Scale, FileText } from 'lucide-react';
 import libraryData from '@/data/educationalLibrary.json';
+import { renderContent } from '@/utils/contentRenderer';
 
 export default function EducationalLibrary() {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ export default function EducationalLibrary() {
                     </CardHeader>
                     <CardContent>
                       <div className="prose prose-sm max-w-none">
-                        <p className="text-foreground whitespace-pre-line">{resource.content}</p>
+                        <p className="text-foreground whitespace-pre-line">{renderContent(resource.content)}</p>
                         
                         {resource.keyTakeaways && (
                           <div className="mt-6 p-4 bg-muted rounded-lg">
