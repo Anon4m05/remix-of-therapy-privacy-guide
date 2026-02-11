@@ -195,7 +195,7 @@ export default function HealthcareProviderDashboard() {
     },
     {
       title: 'The Weight of Silence',
-      content: 'What remains unsaid in privacy discussions can be as harmful as breaches. Patients often don\'t know what information is being shared, with whom, or why. This informational asymmetry can erode trust even when no formal breach occurs.',
+      content: 'Privacy is not about hiding or concealing information. What remains unsaid in healthcare discussions can be as harmful as breaches. Patients often don\'t know what information is being shared, with whom, or why. This informational asymmetry can erode trust even when no formal breach occurs.',
       link: 'Read about strategic omission',
       to: '/educational-library',
       icon: '⚖️'
