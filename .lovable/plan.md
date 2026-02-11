@@ -1,41 +1,60 @@
 
+## Comprehensive Fix and Educational Material Integration
 
-## Fix: Markdown Artifacts and Add Content Linking in Educational Library
+### Part 1: Fix the Runtime Crash (Critical)
 
-### Problem
-1. The educational library JSON content contains `**bold**` markdown syntax (e.g., `**Empathy**`, `**Relegated to Compliance**`), but the component renders raw text, so users see literal asterisks.
-2. References to legislation (PHIPA sections, FIPPA, MFIPPA) and IPC decisions are plain text instead of being linked to the actual in-app content.
+**Root Cause:** `renderContent()` in `contentRenderer.tsx` crashes when passed `undefined` instead of a string. This happens when the EducationalLibrary component calls `renderContent(value)` on JSON fields that don't exist (e.g., a comparison entry value that is missing, or a resource field that is `undefined`).
 
-### Solution
+**Fix in `src/utils/contentRenderer.tsx`:**
+- Add a guard at the top of `renderContent`: if `text` is not a string, return it as-is (or return empty)
+- Add the same guard in `parseContent`
+- This single change fixes all the crashes throughout the Educational Library
 
-#### 1. Create a content renderer utility (`src/utils/contentRenderer.tsx`)
+### Part 2: Extend `renderContent` to All Text Fields
 
-A small React utility function that processes raw text strings and returns JSX with:
+Currently only `resource.content` goes through the renderer but other text fields (keyTakeaways, scenario, therapeuticConsiderations, antiTherapeuticRisks, therapeuticApproaches, connection text, example text, step descriptions) also contain references that should be linked. The EducationalLibrary component already calls `renderContent` on most of these fields -- this is already done but is the source of the crash when values are `undefined`.
 
-- `**bold text**` converted to `<strong>` elements
-- PHIPA section references (e.g., "PHIPA s.29", "PHIPA s.17") converted to links pointing to `/learn/phipa`
-- FIPPA section references converted to links pointing to `/learn/fippa`
-- MFIPPA references converted to links pointing to `/learn/mfippa`
-- IPC Decision references (e.g., "Decision 290", "IPC Decision 298") converted to links pointing to `/ipc-decisions`
+### Part 3: Integrate Uploaded Educational Materials
 
-The function will use regex to identify these patterns and split the text into an array of strings and JSX elements.
+Add new resources to `src/data/educationalLibrary.json` drawn from the uploaded files. Each will be a condensed, structured summary (not a full-text dump) placed in the appropriate existing category:
 
-#### 2. Update `src/pages/EducationalLibrary.tsx`
+**New resources to add:**
 
-Replace the raw `{resource.content}` render (line 73) with a call to the new content renderer. This single change fixes both issues across all resources.
+1. **"Two Decades of Therapeutic Jurisprudence"** (category: `tj-foundations`)
+   - Summary of TJ's 20-year evolution, key milestones, and global expansion
+   - Links to Wexler, Winick, Perlin references
 
-### What stays the same
-- The JSON data files are not modified
-- All other rendering logic (key takeaways, dimensions, scenarios, etc.) remains unchanged
-- Only the `content` field rendering is updated
+2. **"PHIPA: Full Act Overview"** (category: `legislation-context`)
+   - Structured overview of PHIPA's parts, key sections, and therapeutic implications
+   - Links to specific PHIPA sections
 
-### Technical details
+3. **"Public Hospitals Act: Privacy Dimensions"** (category: `legislation-context`)
+   - Hospital management regulations relevant to privacy (patient records, access, consent)
+   - Links to PHIPA cross-references
 
-The renderer handles these patterns:
-- `**text**` -> `<strong class="font-semibold">text</strong>`
-- `PHIPA s.XX` / `PHIPA Section XX` -> `<Link to="/learn/phipa">PHIPA s.XX</Link>`
-- `FIPPA` references -> `<Link to="/learn/fippa">...</Link>`
-- `MFIPPA` / `M/FIPPA` references -> `<Link to="/learn/mfippa">...</Link>`
-- `Decision 290` / `IPC Decision 298` -> `<Link to="/ipc-decisions">Decision 290</Link>`
-- Patterns like `Perlin (2019)` or `Campbell (2010)` -> linked to the "Academic Foundations" category tab within the Educational Library itself
+4. **"Health Privacy Officer Handbook Insights"** (category: `implementation-tools`)
+   - Key practical guidance: 16-step privacy program, cultivating privacy culture, breach management
+   - Links to PHIPA provisions referenced
 
+5. **"Digital Privacy in Healthcare Education"** (category: `privacy-as-principle`)
+   - Digital privacy concepts applied to healthcare: data protection, emerging technology, patient rights in digital contexts
+
+6. **"Therapeutic Jurisprudence-Centered Privacy Impact Assessment (TJPIA)"** (category: `implementation-tools`)
+   - The TJPIA framework: 8 dimensions, scoring methodology, anti-therapeutic patterns
+   - Links to PHIPA, FIPPA, academic citations
+
+### Part 4: Additional Sweep Items
+
+- **DecisionTreeSession.tsx line 67**: `useEffect` is called conditionally after an early return -- this violates Rules of Hooks. Will restructure to ensure all hooks are called unconditionally.
+- **Verify all navigation routes** in Header, Landing, LearnHub work correctly and don't lead to dead ends.
+
+### Technical Details
+
+**Files to modify:**
+1. `src/utils/contentRenderer.tsx` -- Add null/undefined guard to `renderContent` and `parseContent`
+2. `src/data/educationalLibrary.json` -- Add 6 new resource entries across appropriate categories
+3. `src/pages/DecisionTreeSession.tsx` -- Fix hooks ordering violation
+
+**Files unchanged:**
+- `src/pages/EducationalLibrary.tsx` -- Already calls `renderContent` on all relevant fields; the crash fix in the renderer resolves all issues
+- All other pages -- No changes needed after the renderer fix
