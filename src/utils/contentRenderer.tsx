@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface TextSegment {
-  type: 'text' | 'bold' | 'link';
+  type: 'text' | 'bold' | 'link' | 'citation';
   content: string;
   to?: string;
 }
@@ -94,11 +94,10 @@ function parseContent(text: string): TextSegment[] {
       // O. Reg. reference
       segments.push({ type: 'link', content: match[13], to: '/learn/phipa' });
     } else if (match[14]) {
-      // Academic citation
+      // Academic citation — render as styled text, not a link
       segments.push({
-        type: 'link',
+        type: 'citation',
         content: match[14],
-        to: '/educational-library',
       });
     }
 
@@ -130,6 +129,8 @@ export function renderContent(text: string): React.ReactNode {
             {seg.content}
           </Link>
         );
+      case 'citation':
+        return <span key={i} className="font-medium italic text-[#2E5C8A]">{seg.content}</span>;
       default:
         return <span key={i}>{seg.content}</span>;
     }
