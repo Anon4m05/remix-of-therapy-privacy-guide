@@ -16,9 +16,7 @@ export default function Landing() {
                 Understand the Therapeutic Impacts of Health Privacy Decisions
               </h2>
             </div>
-          <p className="text-lg md:text-xl text-white/90 mb-8">
-            A tool for healthcare professionals, patients, and privacy officers to assess privacy through a therapeutic lens.
-          </p>
+          
           <Button size="lg" onClick={() => navigate('/select-role')} className="bg-white text-primary hover:bg-white/90 shadow-lg text-lg px-8 py-6 h-auto font-semibold">
             Get Started
           </Button>
