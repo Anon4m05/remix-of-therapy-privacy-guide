@@ -62,6 +62,9 @@
     --accent: 210 14% 89%; /* Medium gray */
     --accent-foreground: 210 15% 17%;
     
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 17%;
+    
     --border: 210 14% 89%;
     --input: 210 14% 89%;
     --ring: 207 50% 36%;
