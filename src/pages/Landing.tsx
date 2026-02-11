@@ -17,9 +17,11 @@ export default function Landing() {
               </h2>
             </div>
           
-          <Button size="lg" onClick={() => navigate('/select-role')} className="bg-white text-primary hover:bg-white/90 shadow-lg text-lg px-8 py-6 h-auto font-semibold">
+          <div className="mt-8">
+            <Button size="lg" onClick={() => navigate('/select-role')} className="bg-white text-primary hover:bg-white/90 shadow-lg text-lg px-8 py-6 h-auto font-semibold">
             Get Started
-          </Button>
+            </Button>
+          </div>
         </div>
       </section>
 
