@@ -31,6 +31,7 @@ import {
   FunnelIcon
 } from '@heroicons/react/24/outline';
 import { format } from 'date-fns';
+import { renderContent } from '@/utils/contentRenderer';
 
 const categoryConfig = {
   did_you_know: { 
@@ -288,9 +289,9 @@ export default function SavedInsights() {
                             </span>
                           </div>
                           
-                          <p className="text-sm text-foreground leading-relaxed mb-2">
-                            {insight.content}
-                          </p>
+                          <div className="text-sm text-foreground leading-relaxed mb-2">
+                            {renderContent(insight.content)}
+                          </div>
                           
                           {(insight.source || insight.citation) && (
                             <p className="text-xs text-muted-foreground">

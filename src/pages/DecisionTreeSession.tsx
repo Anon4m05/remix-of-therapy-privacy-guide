@@ -63,9 +63,14 @@ export default function DecisionTreeSession() {
     );
   }
 
-  // If we've reached a recommendation, navigate to results
+  // If we've reached a recommendation, navigate to results via effect
+  useEffect(() => {
+    if (currentNode?.type === 'recommendation') {
+      navigate(`/decision-tree/${treeId}/results`);
+    }
+  }, [currentNode, treeId, navigate]);
+
   if (currentNode.type === 'recommendation') {
-    navigate(`/decision-tree/${treeId}/results`);
     return null;
   }
 

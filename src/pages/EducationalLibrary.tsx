@@ -78,7 +78,7 @@ export default function EducationalLibrary() {
                             <h4 className="font-semibold mb-2">Key Takeaways:</h4>
                             <ul className="space-y-1">
                               {resource.keyTakeaways.map((takeaway, idx) => (
-                                <li key={idx}>{takeaway}</li>
+                                <li key={idx}>{renderContent(takeaway)}</li>
                               ))}
                             </ul>
                           </div>
@@ -92,7 +92,7 @@ export default function EducationalLibrary() {
                                 {Object.entries(resource.comparison.traditional).map(([key, value]) => (
                                   <div key={key}>
                                     <dt className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</dt>
-                                    <dd className="text-muted-foreground">{value as string}</dd>
+                                    <dd className="text-muted-foreground">{renderContent(value as string)}</dd>
                                   </div>
                                 ))}
                               </dl>
@@ -103,7 +103,7 @@ export default function EducationalLibrary() {
                                 {Object.entries(resource.comparison.therapeutic).map(([key, value]) => (
                                   <div key={key}>
                                     <dt className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</dt>
-                                    <dd className="text-muted-foreground">{value as string}</dd>
+                                    <dd className="text-muted-foreground">{renderContent(value as string)}</dd>
                                   </div>
                                 ))}
                               </dl>
@@ -116,10 +116,12 @@ export default function EducationalLibrary() {
                             {resource.dimensions.map((dim: any, idx: number) => (
                               <div key={idx} className="p-4 border-l-4 border-primary bg-muted/50 rounded-r-lg">
                                 <h4 className="font-semibold mb-2">{dim.name}</h4>
-                                <p className="text-sm mb-2">{dim.description}</p>
-                                <p className="text-sm text-muted-foreground italic">
-                                  Clinical Impact: {dim.clinicalImpact || dim.clinicalImpact}
-                                </p>
+                                <p className="text-sm mb-2">{renderContent(dim.description)}</p>
+                                {dim.clinicalImpact && (
+                                  <p className="text-sm text-muted-foreground italic">
+                                    Clinical Impact: {renderContent(dim.clinicalImpact)}
+                                  </p>
+                                )}
                               </div>
                             ))}
                           </div>
@@ -129,15 +131,15 @@ export default function EducationalLibrary() {
                           <div className="mt-6 space-y-4">
                             <div className="p-4 bg-amber-50 dark:bg-amber-950/20 rounded-lg border border-amber-200 dark:border-amber-800">
                               <h4 className="font-semibold mb-2">Scenario:</h4>
-                              <p className="text-sm">{resource.scenario}</p>
+                              <p className="text-sm">{renderContent(resource.scenario)}</p>
                             </div>
-                            
+
                             {resource.therapeuticConsiderations && (
                               <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
                                 <h4 className="font-semibold mb-2">Therapeutic Considerations:</h4>
                                 <ul className="text-sm space-y-1 list-disc list-inside">
                                   {resource.therapeuticConsiderations.map((item: string, idx: number) => (
-                                    <li key={idx}>{item}</li>
+                                    <li key={idx}>{renderContent(item)}</li>
                                   ))}
                                 </ul>
                               </div>
@@ -148,7 +150,7 @@ export default function EducationalLibrary() {
                                 <h4 className="font-semibold mb-2">Anti-Therapeutic Risks:</h4>
                                 <ul className="text-sm space-y-1 list-disc list-inside">
                                   {resource.antiTherapeuticRisks.map((item: string, idx: number) => (
-                                    <li key={idx}>{item}</li>
+                                    <li key={idx}>{renderContent(item)}</li>
                                   ))}
                                 </ul>
                               </div>
@@ -159,7 +161,7 @@ export default function EducationalLibrary() {
                                 <h4 className="font-semibold mb-2">Therapeutic Approaches:</h4>
                                 <ul className="text-sm space-y-1 list-disc list-inside">
                                   {resource.therapeuticApproaches.map((item: string, idx: number) => (
-                                    <li key={idx}>{item}</li>
+                                    <li key={idx}>{renderContent(item)}</li>
                                   ))}
                                 </ul>
                               </div>
@@ -172,7 +174,7 @@ export default function EducationalLibrary() {
                             {resource.connections.map((conn: any, idx: number) => (
                               <div key={idx} className="p-3 bg-muted rounded-lg">
                                 <h4 className="font-semibold text-sm mb-1">{conn.principle}</h4>
-                                <p className="text-sm text-muted-foreground">{conn.connection}</p>
+                                <p className="text-sm text-muted-foreground">{renderContent(conn.connection)}</p>
                               </div>
                             ))}
                           </div>
@@ -182,15 +184,15 @@ export default function EducationalLibrary() {
                           <div className="mt-6 space-y-3">
                             {resource.examples.map((ex: any, idx: number) => (
                               <div key={idx} className="p-4 bg-muted rounded-lg">
-                                <h4 className="font-semibold text-sm mb-2">{ex.requirement}</h4>
+                                <h4 className="font-semibold text-sm mb-2">{renderContent(ex.requirement)}</h4>
                                 <div className="grid md:grid-cols-2 gap-3 text-sm">
                                   <div>
                                     <span className="font-medium">Compliance:</span>
-                                    <p className="text-muted-foreground mt-1">{ex.compliance}</p>
+                                    <p className="text-muted-foreground mt-1">{renderContent(ex.compliance)}</p>
                                   </div>
                                   <div>
                                     <span className="font-medium text-primary">Therapeutic:</span>
-                                    <p className="text-muted-foreground mt-1">{ex.therapeutic}</p>
+                                    <p className="text-muted-foreground mt-1">{renderContent(ex.therapeutic)}</p>
                                   </div>
                                 </div>
                               </div>
@@ -208,7 +210,7 @@ export default function EducationalLibrary() {
                                   </div>
                                   <div>
                                     <h4 className="font-semibold mb-1">{step.step}</h4>
-                                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                                    <p className="text-sm text-muted-foreground">{renderContent(step.description)}</p>
                                   </div>
                                 </div>
                               </div>
