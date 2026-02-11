@@ -16,7 +16,6 @@ export default function DecisionTreeSession() {
 
   const data = decisionTreesData as DecisionTreeData;
   
-  // Check for AI-generated tree in sessionStorage first
   const [aiTree, setAiTree] = useState<any>(null);
   
   useEffect(() => {
@@ -41,6 +40,15 @@ export default function DecisionTreeSession() {
     }
   }, [tree, state.currentTreeId, startTree]);
 
+  const currentNode = tree?.nodes.find((n: DecisionTreeNode) => n.id === state.currentNodeId);
+
+  // Navigate to results when recommendation is reached — must be before any returns
+  useEffect(() => {
+    if (currentNode?.type === 'recommendation') {
+      navigate(`/decision-tree/${treeId}/results`);
+    }
+  }, [currentNode, treeId, navigate]);
+
   if (!tree) {
     return (
       <Layout>
@@ -51,8 +59,6 @@ export default function DecisionTreeSession() {
     );
   }
 
-  const currentNode = tree.nodes.find(n => n.id === state.currentNodeId);
-  
   if (!currentNode) {
     return (
       <Layout>
@@ -62,13 +68,6 @@ export default function DecisionTreeSession() {
       </Layout>
     );
   }
-
-  // If we've reached a recommendation, navigate to results via effect
-  useEffect(() => {
-    if (currentNode?.type === 'recommendation') {
-      navigate(`/decision-tree/${treeId}/results`);
-    }
-  }, [currentNode, treeId, navigate]);
 
   if (currentNode.type === 'recommendation') {
     return null;

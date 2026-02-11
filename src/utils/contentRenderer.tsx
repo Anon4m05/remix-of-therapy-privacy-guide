@@ -15,6 +15,7 @@ const KNOWN_AUTHORS = [
 ];
 
 function parseContent(text: string): TextSegment[] {
+  if (typeof text !== 'string') return [];
   const segments: TextSegment[] = [];
 
   // Build author alternation for academic citations
@@ -112,6 +113,7 @@ function parseContent(text: string): TextSegment[] {
 }
 
 export function renderContent(text: string): React.ReactNode {
+  if (typeof text !== 'string') return text ?? null;
   const segments = parseContent(text);
 
   return segments.map((seg, i) => {
