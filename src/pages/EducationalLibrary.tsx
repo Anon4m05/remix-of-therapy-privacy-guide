@@ -32,9 +32,9 @@ export default function EducationalLibrary() {
         </div>
 
         <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 h-auto">
+          <TabsList className="flex flex-wrap gap-2 h-auto w-full justify-start p-2">
             {libraryData.categories.map(cat => (
-              <TabsTrigger key={cat.id} value={cat.id} className="py-3">
+              <TabsTrigger key={cat.id} value={cat.id} className="py-3 whitespace-nowrap">
                 {cat.title}
               </TabsTrigger>
             ))}
