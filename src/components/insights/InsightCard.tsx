@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { BookmarkIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { BookmarkIcon as BookmarkSolidIcon } from '@heroicons/react/24/solid';
 import { cn } from '@/lib/utils';
+import { renderContent } from '@/utils/contentRenderer';
 
 interface InsightCardProps {
   icon: React.ComponentType<{ className?: string }>;
@@ -107,14 +108,14 @@ export function InsightCard({
             </div>
           ) : (
             <>
-              <p className="text-sm leading-relaxed text-foreground">
-                {content}
-              </p>
+              <div className="text-sm leading-relaxed text-foreground">
+                {renderContent(content)}
+              </div>
               {(source || citation) && (
                 <p className="text-xs text-muted-foreground mt-2">
-                  {source && <span className="font-medium">{source}</span>}
+                  {source && <span className="font-medium">{renderContent(source)}</span>}
                   {source && citation && ' • '}
-                  {citation && <span className="italic">{citation}</span>}
+                  {citation && <span className="italic">{renderContent(citation)}</span>}
                 </p>
               )}
             </>

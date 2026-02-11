@@ -9,6 +9,8 @@ import { useState, useMemo } from 'react';
 import { MagnifyingGlassIcon, ArrowTopRightOnSquareIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import ipcDecisions from '@/data/ipcDecisions.json';
 import { IPCBrowserViewer } from '@/components/legislation/IPCBrowserViewer';
+import { Link } from 'react-router-dom';
+import { renderContent } from '@/utils/contentRenderer';
 
 interface IPCDecision {
   title: string;
@@ -179,16 +181,24 @@ export default function IPCDecisions() {
                         </div>
 
                         <div className="flex flex-wrap gap-2">
-                          {decision.related_legislation.map((leg, idx) => (
-                            <Badge key={idx} className="bg-teal/10 text-teal hover:bg-teal/20">
-                              {leg}
-                            </Badge>
-                          ))}
+                          {decision.related_legislation.map((leg, idx) => {
+                            const mainLeg = leg.split(' - ')[0].trim();
+                            let to = '/learn/phipa';
+                            if (/MFIPPA|M\/FIPPA/i.test(mainLeg)) to = '/learn/mfippa';
+                            else if (/FIPPA/i.test(mainLeg)) to = '/learn/fippa';
+                            return (
+                              <Link key={idx} to={to}>
+                                <Badge className="bg-teal/10 text-teal hover:bg-teal/20 cursor-pointer">
+                                  {leg}
+                                </Badge>
+                              </Link>
+                            );
+                          })}
                         </div>
 
-                        <p className="text-sm leading-relaxed text-muted-foreground">
-                          {decision.summary}
-                        </p>
+                        <div className="text-sm leading-relaxed text-muted-foreground">
+                          {renderContent(decision.summary)}
+                        </div>
 
                         {decision.therapeuticAnalysis && (
                           <Accordion type="single" collapsible>
@@ -198,7 +208,7 @@ export default function IPCDecisions() {
                               </AccordionTrigger>
                               <AccordionContent>
                                 <div className="p-4 bg-primary/5 rounded-lg text-sm leading-relaxed whitespace-pre-line text-foreground">
-                                  {decision.therapeuticAnalysis}
+                                  {renderContent(decision.therapeuticAnalysis)}
                                 </div>
                               </AccordionContent>
                             </AccordionItem>

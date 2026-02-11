@@ -40,7 +40,17 @@ export function DecisionTreePrint({ tree, answers }: DecisionTreePrintProps) {
       };
     });
 
-    const finalNode = tree.nodes.find(n => n.type === 'recommendation' && n.id === Object.values(answers).slice(-1)[0]);
+    // Find the recommendation by tracing the last answer's nextNode
+    const lastAnswerEntries = Object.entries(answers);
+    let finalNode: typeof tree.nodes[0] | undefined;
+    if (lastAnswerEntries.length > 0) {
+      const [lastNodeId, lastOptionId] = lastAnswerEntries[lastAnswerEntries.length - 1];
+      const lastNode = tree.nodes.find(n => n.id === lastNodeId);
+      const lastOption = lastNode?.options?.find(o => o.id === lastOptionId);
+      if (lastOption) {
+        finalNode = tree.nodes.find(n => n.id === lastOption.nextNode && n.type === 'recommendation');
+      }
+    }
 
     return `
 <!DOCTYPE html>

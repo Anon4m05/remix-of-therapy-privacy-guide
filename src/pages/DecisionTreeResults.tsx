@@ -8,6 +8,7 @@ import { DecisionTreePrint } from '@/components/decision-tree/DecisionTreePrint'
 import { useDecisionTree } from '@/context/DecisionTreeContext';
 import decisionTreesData from '@/data/decisionTrees.json';
 import type { DecisionTreeData } from '@/types';
+import { renderContent, renderLegalReference } from '@/utils/contentRenderer';
 
 export default function DecisionTreeResults() {
   const { treeId } = useParams<{ treeId: string }>();
@@ -90,7 +91,7 @@ export default function DecisionTreeResults() {
           
           <div className="prose prose-sm max-w-none">
             <div className="whitespace-pre-line text-sm text-foreground">
-              {recommendation.content}
+              {renderContent(recommendation.content || '')}
             </div>
           </div>
 
@@ -99,9 +100,14 @@ export default function DecisionTreeResults() {
               <h4 className="text-sm font-semibold text-foreground mb-2">
                 Legal References:
               </h4>
-              <p className="text-sm text-muted-foreground">
-                {recommendation.legalReferences.join(', ')}
-              </p>
+              <div className="text-sm text-muted-foreground flex flex-wrap gap-x-1">
+                {recommendation.legalReferences.map((ref, idx) => (
+                  <span key={idx}>
+                    {renderLegalReference(ref)}
+                    {idx < recommendation.legalReferences!.length - 1 && ', '}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </Card>

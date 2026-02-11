@@ -190,18 +190,21 @@ export default function HealthcareProviderDashboard() {
       title: 'Privacy as Therapeutic Agent',
       content: 'Privacy decisions are not merely compliance checkboxes—they are clinical variables that affect therapeutic relationships, patient trust, and treatment outcomes. Research shows that transparent privacy practices increase therapeutic alliance by 23% and patient disclosure of sensitive information by 31%.',
       link: 'Learn about therapeutic privacy',
+      to: '/educational-library',
       icon: '🔬'
     },
     {
       title: 'The Weight of Silence',
       content: 'What remains unsaid in privacy discussions can be as harmful as breaches. Patients often don\'t know what information is being shared, with whom, or why. This informational asymmetry can erode trust even when no formal breach occurs.',
       link: 'Read about strategic omission',
+      to: '/educational-library',
       icon: '⚖️'
     },
     {
       title: 'Relational Autonomy in Practice',
       content: 'Autonomy exists within relationships, not in isolation. Effective privacy practice honors patient control while recognizing the relational context of care—family involvement, circle of care, and therapeutic alliance.',
       link: 'Explore relational ethics',
+      to: '/educational-library',
       icon: '🤝'
     }
   ];
@@ -341,15 +344,15 @@ export default function HealthcareProviderDashboard() {
               </Button>
             </Card>
 
-            {/* Learning Library - Coming Soon */}
-            <Card className="p-6 opacity-60">
+            {/* Learning Library */}
+            <Card className="p-6 hover:shadow-md transition-shadow cursor-pointer" onClick={() => navigate('/educational-library')}>
               <AcademicCapIcon className="w-10 h-10 md:w-12 md:h-12 mb-4 text-provider-blue" />
               <h3 className="text-lg md:text-xl font-semibold mb-2">Learning Library</h3>
               <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
                 Educational resources on therapeutic privacy, PHIPA, and relational ethics
               </p>
-              <Button variant="secondary" className="w-full" disabled>
-                Coming in Phase 2
+              <Button variant="outline" className="w-full border-provider-blue text-provider-blue hover:bg-provider-blue/10">
+                Browse Library →
               </Button>
             </Card>
           </div>
@@ -368,7 +371,10 @@ export default function HealthcareProviderDashboard() {
                     <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
                       {insight.content}
                     </p>
-                    <button className="text-sm font-medium text-provider-blue hover:underline">
+                    <button
+                      onClick={() => navigate(insight.to)}
+                      className="text-sm font-medium text-provider-blue hover:underline"
+                    >
                       {insight.link} →
                     </button>
                   </div>
@@ -435,10 +441,11 @@ export default function HealthcareProviderDashboard() {
             >
               Start Decision Tree
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               className="border-teal text-teal hover:bg-teal/10"
+              onClick={() => navigate('/generate-decision-tree')}
             >
               Ask AI Assistant
             </Button>
