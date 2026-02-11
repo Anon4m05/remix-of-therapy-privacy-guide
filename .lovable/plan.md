@@ -1,26 +1,41 @@
 
 
-## Fix: Merge Duplicate Hamburger Menus
+## Fix: Markdown Artifacts and Add Content Linking in Educational Library
 
 ### Problem
-
-The Header has two separate hamburger menu buttons:
-1. **Left side** (mobile only): Opens a `Sheet`-based slide-out `MobileMenu` with limited nav items (Dashboard, Decision Trees, and "Coming Soon" placeholders)
-2. **Right side** (always visible): Opens a `DropdownMenu` with the full nav (Dashboard, Decision Trees, AI Decision Tree, Document Analysis, Legislation, Saved Insights, Change Role)
-
-These should be a single menu.
+1. The educational library JSON content contains `**bold**` markdown syntax (e.g., `**Empathy**`, `**Relegated to Compliance**`), but the component renders raw text, so users see literal asterisks.
+2. References to legislation (PHIPA sections, FIPPA, MFIPPA) and IPC decisions are plain text instead of being linked to the actual in-app content.
 
 ### Solution
 
-Keep the **right-side DropdownMenu** as the single navigation menu since it has the complete set of nav items, and remove the left-side mobile hamburger + MobileMenu component entirely.
+#### 1. Create a content renderer utility (`src/utils/contentRenderer.tsx`)
 
-### Changes
+A small React utility function that processes raw text strings and returns JSX with:
 
-**`src/components/layout/Header.tsx`:**
-- Remove the left-side mobile hamburger `Button` (the one with `className="md:hidden"` that opens `mobileMenuOpen`)
-- Remove the `useState` for `mobileMenuOpen`
-- Remove the `<MobileMenu>` component render at the bottom
-- Remove the `MobileMenu` import
+- `**bold text**` converted to `<strong>` elements
+- PHIPA section references (e.g., "PHIPA s.29", "PHIPA s.17") converted to links pointing to `/learn/phipa`
+- FIPPA section references converted to links pointing to `/learn/fippa`
+- MFIPPA references converted to links pointing to `/learn/mfippa`
+- IPC Decision references (e.g., "Decision 290", "IPC Decision 298") converted to links pointing to `/ipc-decisions`
 
-No other files need changes. The `MobileMenu.tsx` component can remain in the codebase (unused) or be deleted -- it will no longer be referenced.
+The function will use regex to identify these patterns and split the text into an array of strings and JSX elements.
+
+#### 2. Update `src/pages/EducationalLibrary.tsx`
+
+Replace the raw `{resource.content}` render (line 73) with a call to the new content renderer. This single change fixes both issues across all resources.
+
+### What stays the same
+- The JSON data files are not modified
+- All other rendering logic (key takeaways, dimensions, scenarios, etc.) remains unchanged
+- Only the `content` field rendering is updated
+
+### Technical details
+
+The renderer handles these patterns:
+- `**text**` -> `<strong class="font-semibold">text</strong>`
+- `PHIPA s.XX` / `PHIPA Section XX` -> `<Link to="/learn/phipa">PHIPA s.XX</Link>`
+- `FIPPA` references -> `<Link to="/learn/fippa">...</Link>`
+- `MFIPPA` / `M/FIPPA` references -> `<Link to="/learn/mfippa">...</Link>`
+- `Decision 290` / `IPC Decision 298` -> `<Link to="/ipc-decisions">Decision 290</Link>`
+- Patterns like `Perlin (2019)` or `Campbell (2010)` -> linked to the "Academic Foundations" category tab within the Educational Library itself
 
